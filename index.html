@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IS Career Launchpad — BYU Information Systems</title>
+<meta name="description" content="Explore four IS career paths and practice a mock interview for each. Built for the BYU Information Systems Junior Core Case Competition.">
+<meta property="og:title" content="IS Career Launchpad">
+<meta property="og:description" content="Four IS career paths, a hands-on activity for each, and a mock interview with automated feedback.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23002E5D'/%3E%3Cpath d='M32 11 L41 30 H23 Z' fill='%23fff'/%3E%3Crect x='28.5' y='30' width='7' height='15' fill='%23fff'/%3E%3Cpath d='M23 46 h18 l-4 7 H27 Z' fill='%230062B8'/%3E%3C/svg%3E">
 <style>
 :root{
   --navy:#002E5D; --navy-deep:#001B38; --royal:#0062B8; --royal-soft:#E8F1FA;
@@ -94,6 +99,50 @@ table.pay tr:last-child td{border-bottom:0}
 .srclist{font-size:.85rem;padding-left:20px;margin:0} .srclist li{margin-bottom:7px}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
 
+/* ---- per-path colour identity + artwork ---- */
+.themed{--accent:var(--royal);--accent-soft:var(--royal-soft)}
+.ico{width:20px;height:20px;flex-shrink:0;vertical-align:-4px}
+.ico.lg{width:26px;height:26px;vertical-align:-6px}
+.ico.xl{width:34px;height:34px}
+h2 .ico,h3 .ico{margin-right:9px;color:var(--accent)}
+.sec-h{display:flex;align-items:center;gap:0;margin-bottom:.5em}
+.chero{background:linear-gradient(135deg,var(--accent-soft) 0%,#fff 62%);
+  border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin-bottom:8px;
+  display:flex;align-items:center;gap:22px;position:relative;overflow:hidden}
+.chero .badge{width:60px;height:60px;border-radius:15px;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 6px 16px -4px var(--accent)}
+.chero h1{margin:0 0 4px;font-size:1.85rem;color:var(--navy)}
+.chero p{margin:0;color:var(--muted);font-size:1.02rem}
+.chero .art{position:absolute;right:-14px;top:-10px;opacity:.13;color:var(--accent);pointer-events:none}
+.tabs button.on{border-bottom-color:var(--accent);color:var(--navy)}
+.ccard{position:relative;overflow:hidden;padding-top:26px}
+.ccard .strip{position:absolute;top:0;left:0;right:0;height:5px;background:var(--accent)}
+.ccard .row1{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.ccard .badge{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);
+  color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ccard h3{margin:0;color:var(--navy)}
+.ind{border-left:4px solid var(--accent)}
+.ind h4{color:var(--accent)}
+.pill{border-color:var(--accent-soft);background:var(--accent-soft);color:var(--navy)}
+.paycard h3 .ico{color:var(--accent)}
+.paybar{margin:14px 0 4px}
+.paybar .row{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:.83rem}
+.paybar .lbl{min-width:74px;color:var(--muted)}
+.paybar .track{flex:1;height:20px;background:var(--canvas);border-radius:5px;overflow:hidden}
+.paybar .fill{height:20px;border-radius:5px;display:flex;align-items:center;justify-content:flex-end;
+  padding-right:7px;color:#fff;font-weight:700;font-size:.74rem;font-variant-numeric:tabular-nums}
+.ladder li:before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent);
+  flex-shrink:0;margin-top:8px;opacity:.35}
+.ladder li:first-child:before{opacity:1}
+.btn.accent{background:var(--accent);border-color:var(--accent)}
+.btn.accent:hover{filter:brightness(.9)}
+.stage div.on{background:var(--accent);border-color:var(--accent)}
+.hero{position:relative;overflow:hidden}
+.hero .heroart{position:absolute;right:10px;top:34px;opacity:.17;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.know-good{border-left:4px solid var(--ok)}
+.know-bad{border-left:4px solid var(--line)}
 /* ---- interview: deliberately tighter and narrower than the rest of the site ---- */
 .iv{max-width:720px;margin:0 auto;padding:24px 32px 48px}
 .iv .qhead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
@@ -105,6 +154,18 @@ table.pay tr:last-child td{border-bottom:0}
 .iv .opt:hover{border-color:var(--royal);background:var(--royal-soft)}
 .iv .opt.locked{cursor:default}
 .iv .opt.locked:hover{border-color:var(--line);background:#fff}
+.optrow{display:flex;align-items:flex-start;gap:9px}
+.ltr{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex-shrink:0;
+  border-radius:5px;background:var(--canvas);border:1px solid var(--line);font-weight:700;
+  font-size:.76rem;color:var(--muted);margin-top:1px}
+.opt.on .ltr,.opt.right .ltr{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong .ltr{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt .why{font-size:.82rem;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.opt{border:1px solid var(--line);background:#fff;border-radius:8px;padding:11px 13px;margin-bottom:7px;
+  font-size:.9rem;line-height:1.5;cursor:pointer;transition:border-color .1s,background .1s}
+.opt:hover{border-color:var(--royal);background:var(--royal-soft)}
+.opt.locked{cursor:default}
+.opt.locked:hover{border-color:var(--line);background:#fff}
 .iv .opt .why{font-size:.82rem;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
 .iv textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit;
   font-size:.92rem;resize:vertical;line-height:1.55}
@@ -177,6 +238,51 @@ const SOURCES = {
   'nace-2026':   {label:'NACE 2026 Internship & Co-op Survey (via UW–Madison La Follette Career Services)', url:'https://career.lafollette.wisc.edu/blog/2026/04/07/2026-internship-co-op-benchmarks-from-naces-national-survey/', asOf:'Wages as of summer 2025'}
 };
 
+const THEME = {
+  'data-analytics':    {accent:'#0E7C86', soft:'#E2F3F4', icon:'chart'},
+  'cybersecurity':     {accent:'#6B3FA0', soft:'#F0EAF9', icon:'shield'},
+  'project-management':{accent:'#B0650A', soft:'#FBF0E1', icon:'board'},
+  'software-dev':      {accent:'#1E7A46', soft:'#E7F4ED', icon:'code'}
+};
+const ICON_PATHS = {
+  chart:  '<path d="M3 21h18M6.5 21V11M11.5 21V4M16.5 21v-7M21 21v-3"/>',
+  shield: '<path d="M12 3l7.5 3.4v5.5c0 4.6-3.2 8.4-7.5 9.6-4.3-1.2-7.5-5-7.5-9.6V6.4z"/><path d="M9 12.4l2.1 2.1L15.4 10"/>',
+  board:  '<rect x="3" y="4" width="5" height="16" rx="1.2"/><rect x="10" y="4" width="5" height="10" rx="1.2"/><rect x="17" y="4" width="4" height="13" rx="1.2"/>',
+  code:   '<path d="M8.5 7L3 12l5.5 5M15.5 7L21 12l-5.5 5"/>',
+  brief:  '<rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M8.5 7.5V5.5a2 2 0 012-2h3a2 2 0 012 2v2"/><path d="M3 12.5h18"/>',
+  clock:  '<circle cx="12" cy="12" r="8.6"/><path d="M12 7v5.2l3.2 1.9"/>',
+  build:  '<rect x="3" y="9" width="7" height="11" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/><path d="M6 12.5h1M6 16h1M17 8h1M17 12h1M17 16h1"/>',
+  cap:    '<path d="M12 4L2.5 8.7 12 13.4l9.5-4.7z"/><path d="M6.5 11v4.6c0 1.6 2.5 2.9 5.5 2.9s5.5-1.3 5.5-2.9V11"/>',
+  star:   '<path d="M12 3.4l2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20l1.03-6L3.3 9.8l6-.9z"/>',
+  trend:  '<path d="M3 17.5l6-6 4 4 8-8"/><path d="M15.5 7.5H21v5.5"/>',
+  link:   '<path d="M10.2 13.3a4.6 4.6 0 006.9.5l2.8-2.8a4.6 4.6 0 00-6.5-6.5l-1.6 1.6"/><path d="M13.8 10.7a4.6 4.6 0 00-6.9-.5l-2.8 2.8a4.6 4.6 0 006.5 6.5l1.6-1.6"/>',
+  target: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1"/>'
+};
+function ico(name, cls){
+  return '<svg class="ico'+(cls?' '+cls:'')+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" '+
+    'stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICON_PATHS[name]+'</svg>';
+}
+function secH(iconName, text){ return '<h2>'+ico(iconName,'lg')+text+'</h2>'; }
+/* Proportional salary bars — the numbers are the same ones in the table above,
+   drawn so the gap between entry level and the national median is visible. */
+function payBars(c){
+  const t=THEME[c.id];
+  const nums=c.compensation.rows.map(function(r){
+    const m=String(r[1]).match(/\$([\d,]+)/); return m?parseInt(m[1].replace(/,/g,''),10):0; });
+  const rows=[];
+  c.compensation.rows.forEach(function(r,i){
+    if(nums[i]>0 && /Entry|Median|Experienced|management/i.test(r[0]))
+      rows.push([r[0].replace(/ \(.*\)/,''), nums[i]]);
+  });
+  const mx=Math.max.apply(null,rows.map(function(r){return r[1];}));
+  return '<div class="paybar">'+rows.map(function(r,i){
+    const w=Math.max(14,Math.round(r[1]/mx*100));
+    const op=0.45+0.55*(i/Math.max(1,rows.length-1));
+    return '<div class="row"><span class="lbl">'+r[0]+'</span>'+
+      '<div class="track"><div class="fill" style="width:'+w+'%;background:'+t.accent+';opacity:'+op.toFixed(2)+'">'+
+      '$'+(r[1]/1000).toFixed(0)+'k</div></div></div>';
+  }).join('')+'</div>';
+}
 const BYU = {avgStart:72820, medStart:74000, placed:90, grads:123, seeking:100,
              bonusPct:22, bonusAvg:13306, mismAvg:91370, employers:['Qualtrics','EY','Eide Bailly']};
 
@@ -989,12 +1095,31 @@ function lengthScore(n, wc){
 }
 
 /* Human-readable label for a synonym group, used in feedback. */
-const GROUP_LABEL = {};
-GROUP_LABEL[BEH_REQ.result[0]]  = 'a concrete result';
-GROUP_LABEL[BEH_REQ.action[0]]  = 'what you specifically did';
-GROUP_LABEL[BEH_REQ.context[0]] = 'the situation you were in';
-GROUP_LABEL[BEH_REQ.learn[0]]   = 'what you took away from it';
-function labelFor(group){ return GROUP_LABEL[group[0]] || group[0]; }
+const STAR_LABEL = {};
+STAR_LABEL[BEH_REQ.result[0]]  = 'a concrete result';
+STAR_LABEL[BEH_REQ.action[0]]  = 'what you specifically did';
+STAR_LABEL[BEH_REQ.context[0]] = 'the situation you were in';
+STAR_LABEL[BEH_REQ.learn[0]]   = 'what you took away from it';
+/* Readable labels for the question-specific groups, so feedback names a concept
+   rather than echoing a raw keyword back at the candidate. */
+const GROUP_LABEL = {
+  'explain':'how you explained it', 'error':'what the mistake actually was',
+  'missing':'the data problem itself', 'assumption':'the limitation you disclosed',
+  'ask':'the question behind the request', 'alternative':'the alternative you offered',
+  'noticed':'what you actually noticed', 'investigate':'how you verified it',
+  'risk':'the specific risk', 'process':'the process you followed',
+  'uncertain':'what you did not know', 'decided':'the decision you made',
+  'early':'when you raised it', 'option':'the options you brought',
+  'no authority':'the lack of formal authority', 'visible':'how you created alignment',
+  'off track':'what actually went wrong', 'estimate':'the real cost',
+  'tradeoff':'the tradeoff you made visible', 'unfamiliar':'the unfamiliar codebase',
+  'trace':'your method for getting oriented', 'feedback':'the feedback itself',
+  'reacted':'your honest first reaction', 'reproduce':'how you narrowed it down',
+  'root cause':'the root cause', 'disagree':'the disagreement itself',
+  'asked':'curiosity about their reasoning'
+};
+function isStar(group){ return STAR_LABEL[group[0]]!==undefined; }
+function labelFor(group){ return STAR_LABEL[group[0]] || GROUP_LABEL[group[0]] || group[0]; }
 
 function scoreFree(q, answer){
   const tokens   = tokenize(answer);
@@ -1033,9 +1158,11 @@ function feedbackFree(q, s){
   }
   s.missed.slice(0,3).forEach(function(g){
     const l=labelFor(g);
-    out.push(beh
-      ? 'Your answer did not clearly include <b>'+l+'</b>. That is one of the four STAR elements, and it is what interviewers are scoring.'
-      : 'You did not mention <b>'+l+'</b>. Interviewers listen for this specifically — it is how they check you understand the underlying concept.');
+    out.push(!beh
+      ? 'You did not mention <b>'+l+'</b>. Interviewers listen for this specifically — it is how they check you understand the underlying concept.'
+      : isStar(g)
+        ? 'Your answer did not clearly include <b>'+l+'</b>. That is one of the four STAR elements, and it is what interviewers score behavioral answers on.'
+        : 'Your answer never really got to <b>'+l+'</b>, which is the heart of what this question is asking.');
   });
   if(s.kw>=0.75 && s.cos<0.25){
     out.push(beh
@@ -1106,7 +1233,16 @@ function renderNav(active){
 }
 
 function viewLanding(){
-  return '<div class="hero"><div class="wrap">'+
+  return '<div class="hero">'+
+    '<svg class="heroart" width="430" height="272" viewBox="0 0 520 330" fill="none" aria-hidden="true">'+
+      '<path d="M20 300 L140 300 L140 220 L240 220 L240 150 L340 150 L340 80 L460 80" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'+
+      '<circle cx="140" cy="220" r="9" fill="#fff"/><circle cx="240" cy="150" r="9" fill="#fff"/>'+
+      '<circle cx="340" cy="80" r="9" fill="#fff"/><circle cx="460" cy="80" r="13" fill="#fff"/>'+
+      '<path d="M60 300v-46M92 300v-72" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".55"/>'+
+      '<path d="M180 220v-30M210 220v-52" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".55"/>'+
+      '<path d="M280 150v-34M310 150v-56" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".55"/>'+
+      '<path d="M400 80V44M430 80V60" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".55"/>'+
+    '</svg><div class="wrap">'+
     '<h1>Figure out what you actually want to do with an IS degree.</h1>'+
     '<p class="lede">Four career paths, explored properly — what the job really looks like day to day, what it pays, '+
     'what an intern is expected to know. Then practice a mock interview for the one that interests you.</p>'+
@@ -1118,14 +1254,18 @@ function viewLanding(){
     '</div></div></div>'+
 
     '<div class="wrap">'+
-    '<div class="section"><h2>Pick a path to explore</h2>'+
+    '<div class="section">'+secH('target','Pick a path to explore')+
     '<p class="muted" style="max-width:70ch">Each one takes about five minutes to read, plus a short interactive activity '+
     'that shows you what the work actually feels like. Then you can run a mock interview for that role.</p>'+
     '<div class="cards">'+
       CAREERS.map(function(c){
         const med = c.compensation.rows.filter(function(r){return r[0].indexOf('Median')===0;})[0];
-        return '<div class="card ccard" onclick="go(\'#/careers/'+c.id+'\')">'+
-          '<h3>'+c.name+'</h3><p class="muted" style="margin:0">'+c.tagline+'</p>'+
+        const t=THEME[c.id];
+        return '<div class="card ccard themed" style="--accent:'+t.accent+';--accent-soft:'+t.soft+'" '+
+          'onclick="go(\'#/careers/'+c.id+'\')">'+
+          '<div class="strip"></div>'+
+          '<div class="row1"><span class="badge">'+ico(t.icon,'lg')+'</span><h3>'+c.name+'</h3></div>'+
+          '<p class="muted" style="margin:0">'+c.tagline+'</p>'+
           '<div class="sal"><span class="muted">'+med[0]+'</span><span><b>'+med[1]+'</b></span></div></div>';
       }).join('')+
     '</div></div>'+
@@ -1135,14 +1275,14 @@ function viewLanding(){
     'BYU IS graduates averaged <b>$72,820</b> in their first job'+cite('byu-bsis')+' — well below the national median for '+
     'most of these roles. We show the 10th percentile on every page as a more honest entry-level figure.</div>'+
 
-    '<div class="section"><h2>How to use this</h2>'+
+    '<div class="section">'+secH('cap','How to use this')+
     '<ul class="ul" style="max-width:75ch">'+
     '<li><b>Explore a path</b> — roughly five minutes of reading per career, covering day-to-day work, skills, three industries that hire for it, what interns are expected to know, and pay.</li>'+
     '<li><b>Try the activity</b> — two to five minutes. Each one is a small taste of the actual work, not a quiz.</li>'+
     '<li><b>Run a mock interview</b> — five questions drawn from a larger pool: two behavioral and three technical, with feedback on what you wrote and a model answer to compare against.</li>'+
     '</ul></div>'+
 
-    '<div class="section"><h2>Where the numbers come from</h2>'+
+    '<div class="section">'+secH('link','Where the numbers come from')+
     '<p class="muted small" style="max-width:75ch">Every figure on this site links to its source. Salary and outlook data '+
     'is from the U.S. Bureau of Labor Statistics Occupational Outlook Handbook (May 2025 wages, 2025&ndash;2035 projections). '+
     'Placement data is from BYU Marriott published placement profiles for the Class of 2025. Where a role does not map '+
@@ -1152,7 +1292,7 @@ function viewLanding(){
 }
 
 function srcBlock(ids){
-  return '<div class="section"><h2>Sources</h2><ol class="srclist">'+
+  return '<div class="section">'+secH('link','Sources')+'<ol class="srclist">'+
     ids.map(function(id){
       const s=SOURCES[id];
       return '<li id="src-'+id+'">'+esc(s.label)+' — <a href="'+s.url+'" target="_blank" rel="noopener">'+s.url+'</a>'+
@@ -1161,15 +1301,22 @@ function srcBlock(ids){
 }
 
 function viewCareer(c){
-  return '<div class="wrap" style="padding-top:28px">'+
+  const t=THEME[c.id];
+  return '<div class="wrap themed" style="padding-top:28px;--accent:'+t.accent+';--accent-soft:'+t.soft+'">'+
   '<div class="tabs">'+CAREERS.map(function(x){
-      return '<button class="'+(x.id===c.id?'on':'')+'" onclick="go(\'#/careers/'+x.id+'\')">'+x.name+'</button>';}).join('')+'</div>'+
+      const xt=THEME[x.id];
+      return '<button class="'+(x.id===c.id?'on':'')+'" style="'+(x.id===c.id?'border-bottom-color:'+xt.accent:'')+'" '+
+        'onclick="go(\'#/careers/'+x.id+'\')">'+x.name+'</button>';}).join('')+'</div>'+
 
-  '<h1 style="color:var(--navy)">'+c.name+'</h1>'+
-  '<p class="lede muted" style="font-size:1.1rem;max-width:65ch">'+c.tagline+'</p>'+
+  '<div class="chero">'+
+    '<span class="badge">'+ico(t.icon,'xl')+'</span>'+
+    '<div><h1>'+c.name+'</h1><p>'+c.tagline+'</p></div>'+
+    '<svg class="art" width="190" height="190" viewBox="0 0 24 24" fill="none" stroke="currentColor" '+
+      'stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">'+ICON_PATHS[t.icon]+'</svg>'+
+  '</div>'+
 
-  '<div class="cta" style="margin:22px 0 6px">'+
-    '<button class="btn lg" onclick="go(\'#/careers/'+c.id+'/activity\')">Try the 3-minute activity</button>'+
+  '<div class="cta" style="margin:20px 0 6px">'+
+    '<button class="btn lg accent" onclick="go(\'#/careers/'+c.id+'/activity\')">Try the hands-on activity</button>'+
     '<button class="btn lg ghost" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role</button>'+
   '</div>'+
 
@@ -1177,13 +1324,13 @@ function viewCareer(c){
 
   '<div class="grid2">'+
     '<div>'+
-      '<div class="section"><h2>What this job is</h2>'+
+      '<div class="section">'+secH('brief','What this job is')+''+
         c.overview.split('\n\n').map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>'+
 
-      '<div class="section"><h2>A typical day</h2><ul class="ul">'+
+      '<div class="section">'+secH('clock','A typical day')+'<ul class="ul">'+
         c.dayToDay.map(function(d){return '<li>'+d+'</li>';}).join('')+'</ul></div>'+
 
-      '<div class="section"><h2>Where you would work</h2>'+
+      '<div class="section">'+secH('build','Where you would work')+''+
         '<p class="muted">The same job title means genuinely different work depending on the industry. These are three of the largest employers of this role.</p>'+
         c.industries.map(function(i){
           return '<div class="card ind"><h4>'+i.name+'</h4>'+
@@ -1192,11 +1339,12 @@ function viewCareer(c){
             '<div>'+i.employers.map(function(e){return '<span class="pill">'+e+'</span>';}).join('')+'</div></div>';
         }).join('')+'</div>'+
 
-      '<div class="section"><h2>What an intern is expected to know</h2>'+
-        '<div class="card" style="padding:20px;margin-bottom:14px">'+
-        '<h4 style="color:var(--ok)">You should know this</h4><ul class="ul">'+
-        c.entryLevel.know.map(function(k){return '<li>'+k+'</li>';}).join('')+'</ul>'+
-        '<h4 style="color:var(--muted);margin-top:18px">You are not expected to know this yet</h4><ul class="ul">'+
+      '<div class="section">'+secH('cap','What an intern is expected to know')+''+
+        '<div class="card know-good" style="padding:20px;margin-bottom:12px">'+
+        '<h4 style="color:var(--ok)">'+ico('star')+' You should know this</h4><ul class="ul">'+
+        c.entryLevel.know.map(function(k){return '<li>'+k+'</li>';}).join('')+'</ul></div>'+
+        '<div class="card know-bad" style="padding:20px;margin-bottom:14px">'+
+        '<h4 style="color:var(--muted)">You are not expected to know this yet</h4><ul class="ul">'+
         c.entryLevel.notKnow.map(function(k){return '<li>'+k+'</li>';}).join('')+'</ul></div>'+
         '<p><b>What internships actually look like.</b> '+c.entryLevel.internWork+'</p>'+
         '<h4>Certifications</h4>'+
@@ -1204,13 +1352,14 @@ function viewCareer(c){
           return '<p style="margin-bottom:8px"><b>'+ct.name+'</b> — <span class="muted">'+ct.worth+'</span></p>';}).join('')+
       '</div>'+
 
-      '<div class="section"><h2>What makes a strong candidate</h2><ul class="ul">'+
+      '<div class="section">'+secH('star','What makes a strong candidate')+'<ul class="ul">'+
         c.strong.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ul></div>'+
     '</div>'+
 
     '<div>'+
-      '<div class="card" style="padding:20px;position:sticky;top:80px">'+
-        '<h3 style="color:var(--navy)">Pay &amp; outlook</h3>'+
+      '<div class="card paycard" style="padding:20px;position:sticky;top:80px">'+
+        '<h3 style="color:var(--navy)">'+ico('trend','lg')+'Pay &amp; outlook</h3>'+
+        payBars(c)+
         '<table class="pay">'+c.compensation.rows.map(function(r){
           return '<tr><td class="muted">'+r[0]+cite(r[2])+'</td><td>'+r[1]+'</td></tr>';}).join('')+'</table>'+
         '<p class="small muted" style="margin:14px 0 0"><b>Internship:</b> '+c.compensation.intern+cite(c.compensation.internSrc)+'</p>'+
@@ -1230,7 +1379,7 @@ function viewCareer(c){
 
   '<hr class="rule">'+
   '<div class="cta">'+
-    '<button class="btn lg" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role &rarr;</button>'+
+    '<button class="btn lg accent" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role &rarr;</button>'+
     '<button class="btn lg ghost" onclick="go(\'#/careers/'+c.id+'/activity\')">Try the activity</button>'+
   '</div>'+
 
@@ -1398,6 +1547,19 @@ function actShell(c, title, blurb, stages, body, debrief){
     '<button class="btn ghost" onclick="resetAct()">Start over</button>'+
     '<button class="btn" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role &rarr;</button></div></div>';
 }
+const LTRS='ABCDEFGH';
+function mcOpt(idx, text, why, revealed, isCorrect, isPicked, onclick){
+  let cls='opt', st='';
+  if(revealed){ cls+=' locked';
+    if(isCorrect){ cls+=' right'; st='border-color:var(--ok);background:var(--ok-soft)'; }
+    else if(isPicked){ cls+=' wrong'; st='border-color:var(--bad);background:var(--bad-soft)'; }
+    else st='opacity:.6'; }
+  return '<div class="'+cls+'" style="'+st+'"'+(revealed?'':' onclick="'+onclick+'"')+'>'+
+    '<div class="optrow"><span class="ltr">'+LTRS[idx]+'</span><div>'+text+
+      (revealed&&isCorrect?' <span class="chip ok" style="margin-left:6px">Correct</span>':'')+
+      (revealed&&isPicked&&!isCorrect?' <span class="chip bad" style="margin-left:6px">You picked this</span>':'')+
+    '</div></div>'+(revealed?'<div class="why">'+why+'</div>':'')+'</div>';
+}
 function stageBar(labels, cur){
   return '<div class="stage">'+labels.map(function(l,i){
     return '<div class="'+(i<cur?'done':(i===cur?'on':''))+'">'+(i<cur?'✓ ':'')+(i+1)+'. '+l+'</div>';}).join('')+'</div>';
@@ -1440,7 +1602,7 @@ const DFIX=[
   o:[['Delete the row so it does not distort the average',false,'Silently deleting inconvenient rows is how analyses become wrong. If it is real, you have just hidden something important.'],
      ['Replace it with the average quantity of the other rows',false,'Imputing over a value you have not investigated fabricates data and hides the underlying problem.'],
      ['Flag it, exclude it from the headline number, and ask the source owner',true,'Correct. You do not yet know whether it is a typo, a bulk order, or a broken feed. Flag, isolate, and go ask — then decide.'],
-     ['Cap it at the highest plausible value and move on',false,'Winsorising has legitimate uses, but applying it before you know the cause is a guess dressed up as a method.']]},
+     ['Cap it at the highest plausible value and move on',false,'Winsorizing has legitimate uses, but applying it before you know the cause is a guess dressed up as a method.']]},
  {q:'Four rows are missing a quantity, encoded three different ways. What do you do first?',
   o:[['Fill them all with zero',false,'Zero is a real quantity and means something different from unknown. This corrupts every downstream sum and average.'],
      ['Drop those rows from the analysis',false,'Defensible only after you know why they are missing. Drop them blind and you may be removing one region or one channel entirely.'],
@@ -1470,7 +1632,7 @@ function actData(c){
   if(!checked){
     body+='<div style="display:flex;align-items:center;gap:14px;margin-top:14px">'+
       '<button class="btn" onclick="checkData()"'+(flagged.length?'':' disabled')+'>Check my work</button>'+
-      '<span class="muted small">'+flagged.length+' cell'+(flagged.length===1?'':'s')+' flagged</span>'+
+      '<span class="muted small">'+flagged.length+' of 9 flagged</span>'+
       '<span class="muted xs" style="margin-left:auto">Click any cell you think is a problem.</span></div>';
   } else {
     body+='<div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">'+
@@ -1491,18 +1653,13 @@ function actData(c){
         const pick=ACT['fix'+n];
         return '<div class="card" style="padding:16px;margin-bottom:12px"><h4>'+fx.q+'</h4>'+
           fx.o.map(function(o,oi){
-            let st='';
-            if(pick!==undefined){ if(o[1]) st='border-color:var(--ok);background:var(--ok-soft)';
-              else if(pick===oi) st='border-color:var(--bad);background:var(--bad-soft)'; else st='opacity:.66'; }
-            return '<div class="opt'+(pick!==undefined?' locked':'')+'" style="'+st+'"'+
-              (pick===undefined?' onclick="fixPick('+n+','+oi+')"':'')+'>'+o[0]+
-              (pick!==undefined?'<div class="why">'+o[2]+'</div>':'')+'</div>';
+            return mcOpt(oi,o[0],o[2],pick!==undefined,o[1],pick===oi,'fixPick('+n+','+oi+')');
           }).join('')+'</div>';
       }).join('');
   }
 
   return actShell(c,'Audit the Extract',
-    'A sales extract just landed from the source system. Before anyone can answer a question with it, someone has to establish whether it can be trusted. That someone is you. Find every problem in this table.',
+    'A sales extract just landed from the source system. Before anyone can answer a question with it, someone has to establish whether it can be trusted. That someone is you. <b>Nine cells in this table are a problem — find them all.</b>',
     stageBar(['Find the problems','Decide the fixes','Debrief'], stage),
     body,
     stage===2?('You found '+hits.length+' of '+keys.length+' problems'+(fps.length?', with '+fps.length+' false positive'+(fps.length===1?'':'s'):'')+
@@ -1590,12 +1747,7 @@ function actPhish(c){
         '<h3>Stage 3 — Decide your first action</h3>'+
         '<p class="muted small">It is 09:10. You have just reconstructed the timeline above. What do you do first?</p>'+
         RESP.map(function(r,i){
-          let st='';
-          if(ACT.resp!==undefined){ if(r[1]) st='border-color:var(--ok);background:var(--ok-soft)';
-            else if(ACT.resp===i) st='border-color:var(--bad);background:var(--bad-soft)'; else st='opacity:.66'; }
-          return '<div class="opt'+(ACT.resp!==undefined?' locked':'')+'" style="'+st+'"'+
-            (ACT.resp===undefined?' onclick="pickResp('+i+')"':'')+'>'+r[0]+
-            (ACT.resp!==undefined?'<div class="why">'+r[2]+'</div>':'')+'</div>';
+          return mcOpt(i,r[0],r[2],ACT.resp!==undefined,r[1],ACT.resp===i,'pickResp('+i+')');
         }).join('');
     }
   }
@@ -1682,10 +1834,10 @@ function actScope(c){
     'You are three weeks into a six-week project. Six requests landed this morning and your team has 6 points of capacity left. Then you need to work out which tasks actually control your delivery date.',
     stageBar(['Allocate requests','Find the critical path','Debrief'], stage),
     body,
-    stage===2?'Both halves of this are the job. The first half has no right answer — every allocation makes someone unhappy, and the skill is making the tradeoff visible rather than absorbing it silently. The second half does have a right answer, and it is counterintuitive: most people assume the biggest or most visible task is the critical one. Knowing which work actually moves the date is what stops a PM from optimising things that do not matter.':'');
+    stage===2?'Both halves of this are the job. The first half has no right answer — every allocation makes someone unhappy, and the skill is making the tradeoff visible rather than absorbing it silently. The second half does have a right answer, and it is counterintuitive: most people assume the biggest or most visible task is the critical one. Knowing which work actually moves the date is what stops a PM from optimizing things that do not matter.':'');
 }
 
-/* ---- 4. Software Developer: Bug Hunt (unchanged — this one tested well) ---- */
+/* ---- 4. Software Developer: three stages — find a bug, review a PR, pick a test ---- */
 const CODE=[
  'function getTopScores(scores, limit) {',
  '  const sorted = scores.slice().sort((a, b) => b - a);',
@@ -1707,31 +1859,103 @@ const NUDGES={1:'That line is correct — slice() copies the array so the caller
  5:'This line is fine on its own. The question is how many times it runs.',
  8:'Correct. The function returns what it built.',
  11:'That is the call site, not the bug. The inputs are valid.'};
+
+/* Stage 2 — a teammate's pull request with three real review issues. */
+const DIFF=[
+ {t:'async function getUser(id) {', bad:false},
+ {t:"  const res = await fetch('/api/users/' + id);", bad:false},
+ {t:'  const data = await res.json();', bad:true,
+  why:'<b>No check that the request succeeded.</b> If the server returns a 404 or 500, <code>res.ok</code> is false and this parses an error body as if it were a user. Check <code>res.ok</code> before reading the response.'},
+ {t:'  return data;', bad:false},
+ {t:'}', bad:false},
+ {t:'', bad:false},
+ {t:'function renderUser(u) {', bad:false},
+ {t:"  document.getElementById('name').innerHTML = u.name;", bad:true,
+  why:'<b>Cross-site scripting.</b> Assigning user-controlled text to <code>innerHTML</code> executes any markup it contains. A user named <code>&lt;img onerror=...&gt;</code> runs code in every viewer’s browser. Use <code>textContent</code>.'},
+ {t:"  const joined = u.createdAt.split('T')[0];", bad:true,
+  why:'<b>Unchecked assumption.</b> This assumes <code>createdAt</code> is always present and always a string. A user record missing that field throws and takes down the whole render.'},
+ {t:'  return joined;', bad:false},
+ {t:'}', bad:false}];
+
+/* Stage 3 — which test would actually have caught the stage-1 bug? */
+const TESTS=[
+ ['expect(getTopScores([5,4,3],2)).toEqual([5,4])', true,
+  'Correct. It asserts the exact contents at the boundary, so an off-by-one that returns [5,4,3] fails immediately. Testing the boundary is the whole point.'],
+ ['expect(Array.isArray(getTopScores([5,4,3],2))).toBe(true)', false,
+  'Passes whether the function is right or wrong. A test that cannot fail is worse than no test, because it creates false confidence.'],
+ ['expect(getTopScores([],2)).toEqual([])', false,
+  'A reasonable edge case worth having, but the empty array never enters the loop, so this passes even with the off-by-one bug present.'],
+ ['expect(() => getTopScores([5,4,3],2)).not.toThrow()', false,
+  'The buggy version does not throw — it returns the wrong answer quietly. Testing for absence of a crash misses every correctness bug.']];
+
 function guessLine(i){ ACT.guess=i; ACT.tries=(ACT.tries||0)+1; render(); }
+function flagDiff(i){ if(ACT.prChecked) return; ACT['d'+i]=!ACT['d'+i]; render(); }
+function checkPR(){ ACT.prChecked=true; render(); }
+function pickTest(i){ ACT.test=i; render(); }
+
 function actBug(c){
-  const g=ACT.guess, found=g===BUGLINE;
-  let body='<div class="card" style="padding:0;margin:14px 0;overflow:hidden">'+
+  const g=ACT.guess, found=g===BUGLINE, prDone=ACT.prChecked;
+  const badIdx=DIFF.map(function(d,i){return d.bad?i:-1;}).filter(function(i){return i>=0;});
+  const prHits=badIdx.filter(function(i){return ACT['d'+i];}).length;
+  const prFps=DIFF.map(function(d,i){return (!d.bad&&ACT['d'+i])?i:-1;}).filter(function(i){return i>=0;}).length;
+  const stage = !found?0:(!prDone?1:(ACT.test===undefined?2:3));
+
+  /* Stage 1 */
+  let body='<h3>Stage 1 — Find the bug</h3>'+
+    '<p class="muted small">This function should return the top N scores. It returns one too many. Click the line you think is wrong.</p>'+
+    '<div class="card" style="padding:0;margin:10px 0 14px;overflow:hidden">'+
     CODE.map(function(l,i){
       const sel=g===i, clickable=l.trim().length>0 && !found;
-      return '<div onclick="'+(clickable?'guessLine('+i+')':'')+'" style="display:flex;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.87rem;'+
+      return '<div onclick="'+(clickable?'guessLine('+i+')':'')+'" style="display:flex;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;'+
         'padding:3px 0;'+(clickable?'cursor:pointer;':'')+
         (sel?(found?'background:var(--ok-soft);':'background:var(--bad-soft);'):'')+'">'+
-        '<span style="width:44px;text-align:right;padding-right:14px;color:var(--muted);flex-shrink:0">'+(i+1)+'</span>'+
+        '<span style="width:42px;text-align:right;padding-right:13px;color:var(--muted);flex-shrink:0">'+(i+1)+'</span>'+
         '<span style="white-space:pre">'+esc(l)+'</span></div>';}).join('')+'</div>';
   if(g!==undefined && !found)
     body+='<div class="callout"><b>Not that line.</b> '+(NUDGES[g]||'That line is correct.')+' Look again at what happens on the last iteration.</div>';
   if(found)
-    body+='<div class="callout good"><b>Found it — line 5.</b> The loop condition uses <code>i &lt;= limit</code>, so it runs '+
-      '<code>limit + 1</code> times and returns one extra element. This is an off-by-one error, and it is the single most common bug in production code.</div>'+
-      '<div class="cmp"><div class="card" style="padding:15px"><h4 class="muted">The fix</h4>'+
-      '<pre style="margin:0;font-size:.85rem;white-space:pre-wrap">for (let i = 0; i &lt; limit; i++) {</pre></div>'+
-      '<div class="card" style="padding:15px;border-color:var(--royal)"><h4 style="color:var(--navy)">The test that catches it</h4>'+
-      '<pre style="margin:0;font-size:.85rem;white-space:pre-wrap">expect(\n  getTopScores([88,94,71,65,99], 3)\n).toEqual([99, 94, 88]);</pre></div></div>'+
-      '<p class="small muted" style="margin-top:10px">You found it in '+ACT.tries+' '+(ACT.tries===1?'guess':'guesses')+'.</p>';
-  return actShell(c,'Bug Hunt',
-    'This function is supposed to return the top N scores. It returns one too many. Click the line you think is wrong — guess as many times as you need.',
-    '', body,
-    found?'Reading and fixing existing code is most of the job. You will write far less new code than you expect, and most of what you touch will have been written by someone else, often years ago, usually without comments. Notice that the bug was one character. That is normal, and it is why writing a failing test before you fix something matters — it proves you actually understood the problem.':'');
+    body+='<div class="callout good"><b>Found it — line 5, in '+ACT.tries+' '+(ACT.tries===1?'guess':'guesses')+'.</b> '+
+      'The condition uses <code>i &lt;= limit</code>, so the loop runs <code>limit + 1</code> times and returns one extra element. '+
+      'An off-by-one error, and the single most common bug in production code. The fix is one character: <code>i &lt; limit</code>.</div>';
+
+  /* Stage 2 */
+  if(found){
+    body+='<h3 style="margin-top:26px">Stage 2 — Review a teammate’s pull request</h3>'+
+      '<p class="muted small">Reviewing is most of what senior engineers do for juniors. <b>Three lines below have real problems.</b> Click them.</p>'+
+      '<div class="card" style="padding:0;margin:10px 0 12px;overflow:hidden">'+
+      DIFF.map(function(d,i){
+        const on=!!ACT['d'+i], clickable=d.t.trim().length>0 && !prDone;
+        let bg='';
+        if(!prDone && on) bg='background:var(--warn-soft);border-left:3px solid var(--warn);';
+        if(prDone){ if(d.bad&&on) bg='background:var(--ok-soft);border-left:3px solid var(--ok);';
+          else if(d.bad&&!on) bg='background:var(--bad-soft);border-left:3px solid var(--bad);';
+          else if(on) bg='background:#F2F2F4;border-left:3px solid #B9BEC7;opacity:.7;'; }
+        return '<div'+(clickable?' onclick="flagDiff('+i+')"':'')+' style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;'+
+          'font-size:.82rem;padding:4px 0;'+(clickable?'cursor:pointer;':'')+bg+'">'+
+          '<div style="display:flex"><span style="width:42px;text-align:right;padding-right:13px;color:var(--muted);flex-shrink:0">'+(i+1)+'</span>'+
+          '<span style="white-space:pre-wrap;word-break:break-word">'+esc(d.t)+'</span></div>'+
+          (prDone&&d.bad?'<div class="xs" style="font-family:-apple-system,sans-serif;margin:5px 0 2px 55px;color:var(--muted)">'+d.why+'</div>':'')+
+          '</div>';}).join('')+'</div>';
+    if(!prDone) body+='<button class="btn" onclick="checkPR()"'+(DIFF.some(function(d,i){return ACT['d'+i];})?'':' disabled')+'>Submit review</button>';
+    else body+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px">'+
+      '<span class="chip ok">'+prHits+' of 3 found</span>'+
+      (prFps?'<span class="chip warn">'+prFps+' false positive'+(prFps===1?'':'s')+'</span>':'')+'</div>';
+  }
+
+  /* Stage 3 */
+  if(prDone){
+    body+='<h3 style="margin-top:26px">Stage 3 — Pick the test that would have caught it</h3>'+
+      '<p class="muted small">Back to the bug from stage 1. Your lead asks you to add one test. Which of these actually fails against the buggy version?</p>'+
+      TESTS.map(function(t,i){
+        return mcOpt(i,'<code style="font-size:.85rem">'+esc(t[0])+'</code>',t[2],ACT.test!==undefined,t[1],ACT.test===i,'pickTest('+i+')');
+      }).join('');
+  }
+
+  return actShell(c,'Ship It',
+    'Three things developers actually do all day: track down a bug, review someone else’s code, and decide what is worth testing.',
+    stageBar(['Find the bug','Review the PR','Pick the test','Debrief'], stage),
+    body,
+    stage===3?'Notice how little of that was writing new code. Reading and fixing existing code is most of the job, and most of what you touch will have been written by someone else, often years ago, usually without comments. The review stage is where juniors grow fastest — the three issues you were looking for (unchecked responses, unsafe DOM writes, unchecked assumptions about data) account for a large share of real production bugs. And a test that cannot fail is worse than no test at all, because it makes everyone confident about code nobody has actually checked.':'');
 }
 
 const ACTIVITIES={'data-analytics':actData,'cybersecurity':actPhish,'project-management':actScope,'software-dev':actBug};
