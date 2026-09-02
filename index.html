@@ -18,14 +18,12 @@ body{margin:0;background:var(--canvas);color:var(--ink);
 h1,h2,h3,h4{line-height:1.25;margin:0 0 .5em}
 h1{font-size:2.1rem;letter-spacing:-.02em}
 h2{font-size:1.45rem;letter-spacing:-.01em}
-h3{font-size:1.1rem}
+h3{font-size:1.1rem} h4{font-size:.98rem}
 p{margin:0 0 1em}
 a{color:var(--royal)}
 button{font:inherit;cursor:pointer}
 .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-
-/* header */
 header.top{background:var(--navy);color:#fff;padding:14px 0;position:sticky;top:0;z-index:50}
 header.top .wrap{display:flex;align-items:center;gap:20px}
 .brand{font-weight:700;letter-spacing:-.01em;font-size:1.05rem;cursor:pointer}
@@ -35,8 +33,6 @@ header.top nav button{background:transparent;border:1px solid transparent;color:
   padding:6px 12px;border-radius:6px;font-size:.9rem}
 header.top nav button:hover{opacity:1;background:rgba(255,255,255,.1)}
 header.top nav button.on{opacity:1;background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.25)}
-
-/* generic */
 .btn{background:var(--royal);color:#fff;border:1px solid var(--royal);padding:10px 18px;
   border-radius:8px;font-weight:600;font-size:.95rem}
 .btn:hover{background:#00559f}
@@ -44,20 +40,18 @@ header.top nav button.on{opacity:1;background:rgba(255,255,255,.16);border-color
 .btn.ghost{background:#fff;color:var(--navy);border-color:var(--line)}
 .btn.ghost:hover{background:var(--canvas)}
 .btn.lg{padding:13px 24px;font-size:1rem}
-.muted{color:var(--muted)}
-.small{font-size:.86rem}
+.btn.sm{padding:6px 12px;font-size:.85rem}
+.muted{color:var(--muted)} .small{font-size:.86rem} .xs{font-size:.8rem}
 .chip{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.78rem;font-weight:600;
   background:var(--royal-soft);color:var(--navy)}
 .chip.ok{background:var(--ok-soft);color:var(--ok)}
 .chip.warn{background:var(--warn-soft);color:var(--warn)}
 .chip.bad{background:var(--bad-soft);color:var(--bad)}
+.chip.grey{background:var(--canvas);color:var(--muted)}
 sup.cite{font-size:.68rem;font-weight:700}
 sup.cite a{text-decoration:none;padding:0 1px}
 .section{margin:34px 0}
-.section h2{display:flex;align-items:baseline;gap:10px}
 hr.rule{border:0;border-top:1px solid var(--line);margin:32px 0}
-
-/* landing */
 .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:60px 0 66px}
 .hero h1{font-size:2.7rem;max-width:16ch}
 .hero p.lede{font-size:1.15rem;opacity:.88;max-width:60ch}
@@ -66,29 +60,22 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:32px 0}
 .stat{background:rgba(255,255,255,.05);padding:18px 20px}
 .stat b{display:block;font-size:1.7rem;letter-spacing:-.02em}
 .stat span{font-size:.82rem;opacity:.75;line-height:1.35;display:block;margin-top:2px}
+.stat a{color:#9CC7ED}
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .ccard{padding:22px;cursor:pointer;transition:border-color .12s,transform .12s}
 .ccard:hover{border-color:var(--royal);transform:translateY(-2px)}
 .ccard h3{margin-bottom:6px;color:var(--navy)}
-.ccard .sal{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;font-size:.85rem}
-
-/* tabs */
+.ccard .sal{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:.85rem}
 .tabs{display:flex;gap:4px;border-bottom:2px solid var(--line);margin:0 0 26px;flex-wrap:wrap}
 .tabs button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;
   padding:12px 16px;font-weight:600;color:var(--muted);font-size:.95rem}
 .tabs button:hover{color:var(--navy)}
 .tabs button.on{color:var(--navy);border-bottom-color:var(--royal)}
-
-/* career detail */
 .grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:start}
-.ul{margin:0;padding-left:20px}
-.ul li{margin-bottom:8px}
-.skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ul{margin:0;padding-left:20px} .ul li{margin-bottom:8px}
 .pill{display:inline-block;background:var(--canvas);border:1px solid var(--line);
   padding:4px 10px;border-radius:6px;font-size:.85rem;margin:0 5px 6px 0}
-.ind{padding:18px;margin-bottom:12px}
-.ind h4{margin-bottom:4px;color:var(--navy)}
+.ind{padding:18px;margin-bottom:12px} .ind h4{margin-bottom:4px;color:var(--navy)}
 table.pay{width:100%;border-collapse:collapse;font-size:.92rem}
 table.pay td{padding:9px 0;border-bottom:1px solid var(--line)}
 table.pay td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
@@ -96,6 +83,7 @@ table.pay tr:last-child td{border-bottom:0}
 .callout{background:var(--warn-soft);border:1px solid #F0DCB8;border-left:4px solid var(--warn);
   padding:14px 18px;border-radius:8px;margin:18px 0;font-size:.92rem}
 .callout.blue{background:var(--royal-soft);border-color:#C5DDF2;border-left-color:var(--royal)}
+.callout.good{background:var(--ok-soft);border-color:#BEE0CD;border-left-color:var(--ok)}
 .callout b{color:var(--navy)}
 .ladder{list-style:none;padding:0;margin:0}
 .ladder li{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.92rem}
@@ -103,9 +91,55 @@ table.pay tr:last-child td{border-bottom:0}
 .ladder .yr{color:var(--muted);min-width:92px;font-size:.85rem}
 .ladder .ti{flex:1;font-weight:600}
 .ladder .pay{color:var(--navy);font-variant-numeric:tabular-nums}
-.srclist{font-size:.85rem;padding-left:20px;margin:0}
-.srclist li{margin-bottom:7px}
+.srclist{font-size:.85rem;padding-left:20px;margin:0} .srclist li{margin-bottom:7px}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+
+/* ---- interview: deliberately tighter and narrower than the rest of the site ---- */
+.iv{max-width:720px;margin:0 auto;padding:24px 32px 48px}
+.iv .qhead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.iv h2.q{font-size:1.12rem;line-height:1.45;font-weight:600;margin:0 0 16px}
+.iv .bar{height:3px;background:var(--line);border-radius:9px;margin-bottom:20px}
+.iv .bar div{height:3px;background:var(--royal);border-radius:9px;transition:width .25s}
+.iv .opt{border:1px solid var(--line);background:#fff;border-radius:8px;padding:11px 13px;
+  margin-bottom:7px;font-size:.9rem;line-height:1.5;cursor:pointer;transition:border-color .1s,background .1s}
+.iv .opt:hover{border-color:var(--royal);background:var(--royal-soft)}
+.iv .opt.locked{cursor:default}
+.iv .opt.locked:hover{border-color:var(--line);background:#fff}
+.iv .opt .why{font-size:.82rem;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.iv textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit;
+  font-size:.92rem;resize:vertical;line-height:1.55}
+.iv textarea:focus{outline:2px solid var(--royal);outline-offset:-1px;border-color:var(--royal)}
+.iv .meta{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:.82rem}
+.iv .cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.iv .cmp .card{padding:14px;font-size:.88rem;line-height:1.55}
+.iv .cmp h4{font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.iv .fb{padding:14px;font-size:.88rem;margin:14px 0}
+.iv .fb ul{margin:0;padding-left:18px} .iv .fb li{margin-bottom:6px}
+.iv .tip{font-size:.85rem;padding:11px 14px;margin:12px 0}
+/* activities */
+.gridtbl{width:100%;border-collapse:collapse;font-size:.86rem}
+.gridtbl th{text-align:left;padding:7px 9px;border-bottom:2px solid var(--line);font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+.gridtbl td{padding:0;border-bottom:1px solid var(--line)}
+.cell{padding:7px 9px;cursor:pointer;border:2px solid transparent;border-radius:4px;transition:background .1s}
+.cell:hover{background:var(--royal-soft)}
+.cell.flag{background:var(--warn-soft);border-color:var(--warn);font-weight:600}
+.cell.hit{background:var(--ok-soft);border-color:var(--ok)}
+.cell.miss{background:var(--bad-soft);border-color:var(--bad)}
+.cell.fp{background:#F2F2F4;border-color:#B9BEC7;text-decoration:line-through;color:var(--muted)}
+.cell.locked{cursor:default}
+.logline{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;padding:6px 10px;
+  border-left:3px solid transparent;cursor:pointer;white-space:pre-wrap;word-break:break-word}
+.logline:hover{background:var(--royal-soft)}
+.logline.flag{background:var(--warn-soft);border-left-color:var(--warn)}
+.logline.hit{background:var(--ok-soft);border-left-color:var(--ok)}
+.logline.miss{background:var(--bad-soft);border-left-color:var(--bad)}
+.logline.fp{background:#F2F2F4;border-left-color:#B9BEC7;color:var(--muted)}
+.stage{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.stage div{font-size:.8rem;padding:5px 12px;border-radius:99px;background:var(--canvas);
+  border:1px solid var(--line);color:var(--muted)}
+.stage div.on{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:600}
+.stage div.done{background:var(--ok-soft);color:var(--ok);border-color:#BEE0CD}
 </style>
 </head>
 <body>
@@ -120,7 +154,7 @@ table.pay tr:last-child td{border-bottom:0}
   <div class="wrap small muted">
     <p style="margin:0 0 6px"><b>Data sources.</b> Salary and outlook figures are from the U.S. Bureau of Labor Statistics
     Occupational Outlook Handbook (May 2025 wages; 2025&ndash;2035 projections). Placement figures are from BYU Marriott
-    School of Business published placement profiles, Class of 2025. Every figure on this site links to its source.</p>
+    School of Business published placement profiles, Class of 2025. Every figure links directly to its source.</p>
     <p style="margin:0">Built for the BYU IS Junior Core Case Competition. Content was drafted with AI assistance and
     verified by the team against the primary sources listed on each page.</p>
   </div>
@@ -197,11 +231,11 @@ This is often the most accessible entry point into a technical career for an IS 
     'Has caught an error in their own analysis and can tell that story. It signals the skepticism the job requires.'
   ],
   compensation:{
-    mapping:'BLS publishes no occupation titled "Data Analyst." The closest is Data Scientists (SOC 15-2051), which implies more modeling than a typical entry-level analyst role and likely overstates it. Operations Research Analysts (15-2031, $88,940) and Computer Systems Analysts (15-1211, $105,850) bracket the role from below. We show the honest band.',
+    mapping:'Figures are for Data Scientists (SOC 15-2051), which is the closest BLS occupation — there is no BLS occupation titled "Data Analyst." Because 15-2051 implies more statistical modeling than a typical entry-level analyst job, treat this median as the top of the realistic range. Two adjacent occupations sit lower: Operations Research Analysts (15-2031) at $88,940 and Computer Systems Analysts (15-1211) at $105,850.',
     intern:'$23.35/hr average (all majors, bachelor’s level)', internSrc:'nace-2026',
     rows:[
       ['Entry level (10th percentile)','$67,240','bls-datasci'],
-      ['Median — related roles band','$88,940 – $120,230','bls-datasci'],
+      ['Median (all experience levels)','$120,230','bls-datasci'],
       ['Experienced (90th percentile)','$199,130','bls-datasci'],
       ['Projected growth, 2025–2035','35%','bls-datasci'],
       ['Openings per year','~24,800','bls-datasci']
@@ -408,102 +442,226 @@ It pays the best of these four paths at the median and has strong growth. It als
 }
 ];
 
-/* ============================================================================
-   BEHAVIORAL POOL — shared across all four careers.
-   Format: you are shown four candidate answers and pick the strongest.
-   Sources: BYU Career Studio interview guidance (primary); university career
-   center question banks (secondary). See DATA-VERIFIED.md §9.
-   ========================================================================== */
-const BEHAVIORAL = [
-{id:'b1', prompt:'Tell me about a time you had to explain something technical to someone without a technical background.',
- opts:[
-  {t:'I helped my manager understand a database issue. I explained it a few times until she got it, and then we moved on.', q:'weak', w:'No detail about what you actually said or did, and no result. "I explained it until they got it" tells the interviewer nothing about your skill.'},
-  {t:'Our marketing lead wanted a report our data could not support. I mapped what we did have onto her actual question, walked her through it using a spreadsheet she already used daily, and proposed a slightly different metric that answered the same business question. She adopted it and it is still the metric that team reports on.', q:'strong', w:'Situation, specific action, and a durable result. The detail about meeting her in a tool she already knew shows real judgment about your audience.'},
-  {t:'I am a strong communicator and I have always been good at bridging technical and non-technical teams. People often tell me I explain things clearly.', q:'weak', w:'A claim about yourself with no evidence. Interviewers ask for a time because they want a specific instance, not a self-assessment.'},
-  {t:'My teammate did not understand how the API worked, so I sent over the documentation and set up a call to answer questions. It took a while because he was not very technical, but eventually he understood enough to move forward.', q:'okay', w:'Real and specific, but it subtly blames the other person and the result is vague. "Enough to move forward" is not an outcome.'}],
- takeaway:'Use STAR — Situation, Task, Action, Result — and never skip the Result. The most common failure is describing a situation without ever saying what changed because of you.'},
-
-{id:'b2', prompt:'Describe a time you made a mistake at work or on a project. What happened?',
- opts:[
-  {t:'I do not make many significant mistakes because I check my work carefully. The closest I can think of is once submitting something a little later than I wanted.', q:'weak', w:'Dodging the question. Interviewers read this as either low self-awareness or unwillingness to be honest — both are worse than the mistake you are avoiding admitting.'},
-  {t:'I once pushed a change that broke our staging environment for half a day. My manager was frustrated, but the deployment process was fragile and it would have happened to anyone eventually.', q:'weak', w:'Admits the mistake but immediately deflects blame onto the process. Interviewers listen specifically for whether you take ownership.'},
-  {t:'I built a report using a customer table I assumed was deduplicated. It was not, so our active-user count was inflated by about 12% for two weeks before I caught it. I flagged it to my manager the same day, reissued the corrected numbers with a note explaining the discrepancy, and added a row-count validation step to my process. I now check assumptions about source data before I build anything on top of it.', q:'strong', w:'A real mistake with real consequences, immediate ownership, a specific fix, and a generalizable lesson. The quantified impact makes it credible.'},
-  {t:'I made an error in a spreadsheet formula that led to some incorrect numbers. I fixed it once I noticed and told my supervisor. I learned to be more careful.', q:'okay', w:'Honest but thin. "I learned to be more careful" is not a real lesson — it does not tell the interviewer what you would do differently in a concrete way.'}],
- takeaway:'Pick a real mistake with real stakes. Own it without hedging, then spend most of your answer on what you changed. The lesson should be specific enough that someone could act on it.'},
-
-{id:'b3', prompt:'Tell me about a time you disagreed with a teammate. How did you handle it?',
- opts:[
-  {t:'A teammate wanted to rebuild our data pipeline from scratch and I thought we should patch the existing one given our deadline. I asked him to walk me through his reasoning and realized his concern was about a specific failure point, not the whole system. We scoped a fix to that component. It took three days instead of three weeks and addressed his actual worry.', q:'strong', w:'Shows you sought to understand before arguing, and found a solution that addressed the real concern rather than just winning. That is exactly what teams want.'},
-  {t:'I disagreed with a design decision but he had more experience than me, so I deferred to his judgment. It worked out fine in the end.', q:'okay', w:'Deferring is sometimes right, but this answer shows no engagement with the substance. The interviewer learns nothing about your reasoning or your willingness to contribute.'},
-  {t:'We disagreed about the approach so we brought it to our manager and she decided. That is what managers are for.', q:'weak', w:'Escalating immediately, without attempting to resolve it directly, signals that you will generate work for your manager rather than reduce it.'},
-  {t:'I explained my position clearly and eventually he came around and we did it my way. I had done more research so I was confident I was right.', q:'weak', w:'Framed entirely as winning. No curiosity about the other view. Interviewers hear this as someone who will be difficult on a team.'}],
- takeaway:'The point of this question is not whether you were right. It is whether you can disagree productively — seek the reasoning behind the position, then solve the underlying concern.'},
-
-{id:'b4', prompt:'Tell me about a time you had to meet a tight deadline.',
- opts:[
-  {t:'I work well under pressure and have always been able to meet deadlines by staying organized and putting in extra hours when needed.', q:'weak', w:'A general claim, not a story. Every candidate says this, so it distinguishes you from nobody.'},
-  {t:'Our client moved a demo up by a week. I listed everything remaining, identified the three things the demo actually needed, and got agreement from our lead to defer the rest. We demoed on time with a smaller scope, and I flagged the deferred items explicitly so nobody was surprised. Two of them were never requested again.', q:'strong', w:'Shows prioritization and stakeholder management, not just working harder. The detail that two items were never requested again is a genuinely sharp observation.'},
-  {t:'I had a project due Friday and was behind, so I worked through the weekend and stayed late a few nights to get it done. It was stressful but I delivered on time.', q:'okay', w:'Real, but the only lever you pulled was your own hours. That does not scale, and experienced interviewers notice.'},
-  {t:'The deadline was unrealistic from the start, so I told my manager it could not be done and we pushed it. Setting boundaries is important.', q:'weak', w:'Pushing back on an impossible deadline can be right, but with no attempt to find a partial path forward this reads as declining the problem.'}],
- takeaway:'Strong answers show you changed the shape of the problem — scope, sequence, or expectations. Working more hours is the answer of someone with no other tools.'},
-
-{id:'b5', prompt:'Why are you interested in this role specifically?',
- opts:[
-  {t:'I am looking for a role where I can grow and develop my skills at a company with a strong culture. This position seems like a great fit for my background.', q:'weak', w:'Generic enough to apply to any job anywhere. This is the single most common weak answer in entry-level interviews.'},
-  {t:'Honestly, the compensation and the location work well for me, and the company has a good reputation. I am confident I could do the work.', q:'weak', w:'Possibly true, but it gives the interviewer no reason to believe you will still be engaged in a year.'},
-  {t:'I want to work in data analytics, and I like that this role sits inside the operations team rather than a central analytics group. In my internship the analysts closest to the business asked better questions because they understood the context. Your posting mentions supporting supply chain decisions directly, which is the kind of proximity I am looking for.', q:'strong', w:'Specific to this role, grounded in a real experience, and shows you read the posting carefully. It also demonstrates a point of view about how the work should be done.'},
-  {t:'I have followed your company for a while and I am impressed by the product. I use it myself and I would love to contribute to something I actually believe in.', q:'okay', w:'Genuine enthusiasm helps, but it is about the company rather than the role. The interviewer still does not know why this job.'}],
- takeaway:'Name something specific to this role that a candidate who had not read the posting could not say. Tie it to a real experience that explains why it matters to you.'},
-
-{id:'b6', prompt:'Tell me about a time you had to learn something new quickly.',
- opts:[
-  {t:'I am a fast learner and I pick up new tools easily. In my last role I learned several new systems without much trouble.', q:'weak', w:'No specifics. "Fast learner" is on every resume; the interviewer is asking you to prove it.'},
-  {t:'I was assigned to a project using Power BI, which I had never touched. I spent a weekend on tutorials and by Monday I was able to build the dashboard they needed.', q:'okay', w:'Concrete but shallow, and "a weekend of tutorials" is a small challenge. It also does not describe your method, only your effort.'},
-  {t:'My team inherited a reporting process built in a tool nobody still used. Instead of learning the whole system, I traced one report end to end to find where the logic lived, documented that path, and used it as a template for the rest. I got the critical reports migrated in two weeks and left documentation the next person could use.', q:'strong', w:'Shows a deliberate learning strategy — depth-first on one example rather than breadth-first across everything — plus a result and an artifact left behind.'},
-  {t:'I taught myself Python from an online course over a few months and now I use it regularly for personal projects.', q:'okay', w:'Good initiative, but self-directed learning with no deadline and no stakes does not answer "quickly" or show how you perform under pressure.'}],
- takeaway:'Describe your method, not just your effort. How you decide what to learn first is the actual skill being tested.'},
-
-{id:'b7', prompt:'Describe a time you worked on a team where someone was not pulling their weight.',
- opts:[
-  {t:'One member did very little, so the rest of us picked up the slack and finished the project. It was frustrating but we got it done.', q:'okay', w:'Common and honest, but shows no attempt to address it. Absorbing the work quietly is what most students do, and it does not scale to a job.'},
-  {t:'I noticed a teammate had missed two check-ins, so I messaged him directly and asked how it was going. It turned out he was stuck on the data cleaning and had not wanted to say so. I walked him through it in twenty minutes and we adjusted the split so he took the write-up instead, which played to his strengths. He delivered the rest on time.', q:'strong', w:'Assumes good faith, addresses it directly and privately, and finds the actual cause. Reallocating to strengths rather than punishing is a mature move.'},
-  {t:'I brought it up with our professor so it would be reflected in the grade. It would not have been fair for us to carry someone who did not contribute.', q:'weak', w:'Escalating first, without talking to the person, is what interviewers are specifically listening for. It predicts how you will handle a struggling colleague.'},
-  {t:'I called it out in our group chat so everyone could see the work was not getting done. That created accountability and he started contributing more.', q:'weak', w:'Public callouts work occasionally and damage trust reliably. This reads as someone who will create friction on a team.'}],
- takeaway:'Go to the person first, privately, and assume there is a reason before assuming there is not. Interviewers are testing whether you will be a good colleague to someone who is struggling.'},
-
-{id:'b8', prompt:'Tell me about a time you received critical feedback. How did you respond?',
- opts:[
-  {t:'My manager told me my presentations were too detailed for the audience. I disagreed at first because the detail was accurate, but I asked her to sit in on the next one and mark where she lost the thread. She marked slide two. I rebuilt it to lead with the recommendation and moved the analysis to an appendix. That format became what our team used for exec updates.', q:'strong', w:'Honest about the initial disagreement, took a concrete step to understand the feedback, changed the behavior, and the change outlasted the moment.'},
-  {t:'I was told I needed to communicate more proactively. I took it on board and made an effort to keep people updated more often after that.', q:'okay', w:'Accepts the feedback but describes no specific change. "Made an effort" is not an action an interviewer can evaluate.'},
-  {t:'I got some feedback that I thought was unfair given the circumstances, but I accepted it professionally and did not push back since he was my supervisor.', q:'weak', w:'Compliance without engagement. The interviewer learns you can absorb criticism, but not that you can use it.'},
-  {t:'I have not really received much critical feedback. My reviews have been consistently positive.', q:'weak', w:'Either untrue or a sign you have never been in a role where anyone invested in your development. Both readings hurt you.'}],
- takeaway:'Show the gap between hearing feedback and acting on it. The strongest answers include a specific mechanism you used to understand the criticism before changing.'},
-
-{id:'b9', prompt:'Tell me about a project you are proud of.',
- opts:[
-  {t:'I built a full-stack web application with React and Node for a class project. It had user authentication, a database, and a REST API, and I got an A on it.', q:'okay', w:'Describes what you built but not why it mattered or what was hard. A grade is not an outcome an employer cares about.'},
-  {t:'My family runs a small landscaping business and scheduling was done on paper, which meant double-bookings. I built a simple scheduling tool for them. The hard part was not the code — it was that my dad would not use anything that took more than three taps, so I rewrote the booking flow twice. They have used it for over a year and stopped double-booking entirely.', q:'strong', w:'Real users, a real constraint that forced iteration, and a measurable outcome. The detail about rewriting for a stubborn user is the part interviewers remember.'},
-  {t:'I am proud of my senior capstone because our team worked really well together and we all learned a lot from the experience.', q:'weak', w:'Says nothing about what was built, what you did, or what resulted. Pride without substance.'},
-  {t:'I contributed to an open source project by fixing a small bug. It was my first pull request and it got merged.', q:'okay', w:'Genuinely good initiative, but a small bug fix is a thin story. It would be much stronger with detail on how you navigated an unfamiliar codebase.'}],
- takeaway:'Pick the project with real users and a real constraint, not the most technically impressive one. Interviewers remember the story, not the stack.'},
-
-{id:'b10', prompt:'Where do you see yourself in five years?',
- opts:[
-  {t:'I would like to be in a leadership position managing a team by then.', q:'okay', w:'Fine but generic, and jumping straight to management can read as being more interested in the title than the craft.'},
-  {t:'I am not entirely sure yet — I want to stay open and see what opportunities come up.', q:'weak', w:'Honest, and everyone at 21 feels this, but with nothing else attached it reads as having no direction at all.'},
-  {t:'I want to be the person on the team who understands both the data and the business well enough to be trusted with ambiguous questions. Concretely, that means getting deep on SQL and analytics engineering in the first couple of years, then taking on projects where I define the question rather than just answering it. Whether that ends up as a senior IC or a lead role depends on what I am better at, and I would rather find that out than decide now.', q:'strong', w:'Shows direction without pretending to certainty, is specific about the next two years, and stays honest about what depends on information you do not yet have.'},
-  {t:'In five years I hope to still be at this company, having been promoted a couple of times and taken on more responsibility.', q:'okay', w:'Flattering and safe, but it describes a title trajectory rather than what you want to be good at.'}],
- takeaway:'Be specific about the next two years and honest that the rest depends. Direction without false certainty beats both vagueness and a rehearsed five-year plan.'}
-];
 
 /* ============================================================================
-   TECHNICAL POOLS — one per career.
-   type 'free' → scored by keyword coverage + TF-IDF cosine similarity + length
-   type 'mc'   → scored right/wrong
+   BEHAVIORAL POOLS — one per career.
+   v1 shared a single pool across all four paths, which meant a cybersecurity
+   candidate could be shown an answer about data analytics. These are separate
+   and career-flavored. Mostly free response: "tell me about a time" and
+   "describe" questions are things you narrate, not things you pick.
    ========================================================================== */
+const BEH_REQ = {
+  result:  ['result','ended up','led to','saved','reduced','increased','adopted','improved','shipped','delivered','outcome','so that','went from','cut the'],
+  action:  ['i built','i wrote','i asked','i proposed','i set up','i created','i walked','i met','i suggested','i took','i reached','i mapped','i documented','i flagged','i pulled','i showed','i sat','i put','i made','i went'],
+  context: ['internship','intern','project','team','class','job','semester','client','manager','group','work','company','course','course'],
+  learn:   ['learned','now i','since then','next time','changed','takeaway','realized','would do','lesson']
+};
+const BWC = {min:55, ideal:125, max:260};
+
+const BEHAVIORAL = {
+'data-analytics':[
+ {id:'dab1', cat:'behavioral', type:'free',
+  prompt:'Tell me about a time you had to explain a technical finding to someone without a technical background.',
+  model:`During my internship I found that our "active user" count was double-counting anyone who logged in from two devices. The marketing lead had been reporting that number to leadership for months. Rather than lead with the technical explanation about session joins, I showed her two numbers side by side in the spreadsheet she already used, and walked through one real user who appeared twice. Once she could see a single concrete case, the concept landed in about a minute. We agreed on a corrected definition, I documented it, and that became the metric the team reported going forward.`,
+  req:[BEH_REQ.context, BEH_REQ.action, BEH_REQ.result,
+       ['explain','explained','showed','walked','translate','simple','plain','example']],
+  bonus:['analogy','visual','chart','definition','stakeholder','jargon','documented'],
+  wc:BWC,
+  hint:'Use STAR — Situation, Task, Action, Result. The most common failure is describing the situation and never saying what changed because of you.'},
+
+ {id:'dab2', cat:'behavioral', type:'free',
+  prompt:'Describe a time you found an error in your own work. What did you do about it?',
+  model:`I built a weekly revenue report using a customer table I assumed had been deduplicated. It had not been, so our active-account count was inflated by roughly 12% for two weeks before I noticed the number drift away from the finance figure. I told my manager the same day rather than waiting to have a fix ready, reissued the corrected numbers with a short note explaining the discrepancy, and added a row-count check to my process so the same class of error would surface immediately. Since then I validate assumptions about source data before building anything on top of it.`,
+  req:[BEH_REQ.action, BEH_REQ.result, BEH_REQ.learn,
+       ['error','mistake','wrong','incorrect','bug','off','inflated','discrepancy']],
+  bonus:['immediately','same day','told','flagged','validate','check','process','quantif','percent'],
+  wc:BWC,
+  hint:'Own it without hedging, then spend most of the answer on what you changed. Analysts are trusted with numbers, so how you handle being wrong matters more here than in most roles.'},
+
+ {id:'dab3', cat:'behavioral', type:'free',
+  prompt:'Tell me about a time you had to make a recommendation using incomplete or messy data.',
+  model:`For a class project analyzing city bike-share usage, about 9% of trips were missing the end-station field. Rather than silently dropping them, I checked whether the missing rows differed from the complete ones and found they skewed heavily toward one station, which meant dropping them would have understated that location. I ran the analysis both ways, presented the version excluding them as the primary result, and stated the gap and its likely direction explicitly. The recommendation held under both treatments, which is what gave me confidence in it. Being upfront about the limitation made the finding more credible, not less.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['missing','incomplete','messy','dirty','gap','null','unclear','partial'],
+       ['assumption','caveat','limitation','stated','disclosed','both ways','sensitivity','transparent']],
+  bonus:['bias','systematic','random','validate','investigate','skew','confidence'],
+  wc:BWC,
+  hint:'Interviewers want to hear that you named the limitation out loud rather than hiding it. Stating uncertainty is a credibility signal in analytics, not a weakness.'},
+
+ {id:'dab4', cat:'behavioral', type:'free',
+  prompt:'Describe a time you had to tell someone their request could not be answered the way they wanted.',
+  model:`A team lead asked me for churn rate by customer segment, but we did not store the segment assignment historically, only its current value. Answering literally would have applied today's segments to last year's behavior and produced a confidently wrong number. Instead of just saying no, I asked what decision the number was for. She wanted to know which segment to target next quarter. I proposed a forward-looking cohort analysis we could actually support, explained in one sentence why the original framing would mislead, and delivered that instead. She used it, and we later added the historical tracking so the original question became answerable.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['ask','asked','why','underlying','actual question','what they','decision','goal'],
+       ['alternative','instead','proposed','offered','different','another way']],
+  bonus:['explained','mislead','wrong','limitation','follow up','tracking','compromise'],
+  wc:BWC,
+  hint:'The strongest answers do not stop at no. They find the question behind the request and answer that one.'},
+
+ {id:'dab5', cat:'behavioral', type:'mc',
+  prompt:'A stakeholder needs a number by end of day for a board deck. An hour before the deadline you realize the source table may be double-counting. What do you do?',
+  opts:[
+   {t:'Send the number on time and mention the concern in a follow-up note tomorrow morning',c:false,w:'The number will be in a board deck by tomorrow. A caveat that arrives after the decision is not a caveat.'},
+   {t:'Tell them now, with your best estimate of the impact, and let them decide',c:true,w:'Correct. You surface it immediately, quantify what you can, and hand the call to the person who owns the decision. Fast and honest beats late and clean.'},
+   {t:'Hold the number back until you have fully verified it, even if that misses the deadline',c:false,w:'Defensible instinct, but going silent on a deadline leaves the stakeholder with nothing and no ability to plan around it.'},
+   {t:'Send it with a general disclaimer that all figures are preliminary and subject to change',c:false,w:'A blanket disclaimer is not a real warning. It gives you cover without giving them information.'}],
+  takeaway:'Surface data problems the moment you find them, with your best estimate of the size. Analysts lose trust by being late with bad news far faster than by being wrong.'}
+],
+
+'cybersecurity':[
+ {id:'cyb1', cat:'behavioral', type:'free',
+  prompt:'Tell me about a time you noticed something was wrong that other people had missed.',
+  model:`While helping run a student club's website I noticed our analytics showed a steady trickle of login attempts at three in the morning, always against the same three accounts. Everyone had assumed it was bot noise. I pulled the log entries and saw the attempts were sequential and came from a small set of addresses, which looked like credential stuffing rather than random scanning. I wrote up what I found with the specific timestamps, we forced a password reset on those accounts and enabled rate limiting, and the pattern stopped. The lesson was that "probably nothing" is worth ten minutes of actually checking.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['noticed','spotted','saw','pattern','odd','unusual','suspicious','anomaly'],
+       ['investigate','checked','looked','pulled','reviewed','dug','verified']],
+  bonus:['log','timestamp','documented','escalate','wrote up','evidence','baseline'],
+  wc:BWC,
+  hint:'Security interviewers listen for the instinct to verify rather than assume. Show the step where you checked instead of shrugging.'},
+
+ {id:'cyb2', cat:'behavioral', type:'free',
+  prompt:'Describe a time you had to explain a risk to someone who did not want to hear it.',
+  model:`On a group project, a teammate wanted to commit our API keys directly into the repository because setting up environment variables was slowing us down. Rather than argue about policy, I showed him a GitHub search returning thousands of exposed keys and explained that automated scanners find them within minutes of a push. I also acknowledged his actual complaint, which was real — the setup was genuinely annoying — and spent twenty minutes writing a setup script so the secure path was the easy path. He used it. Framing it as removing his friction rather than as a rule got a much better result than insisting would have.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['risk','vulnerable','exposed','insecure','danger','threat','breach'],
+       ['explain','showed','demonstrated','concrete','example','evidence']],
+  bonus:['tradeoff','business','acknowledge','friction','easier','alternative','compromise'],
+  wc:BWC,
+  hint:'Security people who only say no get routed around. The strongest answers make the secure option the convenient one.'},
+
+ {id:'cyb3', cat:'behavioral', type:'free',
+  prompt:'Tell me about a time you had to follow a process carefully even when it slowed you down.',
+  model:`During an internship I was helping close out access reviews, and the process required a second person to confirm every revocation before it was applied. It felt like pure overhead when I could see plainly that the accounts belonged to people who had left. I followed it anyway, and on the fourth batch my reviewer caught that one account I had flagged was a shared service account that three active jobs depended on. Revoking it would have broken a nightly process. That was the moment the control stopped feeling like bureaucracy to me — the check existed precisely for the case I could not see.`,
+  req:[BEH_REQ.context, BEH_REQ.action, BEH_REQ.learn,
+       ['process','procedure','policy','control','protocol','documentation','steps']],
+  bonus:['caught','mistake','why','reason','audit','evidence','patience','discipline'],
+  wc:BWC,
+  hint:'This question is testing whether you will cut corners under pressure. A story where the process actually caught something is the most convincing version.'},
+
+ {id:'cyb4', cat:'behavioral', type:'free',
+  prompt:'Describe a situation where you had to make a decision without complete information.',
+  model:`During a CTF competition our team hit a service that was behaving oddly, and with forty minutes left we could not tell whether it was an intentional challenge or a broken container. I had to choose between spending our remaining time on it or moving to two easier challenges. I gave it a hard ten-minute limit, agreed that up front with the team so the decision was not mine alone to relitigate, and when nothing broke loose we moved on. We finished the other two. The habit I took away was to timebox uncertainty explicitly instead of letting it quietly consume everything.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['uncertain','unclear','incomplete','did not know','unknown','ambiguous','could not tell'],
+       ['decided','decision','chose','judgment','call','prioriti']],
+  bonus:['timebox','limit','escalate','risk','assumption','team','revisit','tradeoff'],
+  wc:BWC,
+  hint:'Analysts make calls on partial evidence constantly. Show your reasoning and the guardrail you set, not just the outcome.'},
+
+ {id:'cyb5', cat:'behavioral', type:'mc',
+  prompt:'You learn a coworker has been sharing their login with a contractor so the contractor can finish a deadline. Nothing has gone wrong. What do you do?',
+  opts:[
+   {t:'Nothing — no harm was done and reporting it would damage a working relationship',c:false,w:'Shared credentials destroy accountability: no log can now attribute any action to a person. The harm is already present even though nothing visible has broken.'},
+   {t:'Report it straight to management without speaking to the coworker about it first',c:false,w:'It does need reporting, but going around a colleague you could have spoken to first is a poor default and often gets you less information.'},
+   {t:'Talk to the coworker, then report it and get the contractor proper access',c:true,w:'Correct. You address it directly, it still gets reported because accountability requires it, and you fix the underlying cause — the contractor needed real access.'},
+   {t:'Quietly reset the shared password yourself so the arrangement stops immediately',c:false,w:'This stops the symptom, breaks the contractor without warning, and leaves no record. Acting unilaterally on someone else account is its own problem.'}],
+  takeaway:'Security incidents involving people are handled with people. Talk to them, fix the underlying need, and still document it — the record is the point.'}
+],
+
+'project-management':[
+ {id:'pmb1', cat:'behavioral', type:'free',
+  prompt:'Tell me about a time you had to deliver bad news about a project or deadline.',
+  model:`On a semester-long group project our client contact expected a working prototype at the four-week check-in, and two weeks in it was clear we would have roughly half of it. I raised it at the two-week mark rather than the four-week one, because at two weeks she still had options. I brought a specific picture: what would be done, what would not, and two paths — a narrower demo on the original date, or the full scope a week later. She chose the narrower demo. Delivering it early cost me an uncomfortable conversation and saved a much worse one.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['early','as soon as','immediately','ahead','before','two weeks','right away','sooner'],
+       ['option','alternative','choice','path','plan','proposed','recommend']],
+  bonus:['specific','scope','descope','stakeholder','honest','surprise','transparent'],
+  wc:BWC,
+  hint:'Timing is most of the answer. Interviewers are testing whether you surface bad news while it can still be acted on, or hide it until it is unrecoverable.'},
+
+ {id:'pmb2', cat:'behavioral', type:'free',
+  prompt:'Describe a time you had to coordinate people who did not report to you.',
+  model:`I ran the logistics for a student conference where the marketing, catering, and speaker teams were all volunteers with no obligation to me. I had responsibility for the date and no authority over anyone. What worked was making the dependencies visible: I put one shared timeline where each team could see that the program could not be printed until speakers were confirmed, so the delay was not me nagging, it was the schedule. I also made a point of asking each lead what they needed from the others rather than assigning tasks. We shipped on the original date with one speaker slot changed.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['no authority','did not report','volunteer','other team','across team','different team','not mine'],
+       ['visible','shared','timeline','dependency','communicat','align','transparen','asked']],
+  bonus:['influence','buy-in','follow up','blocker','ownership','relationship','trust'],
+  wc:BWC,
+  hint:'This is the defining constraint of the job — responsibility without authority. Show influence, not enforcement.'},
+
+ {id:'pmb3', cat:'behavioral', type:'free',
+  prompt:'Tell me about a time a plan you were responsible for went off track. What did you do?',
+  model:`I was coordinating a data migration for a campus club and built the schedule assuming the outgoing system's export would take a day. It took four, because the export tool rate-limited us and nobody had tested it at full volume. Once I saw the first run's throughput I recalculated immediately rather than hoping it would speed up, told the team the new date that afternoon, and resequenced the work so the parts not depending on the export moved forward in parallel. We landed three days late instead of a projected two weeks. The real lesson was to test the riskiest dependency first, not the easiest one.`,
+  req:[BEH_REQ.action, BEH_REQ.result, BEH_REQ.learn,
+       ['off track','behind','late','slipped','delay','wrong','underestimated','went over']],
+  bonus:['replan','resequence','parallel','communicat','immediately','dependency','risk','estimate'],
+  wc:BWC,
+  hint:'Every plan goes wrong. Interviewers want to see how quickly you noticed, how fast you re-planned, and whether you told anyone.'},
+
+ {id:'pmb4', cat:'behavioral', type:'free',
+  prompt:'Describe a time you had to say no to a request.',
+  model:`Two weeks before a launch, a stakeholder asked us to add a reporting feature he described as small. I did not answer in the meeting. I took it to the two developers who would build it, and their estimate was five days plus testing, which would have pushed the launch. I went back with that number and framed it as a choice rather than a refusal: we could add it and move the date, cut something of similar size, or ship it in the following release. He picked the following release once he saw the actual cost. Making the tradeoff visible did the work that arguing would not have.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['estimate','cost','effort','how long','size','points','days'],
+       ['tradeoff','trade-off','option','choice','instead','defer','cut','impact']],
+  bonus:['scope','stakeholder','priority','document','backlog','date','visible'],
+  wc:BWC,
+  hint:'Strong PMs rarely say a flat no. They convert the request into a visible tradeoff with real numbers and hand the decision back.'},
+
+ {id:'pmb5', cat:'behavioral', type:'mc',
+  prompt:'The day before a release, two teams escalate to you with opposite views on whether a dependency is ready. Both are confident. What is your first move?',
+  opts:[
+   {t:'Get both teams in one room to walk through the dependency together',c:true,w:'Correct. They disagree on facts, not preferences, and the fastest resolution is a shared look at the same evidence rather than you relaying claims between them.'},
+   {t:'Escalate to your sponsor immediately, since a release date is at stake',c:false,w:'Possibly needed later, but escalating before you have established the facts hands your sponsor a problem you have not scoped.'},
+   {t:'Side with the team that owns the dependency, since it is their own component',c:false,w:'Ownership does not make someone right, and picking a side without evidence guarantees you lose the other team trust.'},
+   {t:'Delay the release by a week to give everyone room to sort it out',c:false,w:'Spending a week of schedule to avoid a thirty-minute conversation is an expensive way to not make a decision.'}],
+  takeaway:'When people disagree about facts, get them looking at the same evidence together. Relaying claims back and forth is how a PM becomes the bottleneck.'}
+],
+
+'software-dev':[
+ {id:'sdb1', cat:'behavioral', type:'free',
+  prompt:'Tell me about a time you had to work in a codebase you did not write.',
+  model:`I joined a club project with about eight thousand lines of JavaScript and no documentation. Instead of trying to read all of it, I picked one user-visible behavior — submitting the signup form — and traced it end to end from the click handler through to the database write. That one path taught me the conventions the rest of the code followed. I wrote up what I learned in a short README as I went, partly for myself and partly because the next person would need it. My first real change took two days instead of the week I expected, mostly because I had a map by then.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['unfamiliar','did not write','someone else','inherited','existing','legacy','no documentation'],
+       ['trace','traced','read','follow','one','path','end to end','debugger','orient']],
+  bonus:['readme','document','convention','test','breakpoint','git log','map','pattern'],
+  wc:BWC,
+  hint:'Interviewers want your method for orienting yourself. Depth-first on one real path beats trying to read everything.'},
+
+ {id:'sdb2', cat:'behavioral', type:'free',
+  prompt:'Describe a time you received difficult feedback on your code.',
+  model:`My first real pull request came back with about thirty comments. My initial reaction was that it felt excessive for a forty-line change. I went through them and sorted them into three buckets: things I had genuinely gotten wrong, team conventions I did not know yet, and two I actually disagreed with. I fixed the first two groups without arguing and asked about the last two, and on one of them the reviewer agreed with me and we changed the approach. The volume was not criticism, it was a senior engineer investing an hour in me. I now read heavy review as a good sign.`,
+  req:[BEH_REQ.action, BEH_REQ.learn,
+       ['feedback','review','comment','critic','pull request','pr'],
+       ['reacted','felt','initially','defensive','ego','sorted','went through','asked']],
+  bonus:['convention','disagreed','discussed','learned','improve','mentor','changed'],
+  wc:BWC,
+  hint:'Being honest about your initial reaction makes the answer credible. Interviewers are checking whether you can take review without ego.'},
+
+ {id:'sdb3', cat:'behavioral', type:'free',
+  prompt:'Tell me about the hardest bug you have had to track down.',
+  model:`A form in a project I built worked locally but intermittently dropped submissions in production, maybe one in twenty. Because it was intermittent I could not reproduce it on demand, so I added logging around the request and waited for it to happen in real traffic. The logs showed the failures clustered on submissions with unusually long text. The root cause was a database column capped at 255 characters, and the insert error was being swallowed by a catch block that logged nothing. I fixed the column, removed the silent catch, and added a test with an oversized input. The swallowed exception was the real lesson.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['reproduce','intermittent','could not','logs','logging','narrow','isolate','pattern'],
+       ['root cause','turned out','cause','because','found','why']],
+  bonus:['test','regression','hypothesis','bisect','swallow','silent','edge case','fix'],
+  wc:BWC,
+  hint:'Walk the interviewer through your reasoning, not just the answer. How you narrowed it down is the part being evaluated.'},
+
+ {id:'sdb4', cat:'behavioral', type:'free',
+  prompt:'Describe a time you disagreed with a technical decision on your team.',
+  model:`A teammate wanted to pull in a state management library for an app with four screens. I thought it was overhead we would pay for permanently to solve a problem we did not have yet. Rather than argue in the abstract, I asked what specific pain he was hitting, and it turned out to be one component passing props down four levels. That is a real problem with a much smaller fix. We used React context for that one subtree and skipped the library. He was not wrong about the pain, only about the size of the solution, and finding the actual pain is what resolved it.`,
+  req:[BEH_REQ.action, BEH_REQ.result,
+       ['disagree','disagreed','different view','thought','pushed back','concern'],
+       ['asked','understand','why','reasoning','listened','their','underlying','specific']],
+  bonus:['tradeoff','compromise','evidence','prototype','data','agreed','scope','smaller'],
+  wc:BWC,
+  hint:'The point is not whether you were right. It is whether you got curious about the other position before defending yours.'},
+
+ {id:'sdb5', cat:'behavioral', type:'mc',
+  prompt:'You are two days into a three-day ticket and realize the approach you chose will not work. What do you do?',
+  opts:[
+   {t:'Push through with the current approach and plan to refactor it in a later ticket',c:false,w:'You would be knowingly shipping something you already believe is wrong, and the follow-up ticket usually never happens.'},
+   {t:'Start over quietly and try to still hit the deadline without mentioning it',c:false,w:'Hiding it means nobody can help and nobody can adjust the plan. If you miss the date anyway, it is now a surprise.'},
+   {t:'Tell your lead what you found and what redoing it would cost',c:true,w:'Correct. You surface it immediately with the information needed to decide. Two days of learning why an approach fails is real progress, not wasted work.'},
+   {t:'Ask the team to extend the sprint so you have time to do it properly',c:false,w:'Jumps to one solution before your lead knows the problem exists, and the sprint is rarely yours to move.'}],
+  takeaway:'Discovering an approach is wrong is normal engineering. Raising it fast, with the cost of each option, is what separates a junior who is trusted from one who is managed.'}
+]};
+
 const TECHNICAL = {
 'data-analytics':[
- {id:'da1', type:'mc',
+ {id:'da1', cat:'technical', type:'mc',
   prompt:'You need a list of every customer, along with their orders where orders exist. Customers with no orders must still appear. Which join?',
   opts:[{t:'INNER JOIN',c:false,w:'Drops any customer who has no matching order — exactly the rows you were asked to keep.'},
         {t:'LEFT JOIN',c:true,w:'Keeps every row from the left table (customers) and fills NULL where no order matches. This is the correct answer.'},
@@ -511,7 +669,7 @@ const TECHNICAL = {
         {t:'FULL OUTER JOIN',c:false,w:'Also keeps orphaned orders with no customer, which you were not asked for. Not wrong in spirit, but broader than the requirement.'}],
   takeaway:'Join questions are the most common technical screen for analyst roles. Know INNER, LEFT, and FULL OUTER cold and be able to say which rows each one drops.'},
 
- {id:'da2', type:'free',
+ {id:'da2', cat:'technical', type:'free',
   prompt:'A business stakeholder tells you "returns spiked in March — find out why." Walk me through how you would approach this.',
   model:`First I would clarify the question: how much of a spike, against what baseline, and what decision they plan to make with the answer. Then I would verify the number is real before investigating it — a reporting or data pipeline change is a common cause of an apparent spike. Assuming it is real, I would segment: by product, region, channel, and customer type, to see whether the increase is broad or concentrated. Usually it is concentrated. I would then look for a corresponding change in that segment — a new SKU, a supplier change, a pricing test. Finally I would present the finding with the caveats about what I could not rule out.`,
   req:[['clarify','clarifying','question','scope','define','baseline','ask','understand','what they mean'],
@@ -522,7 +680,7 @@ const TECHNICAL = {
   wc:{min:45,ideal:110,max:220},
   hint:'The strongest answers verify the number is real before explaining it. Analysts get burned by chasing a spike that turned out to be a pipeline bug.'},
 
- {id:'da3', type:'free',
+ {id:'da3', cat:'technical', type:'free',
   prompt:'When would you report the median instead of the mean, and why does it matter?',
   model:`The mean is pulled by outliers and the median is not, so I would use the median whenever the distribution is skewed. Salary and revenue-per-customer are the classic cases — a handful of very large values drag the mean well above what a typical case looks like. If I reported mean customer spend and one enterprise account was 400 times the others, the number would describe nobody. The median tells you about the middle of the distribution. In practice I would look at the shape of the data first, and often report both plus a note on the spread, since the gap between mean and median is itself informative.`,
   req:[['outlier','skew','skewed','extreme','tail'],
@@ -532,15 +690,15 @@ const TECHNICAL = {
   wc:{min:35,ideal:95,max:200},
   hint:'A concrete example of a skewed distribution makes this answer much stronger than the definition alone.'},
 
- {id:'da4', type:'mc',
+ {id:'da4', cat:'technical', type:'mc',
   prompt:'You want to show how the composition of revenue across four product lines has changed over the last eight quarters. Which visualization?',
   opts:[{t:'Four separate pie charts, one per year',c:false,w:'Pie charts make comparison across time very hard, and four of them makes it worse. Readers cannot judge angle differences accurately.'},
-        {t:'A stacked area or stacked bar chart over time',c:true,w:'Shows both the total and the composition, with time on a continuous axis. This is the standard answer for part-to-whole over time.'},
+        {t:'A stacked area chart over time',c:true,w:'Shows both the total and the composition, with time on a continuous axis. This is the standard answer for part-to-whole over time.'},
         {t:'A scatter plot of revenue vs. quarter',c:false,w:'Scatter plots show relationships between two continuous variables, not composition.'},
-        {t:'A single grouped bar chart with all 32 bars',c:false,w:'Technically shows the data, but composition and trend both become very hard to read at that density.'}],
+        {t:'A single grouped bar chart showing all thirty-two values',c:false,w:'Technically shows the data, but composition and trend both become very hard to read at that density.'}],
   takeaway:'Chart choice questions test whether you match the visual form to the question being asked. Part-to-whole over time is almost always a stacked area or stacked bar.'},
 
- {id:'da5', type:'free',
+ {id:'da5', cat:'technical', type:'free',
   prompt:'You are handed a dataset where about 8% of the rows are missing a value in a column central to your analysis. What do you do?',
   model:`First I would find out why they are missing, because the reason determines the fix. If the values are missing at random, dropping or imputing them is defensible. If the missingness is systematic — for example one region's system never wrote the field — then dropping those rows silently biases the result. I would check whether the missing rows differ from the complete rows on other dimensions. Depending on what I found I would either exclude them and state that clearly, impute with a documented method, or go back to the source system. Whatever I chose, I would report the decision and the percentage affected alongside the analysis rather than burying it.`,
   req:[['why','reason','cause','systematic','random','pattern'],
@@ -551,7 +709,7 @@ const TECHNICAL = {
   wc:{min:45,ideal:110,max:220},
   hint:'The key insight is that whether missing data is random or systematic changes the correct response entirely.'},
 
- {id:'da6', type:'free',
+ {id:'da6', cat:'technical', type:'free',
   prompt:'Explain the difference between a primary key and a foreign key, and why it matters when you are joining tables.',
   model:`A primary key uniquely identifies each row in a table — customer_id in a customers table. A foreign key is a column in another table that points back to that primary key, like customer_id appearing in an orders table to say which customer placed each order. That relationship is what makes joins possible. It matters practically because if you join on a column that is not actually unique on one side, you get row multiplication — a customer with three orders produces three rows, and any sum over that result is silently inflated. Checking row counts before and after a join is the habit that catches this.`,
   req:[['primary key','unique','uniquely','identifies','identifier'],
@@ -564,7 +722,7 @@ const TECHNICAL = {
 ],
 
 'cybersecurity':[
- {id:'cy1', type:'free',
+ {id:'cy1', cat:'technical', type:'free',
   prompt:'Walk me through what happens when you type a URL into a browser and press enter.',
   model:`The browser checks its cache, then resolves the domain to an IP address through DNS, querying the local resolver and walking up to root, TLD, and authoritative nameservers if needed. With the IP it opens a TCP connection to the server, typically on port 443, completing the three-way handshake. For HTTPS it then performs a TLS handshake — the server presents a certificate, the browser validates it against a trusted certificate authority, and they negotiate session keys. The browser sends an HTTP GET request, the server responds, and the browser parses the HTML and requests any additional resources it references before rendering.`,
   req:[['dns','domain name','resolve','resolution','nameserver'],
@@ -575,7 +733,7 @@ const TECHNICAL = {
   wc:{min:50,ideal:120,max:240},
   hint:'This is the single most common cybersecurity screening question. Interviewers keep asking "and then what?" — depth is the whole point.'},
 
- {id:'cy2', type:'free',
+ {id:'cy2', cat:'technical', type:'free',
   prompt:'A user reports their machine is slow and pop-ups keep appearing. Walk me through your first three steps.',
   model:`First I would isolate the machine from the network to stop any potential spread or data exfiltration, while leaving it powered on so volatile evidence in memory is preserved. Second, I would open a ticket and start documenting everything — timestamps, what the user reports, what they were doing beforehand, and any recent downloads or email attachments. Third, I would run a scan with our EDR or antimalware tooling and review the endpoint's recent process and network activity for anything unexpected. Depending on what turns up, I would escalate to the incident response process. Throughout, I would avoid destroying evidence by rebuilding the machine prematurely.`,
   req:[['isolate','disconnect','quarantine','contain','segment','off the network','unplug','pull the machine','take it offline','offline'],
@@ -585,15 +743,15 @@ const TECHNICAL = {
   wc:{min:45,ideal:110,max:220},
   hint:'Order matters here. Containment comes before investigation, and preserving evidence comes before remediation.'},
 
- {id:'cy3', type:'mc',
+ {id:'cy3', cat:'technical', type:'mc',
   prompt:'Which of these is the strongest single indicator that an email is a phishing attempt?',
-  opts:[{t:'The email contains a spelling mistake',c:false,w:'Common in phishing but also common in legitimate mail. On its own this is weak evidence, and modern phishing is often well-written.'},
-        {t:'The sender display name does not match the actual sender address, and the link text points to a different domain than its href',c:true,w:'Mismatched identity plus a disguised link is deliberate deception. Neither happens by accident in legitimate mail.'},
-        {t:'The email was sent outside of business hours',c:false,w:'Weak signal. Global companies and automated systems send mail at all hours.'},
-        {t:'The email asks the recipient to take an action',c:false,w:'Nearly all legitimate business email asks for action. This would flag everything.'}],
+  opts:[{t:'The message contains spelling and grammar mistakes throughout the body text',c:false,w:'Common in phishing but also common in legitimate mail. On its own this is weak evidence, and modern phishing is often well-written.'},
+        {t:'Display name and real sender address disagree, and link text hides a different href',c:true,w:'Mismatched identity plus a disguised link is deliberate deception. Neither happens by accident in legitimate mail.'},
+        {t:'The message arrived well outside normal business hours, late on a Sunday evening, from an unfamiliar sender',c:false,w:'Weak signal. Global companies and automated systems send mail at all hours.'},
+        {t:'The message asks the recipient to take an action before a stated deadline',c:false,w:'Nearly all legitimate business email asks for action. This would flag everything.'}],
   takeaway:'Triage on signals that require intent to produce. Typos are circumstantial; a mismatched sender address paired with a disguised link is deliberate.'},
 
- {id:'cy4', type:'free',
+ {id:'cy4', cat:'technical', type:'free',
   prompt:'Explain the CIA triad and apply it to a hospital that has just been hit with ransomware.',
   model:`The CIA triad is confidentiality, integrity, and availability. Confidentiality means only authorized parties can read data; integrity means the data has not been altered without authorization; availability means authorized users can access it when they need it. In a hospital ransomware case, availability takes the hardest hit — encrypted systems mean clinicians cannot reach patient records, which can force ambulance diversion and delay care. Confidentiality is also at risk if the attackers exfiltrated data before encrypting, which is now standard in double-extortion attacks. Integrity is a concern because you cannot fully trust restored data until it is validated. In healthcare, availability is often the priority because the consequence is clinical rather than financial.`,
   req:[['confidentiality','confidential'],
@@ -604,15 +762,15 @@ const TECHNICAL = {
   wc:{min:50,ideal:120,max:240},
   hint:'Reciting the three words is the minimum. The question is really testing whether you can apply them to a scenario and say which one matters most here.'},
 
- {id:'cy5', type:'mc',
+ {id:'cy5', cat:'technical', type:'mc',
   prompt:'What is the primary function of a SIEM in a security operations center?',
-  opts:[{t:'It blocks malicious traffic at the network perimeter',c:false,w:'That is a firewall or IPS. A SIEM observes and correlates; it is not primarily an enforcement point.'},
-        {t:'It aggregates and correlates log data from across the environment to surface suspicious patterns as alerts',c:true,w:'Correct. Centralizing logs so events from different systems can be correlated into a single alert is the core purpose.'},
-        {t:'It scans endpoints for known malware signatures',c:false,w:'That is antivirus or EDR. A SIEM may ingest their alerts, but it does not scan endpoints itself.'},
-        {t:'It encrypts data at rest across company servers',c:false,w:'Unrelated. Encryption at rest is handled by storage and database layers.'}],
+  opts:[{t:'It blocks malicious inbound traffic at the network perimeter before it reaches internal hosts',c:false,w:'That is a firewall or IPS. A SIEM observes and correlates; it is not primarily an enforcement point.'},
+        {t:'It correlates log data from across the environment into alerts',c:true,w:'Correct. Centralizing logs so events from different systems can be correlated into a single alert is the core purpose.'},
+        {t:'It scans endpoints for known malware signatures and quarantines any infected files',c:false,w:'That is antivirus or EDR. A SIEM may ingest their alerts, but it does not scan endpoints itself.'},
+        {t:'It encrypts sensitive data at rest across company servers and databases',c:false,w:'Unrelated. Encryption at rest is handled by storage and database layers.'}],
   takeaway:'Know the categories cold: firewall/IPS blocks, EDR watches endpoints, SIEM correlates logs, SOAR automates response. Mixing them up is a common early stumble.'},
 
- {id:'cy6', type:'free',
+ {id:'cy6', cat:'technical', type:'free',
   prompt:'What is the difference between authentication and authorization? Give an example of a failure of each.',
   model:`Authentication is verifying who you are; authorization is determining what you are allowed to do once you are verified. Logging in with a password and an MFA code is authentication. Being permitted to view payroll records after logging in is authorization. An authentication failure is an attacker successfully using credentials stolen in a phishing attack to log in as a legitimate user. An authorization failure is a logged-in user changing an ID in a URL and seeing another customer's record — that is an insecure direct object reference, and it is a broken access control problem rather than an identity problem. MFA addresses the first and access control reviews address the second.`,
   req:[['authentication','authenticate','who','identity','verify'],
@@ -624,7 +782,7 @@ const TECHNICAL = {
 ],
 
 'project-management':[
- {id:'pm1', type:'free',
+ {id:'pm1', cat:'technical', type:'free',
   prompt:'When would you use Agile and when would you use Waterfall? Give a concrete example of each.',
   model:`Agile fits when requirements are expected to change and you can deliver value incrementally — a customer-facing web product where you want user feedback every two weeks and can reprioritize based on it. Waterfall fits when requirements are fixed up front, the cost of change is high, and there are regulatory or physical dependencies — a data center migration or a compliance system where the audit requirements are defined by law and cannot be discovered iteratively. In practice most organizations run a hybrid: Agile delivery inside a Waterfall governance and budgeting structure. The real question is how much uncertainty exists in the requirements, not which methodology is better.`,
   req:[['agile','scrum','iterative','sprint','incremental'],
@@ -635,15 +793,15 @@ const TECHNICAL = {
   wc:{min:45,ideal:110,max:220},
   hint:'Avoid saying Agile is simply better. Naming the conditions where Waterfall is correct is what separates a real answer from a memorized one.'},
 
- {id:'pm2', type:'mc',
+ {id:'pm2', cat:'technical', type:'mc',
   prompt:'What is the purpose of a sprint retrospective?',
-  opts:[{t:'To demonstrate completed work to stakeholders',c:false,w:'That is the sprint review or demo. The retrospective is internal to the team.'},
-        {t:'For the team to inspect how they worked and agree on specific process improvements for the next sprint',c:true,w:'Correct. The retrospective is about the process, and the output is a small number of concrete changes the team commits to.'},
-        {t:'To assign the tasks for the upcoming sprint',c:false,w:'That is sprint planning.'},
-        {t:'For the project manager to review individual performance',c:false,w:'A common and damaging misconception. Turning a retro into performance review destroys the psychological safety it depends on.'}],
+  opts:[{t:'To demonstrate completed work to stakeholders and gather their feedback on it',c:false,w:'That is the sprint review or demo. The retrospective is internal to the team.'},
+        {t:'For the team to examine how they worked and agree on process changes',c:true,w:'Correct. The retrospective is about the process, and the output is a small number of concrete changes the team commits to.'},
+        {t:'To assign and estimate the tasks the team will take on in the upcoming sprint',c:false,w:'That is sprint planning.'},
+        {t:"For the project manager to review each team member's individual performance",c:false,w:'A common and damaging misconception. Turning a retro into performance review destroys the psychological safety it depends on.'}],
   takeaway:'Know the four Scrum ceremonies and what distinguishes them: planning, daily standup, review (external, shows the product), retrospective (internal, examines the process).'},
 
- {id:'pm3', type:'free',
+ {id:'pm3', cat:'technical', type:'free',
   prompt:'Two weeks into a six-week project, a senior stakeholder asks you to add a feature they call "quick." How do you handle it?',
   model:`I would not say yes or no in the meeting. First I would understand what problem the request solves, because often there is a cheaper way to solve it. Then I would take it to the team for a real estimate rather than accepting "quick" as a scope statement. With that estimate I would go back with options and their consequences: we can add it and move the date, add it and defer something else of similar size, or hold it for the next release. I would make the tradeoff visible and let the stakeholder choose, because it is their priority call, but the decision has to be an informed one. Then I would document what was decided.`,
   req:[['understand','clarify','why','problem','underlying','ask'],
@@ -654,7 +812,7 @@ const TECHNICAL = {
   wc:{min:45,ideal:115,max:230},
   hint:'The strongest answers neither refuse nor accept. They convert the request into a visible tradeoff and hand the decision back with real numbers attached.'},
 
- {id:'pm4', type:'free',
+ {id:'pm4', cat:'technical', type:'free',
   prompt:'You realize your project is going to miss its deadline by about three weeks. What do you do, and when?',
   model:`I would communicate it as soon as I am confident, not when it becomes undeniable. Late bad news removes the options that would have fixed it. Before I escalate I would get specific: what exactly is slipping, why, and what the realistic new date is. Then I would bring options rather than just a problem — descope to hold the date, add capacity if that genuinely helps, or move the date with a clear explanation. I would tell my sponsor directly and privately first rather than letting them find out in a status meeting. Afterward I would look at why the plan was wrong so the next estimate is better.`,
   req:[['early','immediately','as soon as','now','not wait','proactive','right away','straight away','soon as i know','asap'],
@@ -665,15 +823,15 @@ const TECHNICAL = {
   wc:{min:45,ideal:110,max:220},
   hint:'Timing is most of the answer. Interviewers are testing whether you will surface bad news early or hide it until it is unrecoverable.'},
 
- {id:'pm5', type:'mc',
+ {id:'pm5', cat:'technical', type:'mc',
   prompt:'What does the critical path of a project represent?',
-  opts:[{t:'The tasks that are most important to the business',c:false,w:'A common confusion. "Critical" here is a scheduling term, not a statement about business value.'},
-        {t:'The longest sequence of dependent tasks, which determines the minimum project duration',c:true,w:'Correct. Any delay to a task on the critical path delays the whole project, because these tasks have zero slack.'},
+  opts:[{t:'The tasks that matter most to the business and its stakeholders',c:false,w:'A common confusion. "Critical" here is a scheduling term, not a statement about business value.'},
+        {t:'The longest chain of dependent tasks, setting minimum duration',c:true,w:'Correct. Any delay to a task on the critical path delays the whole project, because these tasks have zero slack.'},
         {t:'The sequence of tasks assigned to the most senior team members',c:false,w:'Unrelated to who is doing the work.'},
-        {t:'The tasks that carry the highest risk of failure',c:false,w:'Risk and critical path are tracked separately. A high-risk task may have plenty of slack.'}],
+        {t:'The tasks that carry the highest risk of failing or slipping',c:false,w:'Risk and critical path are tracked separately. A high-risk task may have plenty of slack.'}],
   takeaway:'Critical path means zero slack, not high importance. If a task on it slips by a day, the project slips by a day — that is the whole concept.'},
 
- {id:'pm6', type:'free',
+ {id:'pm6', cat:'technical', type:'free',
   prompt:'How do you handle a project risk? Walk me through your process.',
   model:`I identify risks with the team rather than alone, since the people doing the work usually see them first. For each one I assess likelihood and impact, which lets me rank them instead of treating every risk as equal. Then I decide on a response: avoid by changing the plan, mitigate by reducing likelihood or impact, transfer through a vendor or contract, or accept it consciously and document that we did. High-priority risks get an owner and a trigger point that tells us when to act. I review the register regularly, because risks change as the project moves — and the ones that materialize become issues, which is a different process.`,
   req:[['identify','identification','surface','spot'],
@@ -686,7 +844,7 @@ const TECHNICAL = {
 ],
 
 'software-dev':[
- {id:'sd1', type:'mc',
+ {id:'sd1', cat:'technical', type:'mc',
   prompt:'What is the average time complexity of looking up a value by key in a hash map?',
   opts:[{t:'O(n)',c:false,w:'That is linear search through an array or list. It is also the worst case for a hash map when every key collides, but not the average.'},
         {t:'O(1)',c:true,w:'Correct. Hashing the key computes the bucket directly, so average lookup does not depend on the number of entries. Worst case degrades to O(n) with pathological collisions.'},
@@ -694,7 +852,7 @@ const TECHNICAL = {
         {t:'O(n log n)',c:false,w:'That is the complexity of efficient comparison sorts, not a lookup.'}],
   takeaway:'Know the common complexities cold: array index O(1), hash map lookup O(1) average, binary search O(log n), linear scan O(n), good sorts O(n log n).'},
 
- {id:'sd2', type:'free',
+ {id:'sd2', cat:'technical', type:'free',
   prompt:'When would you use a hash map instead of an array, and what is the tradeoff?',
   model:`I would use a hash map when I need to look things up by a key rather than by position — counting occurrences of words, or finding a user by ID without scanning. Lookup, insert, and delete are all constant time on average, versus linear for searching an unsorted array. The tradeoffs are that hash maps use more memory per element, they do not preserve any meaningful ordering in most implementations, and worst-case performance degrades if the hash function distributes keys poorly. If I needed ordered data or was iterating over everything anyway, an array or list is simpler and has better cache locality.`,
   req:[['key','lookup','look up','by name','identifier'],
@@ -704,7 +862,7 @@ const TECHNICAL = {
   wc:{min:40,ideal:105,max:210},
   hint:'Naming a real tradeoff — memory, ordering, or collision behavior — is what distinguishes this from a textbook recitation.'},
 
- {id:'sd3', type:'free',
+ {id:'sd3', cat:'technical', type:'free',
   prompt:'A bug is reported in production that you cannot reproduce locally. How do you approach it?',
   model:`First I would try to reproduce it more precisely — get the exact steps, the user, the timestamp, the browser or client, and any IDs involved. Most "cannot reproduce" cases are a missing detail about the environment or the data. Then I would check logs and any error tracking around that timestamp for a stack trace. I would compare environments: configuration, data, versions, and feature flags are the usual culprits. If it is data-dependent, I would try to pull a sanitized copy of the record that triggered it. Once I have a reproduction I write a failing test first, then fix it, so the test proves the fix and prevents regression.`,
   req:[['reproduce','repro','steps','replicate','recreate','trigger it','make it happen'],
@@ -715,15 +873,15 @@ const TECHNICAL = {
   wc:{min:45,ideal:115,max:230},
   hint:'Writing a failing test before fixing is the detail that signals professional habits rather than student habits.'},
 
- {id:'sd4', type:'mc',
+ {id:'sd4', cat:'technical', type:'mc',
   prompt:'Your feature branch is behind main. What is the practical difference between merging main into your branch and rebasing onto main?',
-  opts:[{t:'Merge rewrites your commit history; rebase preserves it',c:false,w:'Backwards. Rebase is the one that rewrites history by replaying your commits onto a new base.'},
-        {t:'Merge preserves history and adds a merge commit; rebase replays your commits on top of main, producing a linear history but rewriting commit hashes',c:true,w:'Correct. This is also why you avoid rebasing branches others have pulled — their history no longer matches yours.'},
-        {t:'They produce identical results; the choice is purely stylistic',c:false,w:'The resulting tree content is often the same, but the history and the hashes differ, which matters for shared branches.'},
-        {t:'Rebase is always safer than merge',c:false,w:'The opposite is closer to true on shared branches. Rebasing published commits causes real problems for collaborators.'}],
+  opts:[{t:'Merge rewrites your commit history, while rebase preserves it exactly as written',c:false,w:'Backwards. Rebase is the one that rewrites history by replaying your commits onto a new base.'},
+        {t:'Merge adds a merge commit; rebase replays commits and rewrites hashes',c:true,w:'Correct. This is also why you avoid rebasing branches others have pulled — their history no longer matches yours.'},
+        {t:'They produce identical results, so the choice between them is purely stylistic',c:false,w:'The resulting tree content is often the same, but the history and the hashes differ, which matters for shared branches.'},
+        {t:'Rebase is always the safer option on any branch, shared or not',c:false,w:'The opposite is closer to true on shared branches. Rebasing published commits causes real problems for collaborators.'}],
   takeaway:'Git questions are routine in entry-level screens. The rule worth remembering: never rebase a branch someone else has already pulled.'},
 
- {id:'sd5', type:'free',
+ {id:'sd5', cat:'technical', type:'free',
   prompt:'Explain what a REST API is to someone non-technical, then tell me what an endpoint and an HTTP status code are.',
   model:`A REST API is a structured way for two programs to talk to each other over the web. It is like a restaurant menu — the API defines exactly what you can order and what you get back, so you do not need to know anything about the kitchen. An endpoint is one specific item on that menu, a URL representing a resource, like /customers/123 for a particular customer. You act on it with HTTP methods: GET to read, POST to create, PUT to update, DELETE to remove. A status code is the server's short answer about what happened — 200 means success, 404 means the resource was not found, 401 means you are not authenticated, and 500 means the server itself failed.`,
   req:[['endpoint','url','resource','route'],
@@ -734,7 +892,7 @@ const TECHNICAL = {
   wc:{min:50,ideal:120,max:240},
   hint:'This question tests two things at once: technical accuracy and whether you can explain it without jargon. Both are being scored.'},
 
- {id:'sd6', type:'free',
+ {id:'sd6', cat:'technical', type:'free',
   prompt:'What is a database index, and why would adding one not always be a good idea?',
   model:`An index is a separate data structure, usually a B-tree, that lets the database find rows matching a column value without scanning the whole table. Adding one to a column you filter or join on frequently can turn a query from linear to logarithmic, which on a large table is the difference between seconds and milliseconds. The cost is that every insert, update, and delete has to maintain the index as well, so writes get slower, and the index consumes storage. On a write-heavy table, or on a column with very low cardinality like a boolean, an index may cost more than it saves. The right approach is to look at the query plan rather than guessing.`,
   req:[['scan','full table','without scanning','faster','lookup','seek'],
@@ -748,19 +906,17 @@ const TECHNICAL = {
 
 /* ============================================================================
    SCORING ENGINE
-   Free-response technical answers are scored on three signals:
+   Free-response answers (behavioral and technical alike) are scored on:
      keyword coverage 50%  +  TF-IDF cosine similarity 30%  +  length 20%
+   with a length gate so a short keyword-stuffed answer cannot score well.
    Everything runs offline. No API, no network, no dependencies.
    ========================================================================== */
-
 const STOPWORDS = new Set(('a an the and or but if then than that this these those of in on at to for with '+
  'from by as is are was were be been being do does did doing have has had having i you he she it we they '+
  'my your his her its our their me him them what which who whom when where why how all any both each few '+
  'more most other some such no nor not only own same so too very can will just should now would could there '+
  'here about into over under again further once out up down off also because while during before after').split(' '));
 
-/* Lowercase, strip punctuation, drop stopwords, light suffix stripping.
-   Deliberately simple rather than a real stemmer — every team member can explain it. */
 function tokenize(text){
   return String(text||'').toLowerCase()
     .replace(/[^a-z0-9\s'-]/g,' ')
@@ -777,17 +933,22 @@ function tokenize(text){
     });
 }
 
-/* IDF corpus = every technical model answer across all four careers (24 docs).
-   A larger corpus gives more stable inverse-document-frequency weights. */
+/* IDF corpus = every free-response model answer in the app (behavioral +
+   technical, all four careers). A larger corpus gives more stable weights. */
+const ALL_FREE = (function(){
+  const out=[];
+  [BEHAVIORAL, TECHNICAL].forEach(function(pool){
+    Object.keys(pool).forEach(function(k){
+      pool[k].forEach(function(q){ if(q.type==='free') out.push(q); });
+    });
+  });
+  return out;
+})();
+
 const IDF = (function(){
-  const docs=[];
-  Object.keys(TECHNICAL).forEach(function(k){
-    TECHNICAL[k].forEach(function(q){ if(q.type==='free') docs.push(tokenize(q.model)); });
-  });
+  const docs = ALL_FREE.map(function(q){ return tokenize(q.model); });
   const N=docs.length, df={};
-  docs.forEach(function(d){
-    new Set(d).forEach(function(t){ df[t]=(df[t]||0)+1; });
-  });
+  docs.forEach(function(d){ new Set(d).forEach(function(t){ df[t]=(df[t]||0)+1; }); });
   const idf={};
   Object.keys(df).forEach(function(t){ idf[t]=Math.log(N/(1+df[t]))+1; });
   return {map:idf, N:N, fallback:Math.log(N/1)+1};
@@ -812,9 +973,6 @@ function cosine(a,b){
   return dot/(Math.sqrt(na)*Math.sqrt(nb));
 }
 
-/* A synonym group is satisfied if ANY of its members appears.
-   Multi-word phrases are matched against the raw normalized text; single
-   words are matched against tokens so that "scanning" matches "scan". */
 function groupHit(group, tokenSet, normText){
   return group.some(function(term){
     if(term.indexOf(' ')>-1) return normText.indexOf(term)>-1;
@@ -830,6 +988,14 @@ function lengthScore(n, wc){
   return Math.max(0.6, 1 - 0.4*((n-wc.max)/wc.max));
 }
 
+/* Human-readable label for a synonym group, used in feedback. */
+const GROUP_LABEL = {};
+GROUP_LABEL[BEH_REQ.result[0]]  = 'a concrete result';
+GROUP_LABEL[BEH_REQ.action[0]]  = 'what you specifically did';
+GROUP_LABEL[BEH_REQ.context[0]] = 'the situation you were in';
+GROUP_LABEL[BEH_REQ.learn[0]]   = 'what you took away from it';
+function labelFor(group){ return GROUP_LABEL[group[0]] || group[0]; }
+
 function scoreFree(q, answer){
   const tokens   = tokenize(answer);
   const tokenSet = new Set(tokens);
@@ -843,25 +1009,21 @@ function scoreFree(q, answer){
 
   const composite = 0.50*kw + 0.30*cos + 0.20*len;
   let band = composite>=0.70 ? 'strong' : (composite>=0.40 ? 'developing' : 'weak');
-  /* Length gate: keyword-stuffing a three-word answer must not earn a good band.
-     Below half the minimum is always weak; below the minimum can never be strong. */
-  if(words < q.wc.min*0.5)      band = 'weak';
-  else if(words < q.wc.min && band==='strong') band = 'developing';
+  /* Length gate: keyword-stuffing a three-word answer must not earn a good band. */
+  if(words < q.wc.min*0.5)                     band='weak';
+  else if(words < q.wc.min && band==='strong') band='developing';
 
   const missed = q.req.filter(function(g,i){ return !hits[i]; });
   const bonusHit = (q.bonus||[]).filter(function(b){
     return b.indexOf(' ')>-1 ? normText.indexOf(b)>-1 : tokenSet.has(tokenize(b)[0]);
   });
-
-  return {kw:kw, cos:cos, len:len, composite:composite, band:band,
-          words:words, missed:missed, bonusHit:bonusHit,
-          hitTerms:q.req.filter(function(g,i){return hits[i];}).map(function(g){return g[0];})};
+  return {kw:kw, cos:cos, len:len, composite:composite, band:band, words:words,
+          missed:missed, bonusHit:bonusHit,
+          hitTerms:q.req.filter(function(g,i){return hits[i];}).map(labelFor)};
 }
 
-/* Rules-based feedback. Specific and actionable by construction —
-   every bullet names something concrete from the candidate's own answer. */
 function feedbackFree(q, s){
-  const out=[];
+  const out=[], beh = q.cat==='behavioral';
   if(s.words < q.wc.min){
     out.push('Your answer was <b>'+s.words+' words</b>. For a question like this interviewers expect roughly '+
       q.wc.ideal+'. Short answers read as thin knowledge even when you know the material.');
@@ -870,13 +1032,18 @@ function feedbackFree(q, s){
       q.wc.ideal+' words and then stop talking.');
   }
   s.missed.slice(0,3).forEach(function(g){
-    out.push('You did not mention <b>'+g[0]+'</b>. Interviewers listen for this specifically — it is how they check you understand the underlying concept.');
+    const l=labelFor(g);
+    out.push(beh
+      ? 'Your answer did not clearly include <b>'+l+'</b>. That is one of the four STAR elements, and it is what interviewers are scoring.'
+      : 'You did not mention <b>'+l+'</b>. Interviewers listen for this specifically — it is how they check you understand the underlying concept.');
   });
   if(s.kw>=0.75 && s.cos<0.25){
-    out.push('You used the right terminology but did not connect it into a process. Try walking through it in order — first, then, finally.');
+    out.push(beh
+      ? 'You hit the structure, but the answer stays general. Anchor it to one specific instance with details only you would know.'
+      : 'You used the right terminology but did not connect it into a process. Try walking through it in order — first, then, finally.');
   }
   if(s.kw<0.5 && s.cos>=0.35){
-    out.push('Your reasoning is heading the right direction, but you skipped the vocabulary an interviewer is listening for.');
+    out.push('Your reasoning is heading the right direction, but the answer is missing the pieces an interviewer is listening for.');
   }
   if(s.bonusHit.length){
     out.push('Good instinct mentioning <b>'+s.bonusHit.slice(0,2).join('</b> and <b>')+'</b> — that is above the bar for an intern.');
@@ -885,7 +1052,7 @@ function feedbackFree(q, s){
     out.push('Strong answer. You covered '+s.hitTerms.join(', ')+'.');
   }
   if(!out.length){
-    out.push('You covered '+s.hitTerms.join(', ')+'. To sharpen this, add a concrete example — specifics are what make an answer memorable.');
+    out.push('You covered '+s.hitTerms.join(', ')+'. To sharpen this, add a concrete detail — specifics are what make an answer memorable.');
   }
   return out;
 }
@@ -894,28 +1061,37 @@ function feedbackFree(q, s){
    STATE + ROUTER
    ========================================================================== */
 let STATE = {interview:null};
+let ACT = {};
 
 function careerById(id){ return CAREERS.filter(function(c){return c.id===id;})[0]; }
-function sample(arr,n){
-  const copy=arr.slice();
-  for(let i=copy.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=copy[i];copy[i]=copy[j];copy[j]=t; }
-  return copy.slice(0,n);
+function shuffle(arr){
+  const c=arr.slice();
+  for(let i=c.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=c[i];c[i]=c[j];c[j]=t; }
+  return c;
 }
+function sample(arr,n){ return shuffle(arr).slice(0,n); }
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function go(hash){ if(location.hash===hash) render(); else location.hash=hash; }
 
+/* 2 behavioral + 3 technical, drawn from that career's pools, then INTERLEAVED
+   so the two types alternate the way a real screening call does. Multiple-choice
+   options are shuffled per session so position never signals the answer. */
 function startInterview(careerId){
-  const beh = sample(BEHAVIORAL,2).map(function(q){return Object.assign({},q,{type:'behavioral'});});
-  const tech= sample(TECHNICAL[careerId],3);
-  STATE.interview = {careerId:careerId, qs:beh.concat(tech), i:0, answers:[], done:false};
+  const beh  = sample(BEHAVIORAL[careerId],2);
+  const tech = sample(TECHNICAL[careerId],3);
+  const mixed = shuffle(beh.concat(tech)).map(function(q){
+    return q.type==='mc' ? Object.assign({},q,{opts:shuffle(q.opts)}) : q;
+  });
+  STATE.interview = {careerId:careerId, qs:mixed, i:0, answers:[], done:false};
   go('#/careers/'+careerId+'/interview');
 }
 
 window.addEventListener('hashchange', render);
 
-/* Citation superscript */
+/* Citations link straight to the source page. */
 function cite(id){
-  return '<sup class="cite"><a href="#src-'+id+'" title="'+esc(SOURCES[id].label)+'">['+
+  const s=SOURCES[id];
+  return '<sup class="cite"><a href="'+s.url+'" target="_blank" rel="noopener" title="'+esc(s.label)+'">['+
     (Object.keys(SOURCES).indexOf(id)+1)+']</a></sup>';
 }
 
@@ -1062,93 +1238,82 @@ function viewCareer(c){
   '</div>';
 }
 
-/* ---------------------------------------------------------------- interview */
+/* ------------------------------------------------------- interview (tighter) */
 function viewInterview(c){
   const iv=STATE.interview, q=iv.qs[iv.i], a=iv.answers[iv.i];
-  const isMC = q.type==='behavioral' || q.type==='mc';
-  let h='<div class="wrap" style="padding-top:28px;max-width:820px">';
+  const beh = q.cat==='behavioral';
+  let h='<div class="iv">';
 
-  h+='<div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">'+
-     '<span class="chip">'+(q.type==='behavioral'?'Behavioral':'Technical')+'</span>'+
-     '<span class="muted small">Question '+(iv.i+1)+' of '+iv.qs.length+' &middot; '+c.name+'</span>'+
-     '<button class="btn ghost small" style="margin-left:auto;padding:5px 12px" onclick="quitInterview()">Exit</button></div>';
+  h+='<div class="qhead">'+
+     '<span class="chip'+(beh?' grey':'')+'">'+(beh?'Behavioral':'Technical')+'</span>'+
+     '<span class="muted xs">Question '+(iv.i+1)+' of '+iv.qs.length+' &middot; '+c.name+'</span>'+
+     '<button class="btn ghost sm" style="margin-left:auto" onclick="quitInterview()">Exit</button></div>';
+  h+='<div class="bar"><div style="width:'+(((iv.i+(a?1:0))/iv.qs.length)*100)+'%"></div></div>';
+  h+='<h2 class="q">'+q.prompt+'</h2>';
 
-  h+='<div style="height:4px;background:var(--line);border-radius:9px;margin-bottom:26px">'+
-     '<div style="height:4px;width:'+(((iv.i+(a?1:0))/iv.qs.length)*100)+'%;background:var(--royal);border-radius:9px;transition:width .25s"></div></div>';
-
-  h+='<h2 style="font-size:1.35rem;line-height:1.4">'+q.prompt+'</h2>';
-
-  if(isMC){
-    const opts = q.opts;
-    h+='<div style="margin:20px 0">'+opts.map(function(o,idx){
-      let cls='card', extra='', mark='';
+  if(q.type==='mc'){
+    h+=q.opts.map(function(o,idx){
+      let style='';
       if(a){
-        const good = q.type==='behavioral' ? (o.q==='strong') : (o.c===true);
-        const picked = a.given===idx;
-        if(good){ cls+=' '; extra='border-color:var(--ok);background:var(--ok-soft)'; mark='<span class="chip ok" style="margin-left:8px">Best answer</span>'; }
-        else if(picked){ extra='border-color:var(--bad);background:var(--bad-soft)'; mark='<span class="chip bad" style="margin-left:8px">You picked this</span>'; }
-        else { extra='opacity:.72'; }
+        if(o.c===true) style='border-color:var(--ok);background:var(--ok-soft)';
+        else if(a.given===idx) style='border-color:var(--bad);background:var(--bad-soft)';
+        else style='opacity:.66';
       }
-      return '<div class="'+cls+'" style="padding:16px;margin-bottom:10px;'+extra+'" '+
-        (a?'':'onclick="submitMC('+idx+')" style="padding:16px;margin-bottom:10px;cursor:pointer"')+'>'+
-        (a?'':'')+'<div>'+o.t+mark+'</div>'+
-        (a?'<div class="small muted" style="margin-top:9px;border-top:1px solid var(--line);padding-top:9px">'+o.w+'</div>':'')+
-        '</div>';
-    }).join('')+'</div>';
-    if(!a) h+='<p class="muted small">Pick the strongest answer.</p>';
-  } else {
-    if(!a){
-      h+='<textarea id="ans" rows="8" style="width:100%;padding:14px;border:1px solid var(--line);'+
-         'border-radius:8px;font:inherit;resize:vertical" placeholder="Type your answer as if you were speaking it out loud..." '+
-         'oninput="document.getElementById(\'wc\').textContent=this.value.trim().split(/\\s+/).filter(Boolean).length+\' words\';'+
-         'document.getElementById(\'sub\').disabled=this.value.trim().length<3"></textarea>'+
-         '<div style="display:flex;align-items:center;gap:14px;margin-top:12px">'+
-         '<button class="btn" id="sub" disabled onclick="submitFree()">Submit answer</button>'+
-         '<span class="muted small" id="wc">0 words</span>'+
-         '<span class="muted small" style="margin-left:auto">Target: about '+q.wc.ideal+' words</span></div>';
-    } else {
-      const s=a.score;
-      const bandChip = s.band==='strong'?'<span class="chip ok">Strong</span>':
-                       s.band==='developing'?'<span class="chip warn">Developing</span>':
-                       '<span class="chip bad">Needs work</span>';
-      h+='<div style="margin:18px 0 8px">'+bandChip+
-         '<span class="muted small" style="margin-left:10px">'+s.words+' words &middot; '+
-         Math.round(s.kw*100)+'% of key concepts &middot; '+Math.round(s.cos*100)+'% similarity to model answer</span></div>';
-      h+='<div class="card" style="padding:18px;margin-bottom:16px"><h4>Feedback</h4><ul class="ul" style="margin:0">'+
-         feedbackFree(q,s).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul></div>';
-      h+='<div class="grid2" style="grid-template-columns:1fr 1fr;gap:16px">'+
-         '<div class="card" style="padding:18px"><h4 class="muted">Your answer</h4><p style="margin:0;white-space:pre-wrap">'+esc(a.given)+'</p></div>'+
-         '<div class="card" style="padding:18px;border-color:var(--royal)"><h4 style="color:var(--navy)">A strong answer</h4><p style="margin:0">'+q.model+'</p></div>'+
-         '</div>';
-      h+='<div class="callout blue" style="font-size:.9rem"><b>Tip.</b> '+q.hint+'</div>';
-    }
+      return '<div class="opt'+(a?' locked':'')+'" style="'+style+'"'+
+        (a?'':' onclick="submitMC('+idx+')"')+'>'+o.t+
+        (a&&o.c===true?' <span class="chip ok" style="margin-left:6px">Best answer</span>':'')+
+        (a&&a.given===idx&&o.c!==true?' <span class="chip bad" style="margin-left:6px">You picked this</span>':'')+
+        (a?'<div class="why">'+o.w+'</div>':'')+'</div>';
+    }).join('');
+    if(!a) h+='<p class="muted xs" style="margin-top:10px">Pick the strongest answer.</p>';
+    else   h+='<div class="callout blue tip"><b>Takeaway.</b> '+q.takeaway+'</div>';
+  }
+  else if(!a){
+    h+='<textarea id="ans" rows="9" placeholder="'+(beh
+        ? 'Answer out loud the way you would in the room. Situation, what you did, and how it turned out.'
+        : 'Type your answer as if you were speaking it out loud...')+'" '+
+       'oninput="document.getElementById(\'wc\').textContent=this.value.trim().split(/\\s+/).filter(Boolean).length+\' words\';'+
+       'document.getElementById(\'sub\').disabled=this.value.trim().length<3"></textarea>'+
+       '<div class="meta"><button class="btn" id="sub" disabled onclick="submitFree()">Submit answer</button>'+
+       '<span class="muted" id="wc">0 words</span>'+
+       '<span class="muted" style="margin-left:auto">Target: about '+q.wc.ideal+' words</span></div>'+
+       (beh?'<p class="muted xs" style="margin-top:10px">Interviewers score these on STAR: the <b>S</b>ituation, '+
+            'the <b>T</b>ask, the <b>A</b>ction you took, and the <b>R</b>esult. The result is the one people skip.</p>':'');
+  }
+  else {
+    const s=a.score;
+    const chip = s.band==='strong'?'<span class="chip ok">Strong</span>':
+                 s.band==='developing'?'<span class="chip warn">Developing</span>':
+                 '<span class="chip bad">Needs work</span>';
+    h+='<div style="margin:4px 0 2px">'+chip+'<span class="muted xs" style="margin-left:8px">'+
+       s.words+' words &middot; '+Math.round(s.kw*100)+'% of key elements &middot; '+
+       Math.round(s.cos*100)+'% similarity to model</span></div>';
+    h+='<div class="card fb"><h4 style="margin-bottom:7px">Feedback</h4><ul>'+
+       feedbackFree(q,s).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul></div>';
+    h+='<div class="cmp"><div class="card"><h4>Your answer</h4><div style="white-space:pre-wrap">'+esc(a.given)+'</div></div>'+
+       '<div class="card" style="border-color:var(--royal)"><h4 style="color:var(--navy)">A strong answer</h4><div>'+q.model+'</div></div></div>';
+    h+='<div class="callout blue tip"><b>Tip.</b> '+q.hint+'</div>';
   }
 
-  if(a && isMC){
-    h+='<div class="callout blue"><b>Takeaway.</b> '+q.takeaway+'</div>';
-  }
-  if(a){
-    h+='<div class="cta" style="margin-top:20px"><button class="btn lg" onclick="nextQ()">'+
-       (iv.i+1<iv.qs.length?'Next question &rarr;':'See your summary &rarr;')+'</button></div>';
-  }
+  if(a) h+='<div class="cta" style="margin-top:16px"><button class="btn" onclick="nextQ()">'+
+           (iv.i+1<iv.qs.length?'Next question &rarr;':'See your summary &rarr;')+'</button></div>';
   return h+'</div>';
 }
 
 function submitMC(idx){
   const iv=STATE.interview, q=iv.qs[iv.i];
-  const correct = q.type==='behavioral' ? (q.opts[idx].q==='strong') : (q.opts[idx].c===true);
-  iv.answers[iv.i]={type:q.type, given:idx, correct:correct};
-  render(); window.scrollTo(0,0);
+  iv.answers[iv.i]={type:'mc', cat:q.cat, given:idx, correct:q.opts[idx].c===true};
+  render();
 }
 function submitFree(){
   const iv=STATE.interview, q=iv.qs[iv.i];
   const txt=document.getElementById('ans').value;
-  iv.answers[iv.i]={type:'free', given:txt, score:scoreFree(q,txt)};
-  render(); window.scrollTo(0,0);
+  iv.answers[iv.i]={type:'free', cat:q.cat, given:txt, score:scoreFree(q,txt)};
+  render();
 }
 function nextQ(){
   const iv=STATE.interview;
-  if(iv.i+1<iv.qs.length){ iv.i++; render(); window.scrollTo(0,0); }
+  if(iv.i+1<iv.qs.length){ iv.i++; render(); }
   else { iv.done=true; go('#/careers/'+iv.careerId+'/summary'); }
 }
 function quitInterview(){
@@ -1160,228 +1325,367 @@ function quitInterview(){
 /* ------------------------------------------------------------------ summary */
 function viewSummary(c){
   const iv=STATE.interview;
-  let strong=0, shortAns=0, behWrong=0;
+  let strong=0, shortAns=0, behMissedResult=0, freeCount=0;
   iv.answers.forEach(function(a,i){
     const q=iv.qs[i];
-    if(a.type==='free'){ if(a.score.band==='strong') strong++; if(a.score.words<q.wc.min) shortAns++; }
-    else { if(a.correct) strong++; else if(q.type==='behavioral') behWrong++; }
+    if(a.type==='free'){ freeCount++;
+      if(a.score.band==='strong') strong++;
+      if(a.score.words<q.wc.min) shortAns++;
+      if(q.cat==='behavioral' && a.score.missed.some(function(g){return g===BEH_REQ.result;})) behMissedResult++;
+    } else if(a.correct) strong++;
   });
 
-  let pattern='';
-  if(shortAns>=2) pattern='Your written answers were consistently short. Length is not the point in itself, but interviewers read brevity as uncertainty — aim to give the reasoning, not just the conclusion.';
-  else if(behWrong>=2) pattern='Both behavioral questions tripped you up. Look back at the model answers: the pattern is that strong answers always land a specific, concrete result.';
-  else if(strong>=4) pattern='You are in good shape on this track. Run it again — the questions are drawn from a larger pool, so you will get a different set.';
+  let pattern;
+  if(shortAns>=2) pattern='Your written answers were consistently short. Length is not the point in itself, but interviewers read brevity as uncertainty — give the reasoning, not just the conclusion.';
+  else if(behMissedResult>=2) pattern='Your behavioral answers described the situation but did not land a concrete result. That is the single most common weakness in entry-level interviews, and it is the easiest one to fix.';
+  else if(strong>=4) pattern='You are in good shape on this track. Run it again — questions are drawn from a larger pool, so you will get a different set.';
   else pattern='A mixed result, which is normal the first time. Work through the model answers, then run it again with a fresh set of questions.';
 
-  let h='<div class="wrap" style="padding-top:32px;max-width:900px">'+
+  let h='<div class="iv" style="max-width:820px">'+
     '<span class="chip">Interview complete</span>'+
-    '<h1 style="margin-top:12px;color:var(--navy)">'+c.name+' — mock interview</h1>'+
-    '<p class="lede muted">'+strong+' of '+iv.qs.length+' answers rated strong. '+
-    'Two behavioral, three technical.</p>'+
+    '<h1 style="margin-top:12px;font-size:1.7rem;color:var(--navy)">'+c.name+' — mock interview</h1>'+
+    '<p class="muted" style="margin-bottom:14px">'+strong+' of '+iv.qs.length+' answers rated strong. '+
+    'Two behavioral, three technical, drawn at random from this role’s question pools.</p>'+
     '<div class="callout blue"><b>What to work on.</b> '+pattern+'</div>';
 
   iv.answers.forEach(function(a,i){
     const q=iv.qs[i];
-    h+='<div class="card" style="padding:20px;margin-bottom:14px">'+
-       '<div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">'+
-       '<span class="chip">'+(q.type==='behavioral'?'Behavioral':'Technical')+'</span>';
+    h+='<div class="card" style="padding:16px;margin-bottom:12px">'+
+       '<div style="display:flex;gap:8px;align-items:center;margin-bottom:7px">'+
+       '<span class="chip'+(q.cat==='behavioral'?' grey':'')+'">'+(q.cat==='behavioral'?'Behavioral':'Technical')+'</span>';
     if(a.type==='free'){
       h+= a.score.band==='strong'?'<span class="chip ok">Strong</span>':
           a.score.band==='developing'?'<span class="chip warn">Developing</span>':'<span class="chip bad">Needs work</span>';
-    } else {
-      h+= a.correct?'<span class="chip ok">Correct</span>':'<span class="chip bad">Missed</span>';
-    }
-    h+='</div><h4>'+q.prompt+'</h4>';
+    } else h+= a.correct?'<span class="chip ok">Correct</span>':'<span class="chip bad">Missed</span>';
+    h+='</div><h4 style="margin-bottom:9px">'+q.prompt+'</h4>';
+
     if(a.type==='free'){
-      h+='<p class="small muted" style="margin:0 0 4px"><b>YOUR ANSWER ('+a.score.words+' words)</b></p>'+
-         '<p style="white-space:pre-wrap">'+esc(a.given)+'</p>'+
-         '<p class="small muted" style="margin:0 0 4px"><b>FEEDBACK</b></p><ul class="ul small">'+
+      h+='<p class="xs muted" style="margin:0 0 3px"><b>YOUR ANSWER ('+a.score.words+' words)</b></p>'+
+         '<p class="small" style="white-space:pre-wrap">'+esc(a.given)+'</p>'+
+         '<p class="xs muted" style="margin:0 0 3px"><b>FEEDBACK</b></p><ul class="ul small">'+
          feedbackFree(q,a.score).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul>'+
-         '<p class="small muted" style="margin:12px 0 4px"><b>A STRONG ANSWER</b></p><p class="small">'+q.model+'</p>';
+         '<p class="xs muted" style="margin:12px 0 3px"><b>A STRONG ANSWER</b></p><p class="small">'+q.model+'</p>';
     } else {
-      const best = q.opts.filter(function(o){return q.type==='behavioral'?o.q==='strong':o.c===true;})[0];
-      h+='<p class="small muted" style="margin:0 0 4px"><b>YOU PICKED</b></p><p class="small">'+q.opts[a.given].t+'</p>';
-      if(!a.correct){ h+='<p class="small muted" style="margin:10px 0 4px"><b>BEST ANSWER</b></p><p class="small">'+best.t+'</p>'; }
-      h+='<p class="small" style="margin-top:10px;color:var(--navy)"><b>Why:</b> '+best.w+'</p>';
+      const best=q.opts.filter(function(o){return o.c===true;})[0];
+      h+='<p class="xs muted" style="margin:0 0 3px"><b>YOU PICKED</b></p><p class="small">'+q.opts[a.given].t+'</p>';
+      if(!a.correct) h+='<p class="xs muted" style="margin:9px 0 3px"><b>BEST ANSWER</b></p><p class="small">'+best.t+'</p>';
+      h+='<p class="small" style="margin-top:9px;color:var(--navy)"><b>Why:</b> '+best.w+'</p>';
     }
     h+='</div>';
   });
 
-  h+='<div class="cta" style="margin:24px 0 40px">'+
-     '<button class="btn lg" onclick="startInterview(\''+c.id+'\')">Try again with new questions</button>'+
-     '<button class="btn lg ghost" onclick="go(\'#/careers/'+c.id+'\')">Back to '+c.short+'</button>'+
-     '<button class="btn lg ghost" onclick="go(\'#/\')">Explore another career</button></div>';
+  h+='<div class="cta" style="margin:20px 0 40px">'+
+     '<button class="btn" onclick="startInterview(\''+c.id+'\')">Try again with new questions</button>'+
+     '<button class="btn ghost" onclick="go(\'#/careers/'+c.id+'\')">Back to '+c.short+'</button>'+
+     '<button class="btn ghost" onclick="go(\'#/\')">Explore another career</button></div>';
   return h+'</div>';
 }
 
 /* ============================================================================
    ACTIVITIES — one per career, deliberately different in interaction type.
-   Unscored by design: these exist to show what the work feels like.
+   v2: the data and security activities now require the user to FIND the
+   problems themselves rather than pressing a button that fixes everything.
    ========================================================================== */
-let ACT = {};
 function resetAct(){ ACT={}; render(); }
-function actShell(c, title, blurb, body, debrief){
+function actShell(c, title, blurb, stages, body, debrief){
   return '<div class="wrap" style="padding-top:28px;max-width:900px">'+
-    '<button class="btn ghost small" style="padding:5px 12px" onclick="go(\'#/careers/'+c.id+'\')">&larr; '+c.short+'</button>'+
+    '<button class="btn ghost sm" onclick="go(\'#/careers/'+c.id+'\')">&larr; '+c.short+'</button>'+
     '<h1 style="margin-top:16px;color:var(--navy)">'+title+'</h1>'+
-    '<p class="lede muted" style="max-width:65ch">'+blurb+'</p>'+ body +
-    (debrief?'<div class="callout blue" style="margin-top:22px"><b>What this tells you about the job.</b> '+debrief+'</div>':'')+
+    '<p class="muted" style="max-width:66ch;font-size:1.05rem">'+blurb+'</p>'+
+    (stages||'')+ body +
+    (debrief?'<div class="callout good" style="margin-top:22px"><b>What this tells you about the job.</b> '+debrief+'</div>':'')+
     '<div class="cta" style="margin:22px 0 40px">'+
     '<button class="btn ghost" onclick="resetAct()">Start over</button>'+
     '<button class="btn" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role &rarr;</button></div></div>';
 }
+function stageBar(labels, cur){
+  return '<div class="stage">'+labels.map(function(l,i){
+    return '<div class="'+(i<cur?'done':(i===cur?'on':''))+'">'+(i<cur?'✓ ':'')+(i+1)+'. '+l+'</div>';}).join('')+'</div>';
+}
 
-/* ---- 1. Data Analytics: Dirty Data Cleanup ---- */
-const RAWROWS=[
- ['1001','3/4/26','Acme Corp','12','1,440'],['1002','2026-03-05','Bright LLC','8','960'],
- ['1003','Mar 6 2026','Cobalt Inc','N/A','300'],['1004','3/7/26','Delta Co','15','1,800'],
- ['1004','3/7/26','Delta Co','15','1,800'],['1005','2026-03-08','Echo Ltd','','420'],
- ['1006','Mar 9 2026','Foxtrot','9999','1,100'],['1007','3/10/26','Gamma Group','7','840'],
- ['1008','2026-03-11','Helio SA','NULL','520'],['1009','3/12/26','Iris Partners','11','1,320'],
- ['1009','3/12/26','Iris Partners','11','1,320'],['1010','Mar 13 2026','Juno Co','6','720']];
-function fixToggle(k){ ACT[k]=!ACT[k]; render(); }
+/* ---- 1. Data Analytics: Audit the Extract (find the problems yourself) ---- */
+const DROWS=[
+ ['1001','2026-03-04','Acme Corp','12','1,440'],
+ ['1002','2026-03-05','Bright LLC','8','960'],
+ ['1003','Mar 6 2026','Cobalt Inc','N/A','300'],
+ ['1004','3/7/26','Delta Co','15','1,800'],
+ ['1004','3/7/26','Delta Co','15','1,800'],
+ ['1005','2026-03-08','Echo Ltd','','420'],
+ ['1006','Mar 9 2026','Foxtrot Ltd','9999','1,100'],
+ ['1007','2026-03-10','Gamma Group','7','840'],
+ ['1008','2026-03-11','Helio SA','NULL','520'],
+ ['1009','2026-03-12','Iris Partners','11','1,320'],
+ ['1009','2026-03-12','Iris Partners','11','1,320'],
+ ['1010','2026-03-13','Juno Co','6','720']];
+const DISSUES={
+ '2,1':'Date is written as "Mar 6 2026" while most rows use ISO format. Mixed formats break sorting and date maths.',
+ '3,1':'Date is written as "3/7/26" — a third format, and ambiguous between US and international conventions.',
+ '6,1':'Another non-ISO date format. Three different formats in one column.',
+ '2,3':'Quantity is the string "N/A" rather than a null. Three different placeholders are used in this column.',
+ '5,3':'Quantity is an empty string. Same missing value, encoded differently again.',
+ '8,3':'Quantity is the literal text "NULL". A third encoding of the same missing value.',
+ '6,3':'9,999 units against $1,100 of revenue is impossible given every other row. This is an outlier or a data-entry error.',
+ '4,0':'Order 1004 appears twice. Order IDs should be unique — this row is a duplicate.',
+ '10,0':'Order 1009 appears twice. Another duplicate row.'};
+function flagCell(r,cc){ if(ACT.checked) return; const k=r+','+cc; ACT.f=ACT.f||{}; ACT.f[k]=!ACT.f[k]; render(); }
+function checkData(){ ACT.checked=true; render(); }
+function fixPick(n,v){ ACT['fix'+n]=v; render(); }
+const DFIX=[
+ {q:'Two order IDs appear twice, with every field identical. What do you do?',
+  o:[['Delete both copies of each duplicated order',false,'That throws away a real order along with the duplicate. You would understate revenue.'],
+     ['Keep one copy of each and document that you deduplicated',true,'Correct. Order ID should be unique, so one row is the record and one is an artifact. Documenting it matters because your totals will not match the raw extract.'],
+     ['Leave them — they might be two genuine separate orders',false,'Possible in principle, but identical IDs, dates, customers and amounts point to an export artifact. Worth one question to the source owner, not worth keeping as-is.'],
+     ['Sum them together into a single row with double quantity',false,'This invents an order that does not exist and doubles the quantity.']]},
+ {q:'One row shows a quantity of 9,999 against $1,100 in revenue. What do you do?',
+  o:[['Delete the row so it does not distort the average',false,'Silently deleting inconvenient rows is how analyses become wrong. If it is real, you have just hidden something important.'],
+     ['Replace it with the average quantity of the other rows',false,'Imputing over a value you have not investigated fabricates data and hides the underlying problem.'],
+     ['Flag it, exclude it from the headline number, and ask the source owner',true,'Correct. You do not yet know whether it is a typo, a bulk order, or a broken feed. Flag, isolate, and go ask — then decide.'],
+     ['Cap it at the highest plausible value and move on',false,'Winsorising has legitimate uses, but applying it before you know the cause is a guess dressed up as a method.']]},
+ {q:'Four rows are missing a quantity, encoded three different ways. What do you do first?',
+  o:[['Fill them all with zero',false,'Zero is a real quantity and means something different from unknown. This corrupts every downstream sum and average.'],
+     ['Drop those rows from the analysis',false,'Defensible only after you know why they are missing. Drop them blind and you may be removing one region or one channel entirely.'],
+     ['Find out whether the missing rows share anything in common',true,'Correct. Whether the missingness is random or systematic changes the right fix entirely. Check before you choose a treatment.'],
+     ['Fill them with the column average so the totals still work',false,'Imputation may end up being right, but choosing it before diagnosing the pattern is backwards.']]}];
 function actData(c){
-  const f=ACT;
-  let rows=RAWROWS.map(function(r){return r.slice();});
-  if(f.dupes){ const seen={}; rows=rows.filter(function(r){ if(seen[r[0]])return false; seen[r[0]]=1; return true; }); }
-  if(f.dates) rows=rows.map(function(r){
-    let d=r[1];
-    if(/^\d\/\d+\/\d\d$/.test(d)){ const p=d.split('/'); d='2026-0'+p[0]+'-'+(p[1].length<2?'0':'')+p[1]; }
-    else if(/^Mar/.test(d)){ const p=d.split(' '); d='2026-03-'+(p[1].length<2?'0':'')+p[1]; }
-    r[1]=d; return r; });
-  if(f.nulls) rows=rows.map(function(r){ if(r[3]===''||r[3]==='N/A'||r[3]==='NULL') r[3]='—'; return r; });
-  const done=['dupes','dates','nulls','outlier'].filter(function(k){return f[k];}).length;
-  const pct=Math.round(done/4*100);
+  const f=ACT.f||{}, checked=ACT.checked;
+  const keys=Object.keys(DISSUES);
+  const flagged=Object.keys(f).filter(function(k){return f[k];});
+  const hits=flagged.filter(function(k){return DISSUES[k];});
+  const fps=flagged.filter(function(k){return !DISSUES[k];});
+  const missed=keys.filter(function(k){return !f[k];});
+  const stage = !checked?0:(ACT.fix0===undefined||ACT.fix1===undefined||ACT.fix2===undefined?1:2);
 
-  let body='<div class="card" style="padding:18px;margin:20px 0">'+
-    '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">'+
-    [['dupes','Remove duplicates'],['dates','Standardize dates'],['nulls','Normalize nulls'],['outlier','Flag outliers']]
-      .map(function(b){return '<button class="btn '+(f[b[0]]?'':'ghost')+'" style="padding:7px 14px;font-size:.88rem" onclick="fixToggle(\''+b[0]+'\')">'+
-        (f[b[0]]?'✓ ':'')+b[1]+'</button>';}).join('')+'</div>'+
-    '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">'+
-      '<span class="small muted" style="min-width:96px">Data quality</span>'+
-      '<div style="flex:1;height:9px;background:var(--line);border-radius:9px">'+
-      '<div style="height:9px;width:'+pct+'%;background:'+(pct===100?'var(--ok)':'var(--warn)')+';border-radius:9px;transition:width .3s"></div></div>'+
-      '<b style="min-width:44px;text-align:right">'+pct+'%</b></div>'+
-    '<table class="pay" style="font-size:.88rem"><tr><td><b>Order</b></td><td style="text-align:left"><b>Date</b></td>'+
-      '<td style="text-align:left"><b>Customer</b></td><td><b>Qty</b></td><td><b>Revenue</b></td></tr>'+
-    rows.map(function(r){
-      const isOut = f.outlier && r[3]==='9999';
-      return '<tr'+(isOut?' style="background:var(--bad-soft)"':'')+'><td class="muted" style="text-align:left">'+r[0]+'</td>'+
-        '<td style="text-align:left;font-weight:400">'+r[1]+'</td><td style="text-align:left;font-weight:400">'+r[2]+'</td>'+
-        '<td>'+r[3]+(isOut?' ⚠︎':'')+'</td><td>'+r[4]+'</td></tr>';}).join('')+'</table>'+
-    '<p class="small muted" style="margin:14px 0 0">'+rows.length+' rows'+
-      (f.dupes?' (2 duplicates removed)':'')+(f.outlier?' · 1 outlier flagged for review':'')+'</p></div>';
+  let body='<div class="card" style="padding:18px;margin:6px 0 18px">'+
+    '<table class="gridtbl"><tr><th>Order</th><th>Date</th><th>Customer</th><th>Qty</th><th>Revenue</th></tr>'+
+    DROWS.map(function(row,ri){
+      return '<tr>'+row.map(function(v,ci){
+        const k=ri+','+ci, isIssue=!!DISSUES[k], on=!!f[k];
+        let cls='cell'+(checked?' locked':'');
+        if(!checked && on) cls+=' flag';
+        if(checked){ if(isIssue&&on) cls+=' hit'; else if(isIssue&&!on) cls+=' miss'; else if(on) cls+=' fp'; }
+        return '<td><div class="'+cls+'"'+(checked?'':' onclick="flagCell('+ri+','+ci+')"')+
+          (checked&&DISSUES[k]?' title="'+esc(DISSUES[k])+'"':'')+'>'+(v===''?'&nbsp;':esc(v))+'</div></td>';
+      }).join('')+'</tr>';}).join('')+'</table>';
 
-  const debrief = pct===100 ? 'You just did the part of the job nobody puts on a job posting. Analysts routinely spend 60&ndash;80% of their time finding and fixing data before any analysis happens. Notice that none of the four fixes was obvious from the data alone — you had to know what "clean" meant for this business first. That is why analysts who understand the business are more valuable than analysts who only know the tools.' : '';
-  return actShell(c,'Dirty Data Cleanup',
-    'Here is a sales extract, straight out of the source system. Before you can answer any question with it, you have to make it trustworthy. Work through the four issues.',
-    body, debrief);
-}
+  if(!checked){
+    body+='<div style="display:flex;align-items:center;gap:14px;margin-top:14px">'+
+      '<button class="btn" onclick="checkData()"'+(flagged.length?'':' disabled')+'>Check my work</button>'+
+      '<span class="muted small">'+flagged.length+' cell'+(flagged.length===1?'':'s')+' flagged</span>'+
+      '<span class="muted xs" style="margin-left:auto">Click any cell you think is a problem.</span></div>';
+  } else {
+    body+='<div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">'+
+      '<span class="chip ok">'+hits.length+' of '+keys.length+' found</span>'+
+      (missed.length?'<span class="chip bad">'+missed.length+' missed</span>':'')+
+      (fps.length?'<span class="chip warn">'+fps.length+' false positive'+(fps.length===1?'':'s')+'</span>':'')+'</div>'+
+      '<ul class="ul small" style="margin-top:12px">'+
+      keys.map(function(k){
+        return '<li'+(f[k]?'':' style="color:var(--bad)"')+'><b>'+(f[k]?'Found':'Missed')+':</b> '+DISSUES[k]+'</li>';
+      }).join('')+'</ul>';
+  }
+  body+='</div>';
 
-/* ---- 2. Cybersecurity: Phishing Triage ---- */
-const EMAILS=[
- {from:'IT Support <helpdesk@byu-secure.net>', subj:'URGENT: Your account will be disabled in 24 hours',
-  body:'We detected unusual activity. Verify your credentials immediately or your account will be permanently disabled. <u>byu.edu/verify</u>',
-  phish:true, tells:['Lookalike domain: byu-secure.net is not byu.edu','Manufactured urgency with a 24-hour deadline','Link text says byu.edu but the actual href points elsewhere','Generic sender name, no individual identified']},
- {from:'Sarah Chen <schen@qualtrics.com>', subj:'Re: Internship offer — paperwork',
-  body:'Hi! Great talking yesterday. HR will send the formal packet through Workday tomorrow. Let me know if you have questions before then.',
-  phish:false, tells:['Named individual at a domain matching the company','References a specific prior conversation','No link, no attachment, no request for credentials','Routes you to an official internal system rather than an external form']},
- {from:'DocuSign <no-reply@docu-sign-secure.com>', subj:'You have a document to sign',
-  body:'Click below to review and sign. Document expires in 48 hours. <u>Review Document</u>',
-  phish:true, tells:['docu-sign-secure.com is not docusign.com','Expiry pressure is a standard phishing lever','No context about what the document is or who sent it','Generic greeting with no recipient name']},
- {from:'BYU Marriott Careers <careers@byu.edu>', subj:'STEM Fair, September 17 — employer list posted',
-  body:'The employer list for the fall STEM Fair is now available on Handshake. Registration closes September 15.',
-  phish:false, tells:['Legitimate byu.edu domain','No credential request and no urgency','Directs you to a known platform you already use','Content matches a real, verifiable event']},
- {from:'Payroll <payroll@byu.edu>', subj:'Action required: update your direct deposit',
-  body:'Our records show your direct deposit information is out of date. Please reply to this message with your bank routing and account number so we can correct it before the next pay period.',
-  phish:true, tells:['Legitimate-looking domain can still be spoofed — check the actual header, not the display name','Never send bank details by email reply; real payroll systems use a self-service portal','Reply-to address differs from the displayed sender','Requesting financial data over email is the tell, regardless of domain']},
- {from:'GitHub <noreply@github.com>', subj:'A new SSH key was added to your account',
-  body:'If you did not add this key, review your account security settings. This is an automated notification.',
-  phish:false, tells:['Legitimate github.com domain','Alarming subject, but it is a genuine security notification','Does not ask for credentials — it tells you to check settings yourself','This is exactly the kind of real alert that gets wrongly reported as phishing']}];
-function markMail(i,guess){ ACT['m'+i]=guess; render(); }
-function actPhish(c){
-  const answered=EMAILS.filter(function(e,i){return ACT['m'+i]!==undefined;}).length;
-  const all=answered===EMAILS.length;
-  let correct=0; EMAILS.forEach(function(e,i){ if(ACT['m'+i]===e.phish) correct++; });
+  if(checked){
+    body+='<h3>Now decide what to do about them</h3>'+
+      '<p class="muted small">Finding problems is the easy half. Choosing the fix is where analysts actually differ.</p>'+
+      DFIX.map(function(fx,n){
+        const pick=ACT['fix'+n];
+        return '<div class="card" style="padding:16px;margin-bottom:12px"><h4>'+fx.q+'</h4>'+
+          fx.o.map(function(o,oi){
+            let st='';
+            if(pick!==undefined){ if(o[1]) st='border-color:var(--ok);background:var(--ok-soft)';
+              else if(pick===oi) st='border-color:var(--bad);background:var(--bad-soft)'; else st='opacity:.66'; }
+            return '<div class="opt'+(pick!==undefined?' locked':'')+'" style="'+st+'"'+
+              (pick===undefined?' onclick="fixPick('+n+','+oi+')"':'')+'>'+o[0]+
+              (pick!==undefined?'<div class="why">'+o[2]+'</div>':'')+'</div>';
+          }).join('')+'</div>';
+      }).join('');
+  }
 
-  let body='<div style="margin:20px 0">'+EMAILS.map(function(e,i){
-    const g=ACT['m'+i], shown=g!==undefined;
-    const right = g===e.phish;
-    return '<div class="card" style="padding:18px;margin-bottom:12px;'+
-      (shown?(right?'border-color:var(--ok)':'border-color:var(--bad)'):'')+'">'+
-      '<div class="small muted">From: <b style="color:var(--ink)">'+esc(e.from)+'</b></div>'+
-      '<div style="font-weight:600;margin:4px 0 8px">'+esc(e.subj)+'</div>'+
-      '<div class="small" style="color:var(--muted)">'+e.body+'</div>'+
-      (shown?
-        '<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">'+
-        (right?'<span class="chip ok">Correct — '+(e.phish?'phishing':'legitimate')+'</span>':
-               '<span class="chip bad">Missed — this one is '+(e.phish?'phishing':'legitimate')+'</span>')+
-        '<ul class="ul small" style="margin:10px 0 0">'+e.tells.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div>'
-        :
-        '<div style="margin-top:12px;display:flex;gap:8px">'+
-        '<button class="btn" style="padding:6px 14px;font-size:.85rem" onclick="markMail('+i+',true)">Phishing</button>'+
-        '<button class="btn ghost" style="padding:6px 14px;font-size:.85rem" onclick="markMail('+i+',false)">Legitimate</button></div>')+
-      '</div>';}).join('')+'</div>';
-
-  if(!all) body='<p class="chip" style="margin-bottom:8px">'+answered+' of '+EMAILS.length+' triaged</p>'+body;
-  else body='<div class="callout '+(correct>=5?'blue':'')+'" style="margin-bottom:18px"><b>'+correct+' of 6 correct.</b> '+
-      (correct===6?'Clean sweep.':'Two of the six were legitimate — including one that looks alarming but is fine.')+'</div>'+body;
-
-  return actShell(c,'Phishing Triage',
-    'Six messages reported by employees are sitting in your queue. Mark each one. This is genuinely a first-week task — analysts triage user-reported phishing every single day.',
+  return actShell(c,'Audit the Extract',
+    'A sales extract just landed from the source system. Before anyone can answer a question with it, someone has to establish whether it can be trusted. That someone is you. Find every problem in this table.',
+    stageBar(['Find the problems','Decide the fixes','Debrief'], stage),
     body,
-    all?'False positives cost real money. If you quarantine the legitimate GitHub alert and the real recruiter email, you break trust in the security team and people stop reporting anything at all. The skill is not paranoia — it is calibration. Notice that the hardest one was the payroll email from a legitimate domain: the request itself was the tell, not the sender.':'');
+    stage===2?('You found '+hits.length+' of '+keys.length+' problems'+(fps.length?', with '+fps.length+' false positive'+(fps.length===1?'':'s'):'')+
+      '. Notice that nothing in this table was labelled as wrong — you had to know what "clean" meant for this business before you could see it. That is why analysts who understand the business outperform analysts who only know the tools. Also notice that every one of the three fixes had a defensible-sounding wrong answer. Deleting the outlier, zero-filling the nulls, and dropping the duplicates all produce a tidy table and a wrong number.'):'');
 }
 
-/* ---- 3. IT Project Manager: Scope Triage ---- */
+/* ---- 2. Cybersecurity: three-stage investigation ---- */
+const EMAILS=[
+ {from:'IT Support &lt;helpdesk@byu-secure.net&gt;', subj:'URGENT: Your account will be disabled in 24 hours',
+  body:'We detected unusual activity. Verify your credentials immediately or your account will be permanently disabled. <u>byu.edu/verify</u>',
+  phish:true, tells:['Lookalike domain: byu-secure.net is not byu.edu','Manufactured urgency with a 24-hour deadline','Link text reads byu.edu but the href points somewhere else','Generic sender, no individual named']},
+ {from:'GitHub &lt;noreply@github.com&gt;', subj:'A new SSH key was added to your account',
+  body:'If you did not add this key, review your account security settings. This is an automated notification.',
+  phish:false, tells:['Legitimate github.com domain','Alarming subject, but it is a real security notification','Does not ask for credentials — it tells you to check your own settings','Exactly the kind of real alert that gets wrongly reported as phishing']},
+ {from:'Payroll &lt;payroll@byu.edu&gt;', subj:'Action required: update your direct deposit',
+  body:'Our records show your direct deposit information is out of date. Please reply to this message with your bank routing and account number so we can correct it before the next pay period.',
+  phish:true, tells:['A legitimate-looking domain can still be spoofed — check the header, not the display name','Real payroll systems never collect bank details by email reply','The reply-to address differs from the displayed sender','Requesting financial data over email is the tell, regardless of the domain']},
+ {from:'Sarah Chen &lt;schen@qualtrics.com&gt;', subj:'Re: Internship offer — paperwork',
+  body:'Hi! Great talking yesterday. HR will send the formal packet through Workday tomorrow. Let me know if you have questions before then.',
+  phish:false, tells:['Named individual at a domain matching the company','References a specific prior conversation','No link, no attachment, no credential request','Routes you to an official internal system rather than an external form']}];
+const LOGS=[
+ {t:'08:14:02  auth OK        user=jsmith  src=128.187.14.22   mfa=yes', bad:false, why:'Normal working-hours login from a campus address with MFA.'},
+ {t:'08:15:44  auth OK        user=mchen   src=128.187.14.51   mfa=yes', bad:false, why:'Normal login.'},
+ {t:'02:41:09  auth FAIL      user=jsmith  src=45.155.204.19   attempts=47/60s', bad:true, why:'47 failed attempts in 60 seconds from an off-campus address at 2:41am. This is automated password guessing.'},
+ {t:'02:41:58  auth OK        user=jsmith  src=45.155.204.19   mfa=no', bad:true, why:'A success immediately after 47 failures, from the same foreign address, with MFA not satisfied. The account is compromised.'},
+ {t:'08:31:10  file read      user=mchen   path=/reports/q3.xlsx', bad:false, why:'Routine file access during working hours.'},
+ {t:'02:43:20  priv ESCALATE  user=jsmith  role=domain_admin', bad:true, why:'Two minutes after the suspicious login, this account gained domain administrator rights. Privilege escalation.'},
+ {t:'09:02:55  auth OK        user=tlee    src=128.187.14.77   mfa=yes', bad:false, why:'Normal login.'},
+ {t:'02:44:05  export         user=jsmith  rows=48210  dest=external_share', bad:true, why:'48,210 rows exported to an external destination, one minute after gaining admin rights. This is the exfiltration.'}];
+const RESP=[
+ ['Email jsmith to ask whether the 2:41am activity was them',false,'Slow, and if the account is controlled by an attacker you have just told them they were noticed.'],
+ ['Disable the account and isolate the systems it touched, then investigate',true,'Correct. Containment comes first. The account is provably compromised and is actively exfiltrating data — every minute of investigation before containment is more data gone.'],
+ ['Reset the password on the jsmith account and continue monitoring',false,'A password reset does not end an established session or remove the domain admin rights the attacker already granted themselves.'],
+ ['Open a ticket and escalate to your manager for review in the morning',false,'Data is leaving right now. Anything that waits until morning is not a response.']];
+function markMail(i,g){ ACT['m'+i]=g; render(); }
+function flagLog(i){ if(ACT.logChecked) return; ACT['L'+i]=!ACT['L'+i]; render(); }
+function checkLogs(){ ACT.logChecked=true; render(); }
+function pickResp(i){ ACT.resp=i; render(); }
+function actPhish(c){
+  const mailDone=EMAILS.filter(function(e,i){return ACT['m'+i]!==undefined;}).length===EMAILS.length;
+  let mailRight=0; EMAILS.forEach(function(e,i){ if(ACT['m'+i]===e.phish) mailRight++; });
+  const logChecked=ACT.logChecked;
+  const badIdx=LOGS.map(function(l,i){return l.bad?i:-1;}).filter(function(i){return i>=0;});
+  const logHits=badIdx.filter(function(i){return ACT['L'+i];});
+  const logFps=LOGS.map(function(l,i){return (!l.bad&&ACT['L'+i])?i:-1;}).filter(function(i){return i>=0;});
+  const stage = !mailDone?0:(!logChecked?1:(ACT.resp===undefined?2:3));
+
+  let body='<h3>Stage 1 — Triage the reported messages</h3>'+
+    '<p class="muted small">Four messages reported by employees. Two are real threats and two are not.</p>'+
+    EMAILS.map(function(e,i){
+      const g=ACT['m'+i], shown=g!==undefined, right=g===e.phish;
+      return '<div class="card" style="padding:15px;margin-bottom:10px;'+(shown?(right?'border-color:var(--ok)':'border-color:var(--bad)'):'')+'">'+
+        '<div class="xs muted">From: <b style="color:var(--ink)">'+e.from+'</b></div>'+
+        '<div style="font-weight:600;margin:3px 0 6px;font-size:.95rem">'+esc(e.subj)+'</div>'+
+        '<div class="small muted">'+e.body+'</div>'+
+        (shown?'<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--line)">'+
+          (right?'<span class="chip ok">Correct — '+(e.phish?'phishing':'legitimate')+'</span>':
+                 '<span class="chip bad">Missed — this one is '+(e.phish?'phishing':'legitimate')+'</span>')+
+          '<ul class="ul xs" style="margin-top:8px">'+e.tells.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div>'
+        :'<div style="margin-top:10px;display:flex;gap:7px">'+
+          '<button class="btn sm" onclick="markMail('+i+',true)">Phishing</button>'+
+          '<button class="btn ghost sm" onclick="markMail('+i+',false)">Legitimate</button></div>')+'</div>';
+    }).join('');
+
+  if(mailDone){
+    body+='<div class="callout '+(mailRight===4?'good':'')+'"><b>'+mailRight+' of 4 correct.</b> '+
+      (mailRight===4?'Clean sweep. ':'')+
+      'One user clicked the link in the first message before reporting it. Now you investigate.</div>'+
+      '<h3>Stage 2 — Hunt through the authentication log</h3>'+
+      '<p class="muted small">Click every line you think is suspicious. Four of the eight are.</p>'+
+      '<div class="card" style="padding:8px 0;margin-bottom:12px">'+
+      LOGS.map(function(l,i){
+        const on=!!ACT['L'+i]; let cls='logline';
+        if(!logChecked && on) cls+=' flag';
+        if(logChecked){ if(l.bad&&on) cls+=' hit'; else if(l.bad&&!on) cls+=' miss'; else if(on) cls+=' fp'; }
+        return '<div class="'+cls+'"'+(logChecked?'':' onclick="flagLog('+i+')"')+'>'+esc(l.t)+
+          (logChecked?'<div class="xs" style="font-family:inherit;margin-top:4px;color:var(--muted)">'+l.why+'</div>':'')+'</div>';
+      }).join('')+'</div>';
+    if(!logChecked){
+      body+='<button class="btn" onclick="checkLogs()">Check my work</button>';
+    } else {
+      body+='<div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">'+
+        '<span class="chip ok">'+logHits.length+' of 4 found</span>'+
+        (logFps.length?'<span class="chip warn">'+logFps.length+' false positive'+(logFps.length===1?'':'s')+'</span>':'')+'</div>'+
+        '<h3>Stage 3 — Decide your first action</h3>'+
+        '<p class="muted small">It is 09:10. You have just reconstructed the timeline above. What do you do first?</p>'+
+        RESP.map(function(r,i){
+          let st='';
+          if(ACT.resp!==undefined){ if(r[1]) st='border-color:var(--ok);background:var(--ok-soft)';
+            else if(ACT.resp===i) st='border-color:var(--bad);background:var(--bad-soft)'; else st='opacity:.66'; }
+          return '<div class="opt'+(ACT.resp!==undefined?' locked':'')+'" style="'+st+'"'+
+            (ACT.resp===undefined?' onclick="pickResp('+i+')"':'')+'>'+r[0]+
+            (ACT.resp!==undefined?'<div class="why">'+r[2]+'</div>':'')+'</div>';
+        }).join('');
+    }
+  }
+
+  return actShell(c,'Incident Triage',
+    'A phishing report comes in, someone clicked, and now you have to work out what happened and stop it. Three stages: triage the messages, reconstruct the timeline from the log, then decide what to do.',
+    stageBar(['Triage messages','Hunt the log','Respond','Debrief'], stage),
+    body,
+    stage===3?('The whole attack took three minutes: compromise at 02:41, domain admin at 02:43, 48,000 rows out the door at 02:44. You found it at 09:10 — more than six hours later — which is realistic and is exactly why detection speed is the metric security teams are judged on. Notice too that two of the four messages were legitimate. If you quarantine the real GitHub alert and the real recruiter email, people stop reporting anything at all, and you lose the only sensor that found this one.'):'');
+}
+
+/* ---- 3. IT Project Manager: scope triage, then critical path ---- */
 const REQS=[
  {t:'Security patch for a known vulnerability in the auth library', eff:2, who:'Security team', right:'sprint', why:'A known vulnerability in authentication is not deferrable. Small effort, unbounded downside.'},
- {t:'"Quick" dashboard tweak requested by the VP', eff:3, who:'VP of Operations', right:'backlog', why:'Nothing requested by a VP is actually quick, and this one is cosmetic. Backlog it with a date, and tell them why — do not silently drop it.'},
+ {t:'"Quick" dashboard tweak requested by the VP', eff:3, who:'VP of Operations', right:'backlog', why:'Nothing requested by a VP is actually quick, and this one is cosmetic. Backlog it with a date and tell them why — do not silently drop it.'},
  {t:'Bug affecting 2% of users at checkout', eff:3, who:'Support', right:'sprint', why:'Two percent of checkout is revenue walking out the door. Small percentages of a large number are still large.'},
  {t:'Upgrade a dependency that goes end-of-life in 8 months', eff:5, who:'Engineering', right:'backlog', why:'Real and necessary, but eight months of runway means it does not belong in a sprint that is already full.'},
- {t:'Match a feature a competitor launched last week', eff:8, who:'Product Marketing', right:'backlog', why:'Reactive scope with no validation behind it. Needs a real conversation before it consumes half a sprint.'},
- {t:'Rewrite the reporting module because the code is ugly', eff:8, who:'A developer', right:'decline', why:'Refactoring for aesthetics with no user-facing outcome, three weeks from a deadline. Decline it now, revisit after launch.'}];
+ {t:'Match a feature a competitor launched last week', eff:8, who:'Product Marketing', right:'backlog', why:'Reactive scope with no validation behind it. Needs a real conversation before it consumes most of a sprint.'},
+ {t:'Rewrite the reporting module because the code is ugly', eff:8, who:'A developer', right:'decline', why:'Refactoring for aesthetics with no user-facing outcome, three weeks from a deadline. Decline now, revisit after launch.'}];
 const CAP=6;
+const TASKS=[
+ {id:'A', n:'Requirements sign-off', d:5, dep:[],          crit:true},
+ {id:'B', n:'UI design',            d:3, dep:['A'],        crit:false},
+ {id:'C', n:'Data migration script',d:8, dep:['A'],        crit:true},
+ {id:'D', n:'Build the screens',    d:4, dep:['B'],        crit:false},
+ {id:'E', n:'Integration testing',  d:2, dep:['C','D'],    crit:true}];
 function assign(i,b){ ACT['r'+i]=b; render(); }
+function pickTask(i){ if(ACT.cpChecked) return; ACT['t'+i]=!ACT['t'+i]; render(); }
+function checkCP(){ ACT.cpChecked=true; render(); }
 function actScope(c){
-  const done=REQS.filter(function(r,i){return ACT['r'+i];}).length;
-  const all=done===REQS.length;
-  const load=REQS.reduce(function(s,r,i){ return s + (ACT['r'+i]==='sprint'? r.eff:0); },0);
+  const done=REQS.filter(function(r,i){return ACT['r'+i];}).length, all=done===REQS.length;
+  const load=REQS.reduce(function(s,r,i){ return s+(ACT['r'+i]==='sprint'?r.eff:0); },0);
   const over=load>CAP;
   let match=0; REQS.forEach(function(r,i){ if(ACT['r'+i]===r.right) match++; });
+  const cpDone=ACT.cpChecked;
+  const cpHits=TASKS.filter(function(t,i){return t.crit&&ACT['t'+i];}).length;
+  const cpFps=TASKS.filter(function(t,i){return !t.crit&&ACT['t'+i];}).length;
+  const stage = !all?0:(!cpDone?1:2);
 
-  let body='<div class="card" style="padding:18px;margin:20px 0">'+
+  let body='<h3>Stage 1 — Allocate the incoming requests</h3>'+
+    '<div class="card" style="padding:16px;margin:10px 0 14px">'+
     '<div style="display:flex;align-items:center;gap:12px">'+
-    '<span class="small muted" style="min-width:120px">Sprint capacity</span>'+
+    '<span class="small muted" style="min-width:110px">Sprint capacity</span>'+
     '<div style="flex:1;height:11px;background:var(--line);border-radius:9px;overflow:hidden">'+
     '<div style="height:11px;width:'+Math.min(100,load/CAP*100)+'%;background:'+(over?'var(--bad)':'var(--ok)')+';transition:width .3s"></div></div>'+
     '<b style="min-width:70px;text-align:right;color:'+(over?'var(--bad)':'var(--ink)')+'">'+load+' / '+CAP+' pts</b></div>'+
-    (over?'<p class="small" style="color:var(--bad);margin:10px 0 0"><b>Over capacity.</b> Something in this sprint will slip, and you do not get to choose what unless you decide now.</p>':'')+
-    '</div>';
+    (over?'<p class="small" style="color:var(--bad);margin:10px 0 0"><b>Over capacity.</b> Something in this sprint will slip, and you do not get to choose what unless you decide now.</p>':'')+'</div>'+
+    REQS.map(function(r,i){
+      const b=ACT['r'+i];
+      return '<div class="card" style="padding:14px;margin-bottom:9px"><div style="display:flex;gap:14px;align-items:flex-start">'+
+        '<div style="flex:1"><div style="font-weight:600;font-size:.95rem">'+r.t+'</div>'+
+        '<div class="xs muted">Requested by '+r.who+' · '+r.eff+' points</div>'+
+        (b?'<div class="xs" style="margin-top:7px;color:var(--navy)"><b>'+(b===r.right?'Reasonable call.':'Defensible, but consider:')+'</b> '+r.why+'</div>':'')+
+        '</div><div style="display:flex;gap:5px;flex-shrink:0">'+
+        [['sprint','Sprint'],['backlog','Backlog'],['decline','Decline']].map(function(o){
+          return '<button class="btn '+(b===o[0]?'':'ghost')+' sm" onclick="assign('+i+',\''+o[0]+'\')">'+o[1]+'</button>';
+        }).join('')+'</div></div></div>';
+    }).join('');
 
-  body+=REQS.map(function(r,i){
-    const b=ACT['r'+i];
-    return '<div class="card" style="padding:16px;margin-bottom:10px">'+
-      '<div style="display:flex;gap:14px;align-items:flex-start">'+
-      '<div style="flex:1"><div style="font-weight:600">'+r.t+'</div>'+
-      '<div class="small muted">Requested by '+r.who+' · '+r.eff+' points</div>'+
-      (b?'<div class="small" style="margin-top:8px;color:var(--navy)"><b>'+
-        (b===r.right?'Reasonable call.':'A defensible call, but consider:')+'</b> '+r.why+'</div>':'')+
-      '</div>'+
-      '<div style="display:flex;gap:6px;flex-shrink:0">'+
-      [['sprint','This sprint'],['backlog','Backlog'],['decline','Decline']].map(function(o){
-        return '<button class="btn '+(b===o[0]?'':'ghost')+'" style="padding:6px 11px;font-size:.82rem" onclick="assign('+i+',\''+o[0]+'\')">'+o[1]+'</button>';
-      }).join('')+'</div></div></div>';
-  }).join('');
+  if(all){
+    body+='<div class="callout"><b>You matched the reference allocation on '+match+' of 6.</b> There was no clean answer — that is the point. Now the harder question: which work actually controls your end date?</div>'+
+      '<h3>Stage 2 — Find the critical path</h3>'+
+      '<p class="muted small">Five tasks with dependencies and durations. Click every task on the <b>critical path</b> — the chain that determines the earliest the project can possibly finish.</p>'+
+      '<div style="margin-bottom:12px">'+TASKS.map(function(t,i){
+        const on=!!ACT['t'+i]; let st='';
+        if(!cpDone && on) st='border-color:var(--warn);background:var(--warn-soft)';
+        if(cpDone){ if(t.crit&&on) st='border-color:var(--ok);background:var(--ok-soft)';
+          else if(t.crit&&!on) st='border-color:var(--bad);background:var(--bad-soft)';
+          else if(on) st='border-color:#B9BEC7;background:#F2F2F4;opacity:.7'; }
+        return '<div class="opt'+(cpDone?' locked':'')+'" style="'+st+'"'+(cpDone?'':' onclick="pickTask('+i+')"')+'>'+
+          '<b>'+t.id+'.</b> '+t.n+' <span class="muted xs">· '+t.d+' days · '+
+          (t.dep.length?'after '+t.dep.join(' and '):'no dependencies')+'</span>'+
+          (cpDone?'<div class="why">'+(t.crit?'<b>On the critical path.</b> Any delay here delays the whole project.':
+            '<b>Has slack.</b> This task can slip by a day without moving the end date.')+'</div>':'')+'</div>';
+      }).join('')+'</div>';
+    if(!cpDone) body+='<button class="btn" onclick="checkCP()"'+(TASKS.some(function(t,i){return ACT['t'+i];})?'':' disabled')+'>Check my work</button>';
+    else body+='<div class="callout blue"><b>'+cpHits+' of 3 correct'+(cpFps?', '+cpFps+' extra':'')+'.</b> '+
+      'The two paths are A→B→D→E at 14 days and A→C→E at <b>15 days</b>. The longer one wins, so the critical path is '+
+      '<b>A, C, E</b>. B and D each carry one day of slack — which means if you have a spare developer, putting them on '+
+      'the UI work buys you nothing at all. Moving them to the migration script is the only thing that pulls the date in.</div>';
+  }
 
-  return actShell(c,'Scope Triage',
-    'You are three weeks into a six-week project. Six requests landed this morning and your team has 6 points of capacity left. Every one of them is someone’s priority. Decide.',
+  return actShell(c,'Run the Sprint',
+    'You are three weeks into a six-week project. Six requests landed this morning and your team has 6 points of capacity left. Then you need to work out which tasks actually control your delivery date.',
+    stageBar(['Allocate requests','Find the critical path','Debrief'], stage),
     body,
-    all?('You matched the reference allocation on '+match+' of 6 — but there was no clean answer, and that is the point. Every option made someone unhappy. Notice that the two largest requests came from people who were not wrong to ask: the competitor feature is a real business concern and the refactor is real technical debt. The job is not sorting good requests from bad ones. It is making the tradeoff visible and owning the consequence.'):'');
+    stage===2?'Both halves of this are the job. The first half has no right answer — every allocation makes someone unhappy, and the skill is making the tradeoff visible rather than absorbing it silently. The second half does have a right answer, and it is counterintuitive: most people assume the biggest or most visible task is the critical one. Knowing which work actually moves the date is what stops a PM from optimising things that do not matter.':'');
 }
 
-/* ---- 4. Software Developer: Bug Hunt ---- */
+/* ---- 4. Software Developer: Bug Hunt (unchanged — this one tested well) ---- */
 const CODE=[
  'function getTopScores(scores, limit) {',
  '  const sorted = scores.slice().sort((a, b) => b - a);',
@@ -1406,67 +1710,64 @@ const NUDGES={1:'That line is correct — slice() copies the array so the caller
 function guessLine(i){ ACT.guess=i; ACT.tries=(ACT.tries||0)+1; render(); }
 function actBug(c){
   const g=ACT.guess, found=g===BUGLINE;
-  let body='<div class="card" style="padding:0;margin:20px 0;overflow:hidden">'+
+  let body='<div class="card" style="padding:0;margin:14px 0;overflow:hidden">'+
     CODE.map(function(l,i){
-      const sel=g===i;
-      const clickable=l.trim().length>0 && !found;
+      const sel=g===i, clickable=l.trim().length>0 && !found;
       return '<div onclick="'+(clickable?'guessLine('+i+')':'')+'" style="display:flex;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.87rem;'+
         'padding:3px 0;'+(clickable?'cursor:pointer;':'')+
         (sel?(found?'background:var(--ok-soft);':'background:var(--bad-soft);'):'')+'">'+
         '<span style="width:44px;text-align:right;padding-right:14px;color:var(--muted);flex-shrink:0">'+(i+1)+'</span>'+
-        '<span style="white-space:pre">'+esc(l)+'</span></div>';
-    }).join('')+'</div>';
-
-  if(g!==undefined && !found){
-    body+='<div class="callout"><b>Not that line.</b> '+(NUDGES[g]||'That line is correct.')+
-      ' Look again at what happens on the last iteration.</div>';
-  }
-  if(found){
-    body+='<div class="callout blue" style="border-left-color:var(--ok);background:var(--ok-soft);border-color:#BEE0CD">'+
-      '<b>Found it — line 5.</b> The loop condition uses <code>i &lt;= limit</code>, so it runs '+
-      '<code>limit + 1</code> times and returns one extra element. This is an off-by-one error, and it is '+
-      'the single most common bug in production code.</div>'+
-      '<div class="grid2" style="grid-template-columns:1fr 1fr;gap:16px">'+
-      '<div class="card" style="padding:16px"><h4 class="muted">The fix</h4>'+
+        '<span style="white-space:pre">'+esc(l)+'</span></div>';}).join('')+'</div>';
+  if(g!==undefined && !found)
+    body+='<div class="callout"><b>Not that line.</b> '+(NUDGES[g]||'That line is correct.')+' Look again at what happens on the last iteration.</div>';
+  if(found)
+    body+='<div class="callout good"><b>Found it — line 5.</b> The loop condition uses <code>i &lt;= limit</code>, so it runs '+
+      '<code>limit + 1</code> times and returns one extra element. This is an off-by-one error, and it is the single most common bug in production code.</div>'+
+      '<div class="cmp"><div class="card" style="padding:15px"><h4 class="muted">The fix</h4>'+
       '<pre style="margin:0;font-size:.85rem;white-space:pre-wrap">for (let i = 0; i &lt; limit; i++) {</pre></div>'+
-      '<div class="card" style="padding:16px;border-color:var(--royal)"><h4 style="color:var(--navy)">The test that catches it</h4>'+
+      '<div class="card" style="padding:15px;border-color:var(--royal)"><h4 style="color:var(--navy)">The test that catches it</h4>'+
       '<pre style="margin:0;font-size:.85rem;white-space:pre-wrap">expect(\n  getTopScores([88,94,71,65,99], 3)\n).toEqual([99, 94, 88]);</pre></div></div>'+
-      '<p class="small muted" style="margin-top:12px">You found it in '+ACT.tries+' '+(ACT.tries===1?'guess':'guesses')+'.</p>';
-  }
-
+      '<p class="small muted" style="margin-top:10px">You found it in '+ACT.tries+' '+(ACT.tries===1?'guess':'guesses')+'.</p>';
   return actShell(c,'Bug Hunt',
-    'This function is supposed to return the top N scores. It returns one too many. Click the line you think is wrong — you can guess as many times as you need.',
-    body,
+    'This function is supposed to return the top N scores. It returns one too many. Click the line you think is wrong — guess as many times as you need.',
+    '', body,
     found?'Reading and fixing existing code is most of the job. You will write far less new code than you expect, and most of what you touch will have been written by someone else, often years ago, usually without comments. Notice that the bug was one character. That is normal, and it is why writing a failing test before you fix something matters — it proves you actually understood the problem.':'');
 }
 
 const ACTIVITIES={'data-analytics':actData,'cybersecurity':actPhish,'project-management':actScope,'software-dev':actBug};
 
 /* ============================================================================
-   RENDER
+   RENDER — every view change returns you to the top of the page.
    ========================================================================== */
+let LASTVIEW='';
 function render(){
   const parts=(location.hash||'#/').replace(/^#\/?/,'').split('/').filter(Boolean);
   const app=document.getElementById('app');
+  const key=parts.join('/')+'|'+(STATE.interview?STATE.interview.i:'');
 
-  if(parts[0]!=='careers'){ renderNav(null); app.innerHTML=viewLanding(); return; }
+  function paint(html, navId){
+    renderNav(navId);
+    app.innerHTML=html;
+    if(key!==LASTVIEW){ window.scrollTo(0,0); LASTVIEW=key; }
+  }
+
+  if(parts[0]!=='careers'){ paint(viewLanding(), null); return; }
   const c=careerById(parts[1]);
   if(!c){ location.hash='#/'; return; }
-  renderNav(c.id);
 
   const sub=parts[2];
-  if(sub==='activity'){ app.innerHTML=ACTIVITIES[c.id](c); return; }
+  if(sub==='activity'){ paint(ACTIVITIES[c.id](c), c.id); return; }
   if(sub==='interview'){
     if(!STATE.interview || STATE.interview.careerId!==c.id){ startInterview(c.id); return; }
-    app.innerHTML=viewInterview(c); return;
+    paint(viewInterview(c), c.id); return;
   }
   if(sub==='summary'){
     if(!STATE.interview || !STATE.interview.done){ go('#/careers/'+c.id); return; }
-    app.innerHTML=viewSummary(c); return;
+    paint(viewSummary(c), c.id); return;
   }
   if(STATE.interview && STATE.interview.careerId!==c.id) STATE.interview=null;
   ACT={};
-  app.innerHTML=viewCareer(c);
+  paint(viewCareer(c), c.id);
 }
 
 render();
