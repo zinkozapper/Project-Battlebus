@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IS Career Launchpad — BYU Information Systems</title>
+<title>IS Career Launchpad: BYU Information Systems</title>
 <meta name="description" content="Explore four IS career paths and practice a mock interview for each. Built for the BYU Information Systems Junior Core Case Competition.">
 <meta property="og:title" content="IS Career Launchpad">
 <meta property="og:description" content="Four IS career paths, a hands-on activity for each, and a mock interview with automated feedback.">
@@ -17,7 +17,9 @@
   --radius:10px; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.1);
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--canvas);color:var(--ink);
+main{flex:1 0 auto}
+footer{flex-shrink:0;margin-top:auto}
+body{margin:0;background:var(--canvas);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{line-height:1.25;margin:0 0 .5em}
@@ -143,6 +145,49 @@ h2 .ico,h3 .ico{margin-right:9px;color:var(--accent)}
 .hero .wrap{position:relative;z-index:1}
 .know-good{border-left:4px solid var(--ok)}
 .know-bad{border-left:4px solid var(--line)}
+/* ---- career page layout: full width, balanced columns, no orphan sidebar ---- */
+.grid2col{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.grid3col{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+h2.bigh{font-size:2rem;letter-spacing:-.02em;display:flex;align-items:center;gap:12px;color:var(--navy)}
+h2.bigh .ico{color:var(--accent)}
+.payband{padding:24px 26px;margin-top:6px}
+.payband-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;color:var(--accent)}
+.payband-head h2{color:var(--navy);font-size:1.35rem}
+.pay3{display:grid;grid-template-columns:1.15fr 1fr 1.1fr;gap:30px;align-items:start}
+h4.sub{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+  margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.factgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fact{background:var(--accent-soft);border-radius:9px;padding:12px 13px}
+.fact b{display:block;font-size:1.5rem;line-height:1.1;color:var(--navy);letter-spacing:-.02em}
+.fact span{display:block;font-size:.76rem;color:var(--muted);margin-top:3px;line-height:1.3}
+.paynote{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.indcard{padding:20px;border-top:4px solid var(--accent);display:flex;flex-direction:column}
+.indcard h3{color:var(--navy);margin-bottom:10px;font-size:1.18rem}
+.indcard .emp{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.indcard p{font-size:.92rem;margin-bottom:10px}
+.skillbox{padding:18px}
+.skillbox h4{color:var(--navy);margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.skillbox .ul{font-size:.92rem}
+@media (max-width:1000px){
+  .pay3,.grid2col,.grid3col{grid-template-columns:1fr}
+}
+
+/* Activity multiple-choice needs stronger separation than the interview does,
+   because it sits inside a page with a lot of other content around it. */
+.mcblock{background:var(--canvas);border:1px solid var(--line);border-radius:12px;padding:18px 18px 6px;margin:14px 0 20px}
+.mcblock h4{margin-bottom:4px;font-size:1.02rem;color:var(--navy)}
+.mcblock .lead{font-size:.86rem;color:var(--muted);margin-bottom:14px}
+.mcblock .opt{margin-bottom:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.mcblock .opt .why{margin-top:11px;padding-top:11px}
+/* Make interactive things look interactive. */
+.howto{background:var(--accent-soft);border:1px dashed var(--accent);border-radius:10px;
+  padding:13px 16px;margin:14px 0;font-size:.9rem;display:flex;gap:11px;align-items:flex-start}
+.howto b{color:var(--navy)}
+.howto .ico{color:var(--accent);margin-top:2px}
+.cell{border:2px dashed transparent}
+.cell:hover{background:var(--royal-soft);border-color:var(--royal)}
+.logline{border-left:3px solid transparent;position:relative}
+.logline:hover{background:var(--royal-soft);box-shadow:inset 3px 0 0 var(--royal)}
 /* ---- interview: deliberately tighter and narrower than the rest of the site ---- */
 .iv{max-width:720px;margin:0 auto;padding:24px 32px 48px}
 .iv .qhead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
@@ -214,28 +259,28 @@ h2 .ico,h3 .ico{margin-right:9px;color:var(--accent)}
 <footer style="border-top:1px solid var(--line);margin-top:60px;padding:26px 0;background:#fff">
   <div class="wrap small muted">
     <p style="margin:0 0 6px"><b>Data sources.</b> Salary and outlook figures are from the U.S. Bureau of Labor Statistics
-    Occupational Outlook Handbook (May 2025 wages; 2025&ndash;2035 projections). Placement figures are from BYU Marriott
-    School of Business published placement profiles, Class of 2025. Every figure links directly to its source.</p>
+    Occupational Outlook Handbook (May 2025 wages; 2025-2035 projections). Placement figures are from BYU Marriott
+    School of Business published placement profiles, Class of 2025.</p>
     <p style="margin:0">Built for the BYU IS Junior Core Case Competition. Content was drafted with AI assistance and
     verified by the team against the primary sources listed on each page.</p>
   </div>
 </footer>
 <script>
 /* ============================================================================
-   SOURCES — every figure on this site points at one of these.
+   SOURCES: every figure on this site points at one of these.
    All retrieved and verified 2026-09-02. See DATA-VERIFIED.md.
    ========================================================================== */
 const SOURCES = {
-  'bls-swdev':   {label:'BLS Occupational Outlook Handbook — Software Developers, QA Analysts, and Testers', url:'https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm', asOf:'May 2025 wages; 2025–2035 projections'},
-  'bls-infosec': {label:'BLS Occupational Outlook Handbook — Information Security Analysts', url:'https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm', asOf:'May 2025 wages; 2025–2035 projections'},
-  'bls-datasci': {label:'BLS Occupational Outlook Handbook — Data Scientists', url:'https://www.bls.gov/ooh/math/data-scientists.htm', asOf:'May 2025 wages; 2025–2035 projections'},
-  'bls-pms':     {label:'BLS Occupational Outlook Handbook — Project Management Specialists', url:'https://www.bls.gov/ooh/business-and-financial/project-management-specialists.htm', asOf:'May 2025 wages; 2025–2035 projections'},
-  'bls-orat':    {label:'BLS Occupational Outlook Handbook — Operations Research Analysts', url:'https://www.bls.gov/ooh/math/operations-research-analysts.htm', asOf:'May 2025 wages; 2025–2035 projections'},
-  'bls-csa':     {label:'BLS Occupational Outlook Handbook — Computer Systems Analysts', url:'https://www.bls.gov/ooh/computer-and-information-technology/computer-systems-analysts.htm', asOf:'May 2025 wages; 2025–2035 projections'},
-  'bls-cism':    {label:'BLS Occupational Outlook Handbook — Computer and Information Systems Managers', url:'https://www.bls.gov/ooh/management/computer-and-information-systems-managers.htm', asOf:'May 2025 wages; 2025–2035 projections'},
-  'byu-bsis':    {label:'BYU Marriott — BS Information Systems Career Placement, Class of 2025', url:'https://marriott.byu.edu/infosys/careers/placement-profile/bsis/', asOf:'Class of 2025'},
-  'byu-mism':    {label:'BYU Marriott — MISM Career Placement, Class of 2025', url:'https://marriott.byu.edu/infosys/careers/placement-profile/mism/', asOf:'Class of 2025'},
-  'nace-2026':   {label:'NACE 2026 Internship & Co-op Survey (via UW–Madison La Follette Career Services)', url:'https://career.lafollette.wisc.edu/blog/2026/04/07/2026-internship-co-op-benchmarks-from-naces-national-survey/', asOf:'Wages as of summer 2025'}
+  'bls-swdev':   {label:'BLS Occupational Outlook Handbook: Software Developers, QA Analysts, and Testers', url:'https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm', asOf:'May 2025 wages; 2025-2035 projections'},
+  'bls-infosec': {label:'BLS Occupational Outlook Handbook: Information Security Analysts', url:'https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm', asOf:'May 2025 wages; 2025-2035 projections'},
+  'bls-datasci': {label:'BLS Occupational Outlook Handbook: Data Scientists', url:'https://www.bls.gov/ooh/math/data-scientists.htm', asOf:'May 2025 wages; 2025-2035 projections'},
+  'bls-pms':     {label:'BLS Occupational Outlook Handbook: Project Management Specialists', url:'https://www.bls.gov/ooh/business-and-financial/project-management-specialists.htm', asOf:'May 2025 wages; 2025-2035 projections'},
+  'bls-orat':    {label:'BLS Occupational Outlook Handbook: Operations Research Analysts', url:'https://www.bls.gov/ooh/math/operations-research-analysts.htm', asOf:'May 2025 wages; 2025-2035 projections'},
+  'bls-csa':     {label:'BLS Occupational Outlook Handbook: Computer Systems Analysts', url:'https://www.bls.gov/ooh/computer-and-information-technology/computer-systems-analysts.htm', asOf:'May 2025 wages; 2025-2035 projections'},
+  'bls-cism':    {label:'BLS Occupational Outlook Handbook: Computer and Information Systems Managers', url:'https://www.bls.gov/ooh/management/computer-and-information-systems-managers.htm', asOf:'May 2025 wages; 2025-2035 projections'},
+  'byu-bsis':    {label:'BYU Marriott: BS Information Systems Career Placement, Class of 2025', url:'https://marriott.byu.edu/infosys/careers/placement-profile/bsis/', asOf:'Class of 2025'},
+  'byu-mism':    {label:'BYU Marriott: MISM Career Placement, Class of 2025', url:'https://marriott.byu.edu/infosys/careers/placement-profile/mism/', asOf:'Class of 2025'},
+  'nace-2026':   {label:'NACE 2026 Internship & Co-op Survey (via UW-Madison La Follette Career Services)', url:'https://career.lafollette.wisc.edu/blog/2026/04/07/2026-internship-co-op-benchmarks-from-naces-national-survey/', asOf:'Wages as of summer 2025'}
 };
 
 const THEME = {
@@ -263,7 +308,7 @@ function ico(name, cls){
     'stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICON_PATHS[name]+'</svg>';
 }
 function secH(iconName, text){ return '<h2>'+ico(iconName,'lg')+text+'</h2>'; }
-/* Proportional salary bars — the numbers are the same ones in the table above,
+/* Proportional salary bars. The numbers are the same ones in the table above,
    drawn so the gap between entry level and the national median is visible. */
 function payBars(c){
   const t=THEME[c.id];
@@ -293,13 +338,13 @@ const CAREERS = [
 {
   id:'data-analytics', name:'Data Analytics', short:'Data Analyst',
   tagline:'Turn messy company data into answers people actually act on.',
-  overview:`Data analysts sit between raw data and the people who have to make decisions with it. Someone in the business asks a question — why did returns spike in March, which customers are about to cancel, is this marketing spend working — and the analyst figures out where the data lives, gets it into usable shape, analyzes it, and explains the answer in language a non-technical executive understands.
+  overview:`Data analysts sit between raw data and the people who have to make decisions with it. Someone in the business asks a question (why did returns spike in March, which customers are about to cancel, is this marketing spend working) and the analyst figures out where the data lives, gets it into usable shape, analyzes it, and explains the answer in language a non-technical executive understands.
 
 The stereotype is that this job is mostly statistics. In practice it is mostly SQL, cleaning, and communication. Analysts routinely spend the majority of their time finding and fixing data before any analysis happens. The technical bar for an entry-level role is lower than students expect; the communication bar is higher.
 
 This is often the most accessible entry point into a technical career for an IS student, because it rewards business context as much as code.`,
   dayToDay:[
-    'Write SQL to pull and join data across several systems — a CRM, an ERP, a web analytics warehouse — that were never designed to talk to each other.',
+    'Write SQL to pull and join data across several systems (a CRM, an ERP, a web analytics warehouse) that were never designed to talk to each other.',
     'Clean and validate the results: dedupe records, reconcile inconsistent date and currency formats, decide what to do about the 4% of rows with missing values.',
     'Build and maintain dashboards in Power BI or Tableau that stakeholders check weekly, and field the "why did this number change?" questions that follow.',
     'Do ad-hoc analysis for a specific business question, usually with a deadline measured in days, not weeks.',
@@ -315,41 +360,41 @@ This is often the most accessible entry point into a technical career for an IS 
     {name:'Healthcare',whyTheyHire:'Hospital systems and insurers generate enormous volumes of clinical, claims, and operational data, and regulation forces them to track it carefully.',
      howTheRoleDiffers:'The data is highly sensitive and HIPAA-governed, so access is slow and heavily audited. Analysis is more likely to affect patient outcomes and cost of care than revenue. Expect to learn clinical vocabulary and to work with legacy systems that predate the cloud by decades.',
      employers:['Intermountain Health','HCA Healthcare','UnitedHealth Group','Epic Systems']},
-    {name:'Financial Services',whyTheyHire:'Banks, insurers, and fintechs run on quantitative decision-making — risk, fraud, pricing, and regulatory reporting are all analytics problems.',
+    {name:'Financial Services',whyTheyHire:'Banks, insurers, and fintechs run on quantitative decision-making. Risk, fraud, pricing, and regulatory reporting are all analytics problems.',
      howTheRoleDiffers:'The highest technical bar of the three and the most statistics. Work is heavily audited and reproducibility matters enormously; an analysis you cannot rerun and defend is worthless. Pay is typically the strongest, and the pace around quarterly reporting is intense.',
      employers:['Goldman Sachs','Zions Bancorporation','Capital One','American Express']},
     {name:'Retail & E-commerce',whyTheyHire:'Every pricing, inventory, and marketing decision is measurable, and the feedback loop is measured in hours rather than quarters.',
-     howTheRoleDiffers:'The fastest-moving of the three, with the most experimentation — A/B testing is a core daily skill rather than an occasional project. Data volumes are huge but the questions are more intuitive. Seasonality dominates: the holiday quarter is a different job from the rest of the year.',
+     howTheRoleDiffers:'The fastest-moving of the three, with the most experimentation. A/B testing is a core daily skill rather than an occasional project. Data volumes are huge but the questions are more intuitive. Seasonality dominates: the holiday quarter is a different job from the rest of the year.',
      employers:['Amazon','Target','Nike','Qualtrics']}
   ],
   entryLevel:{
-    know:['Write a multi-table SQL join without looking it up, and explain the difference between INNER and LEFT','Build a clear chart and explain why you chose that chart type','Comfort with Excel beyond the basics — pivot tables, lookups, conditional logic','Basic descriptive statistics: mean vs. median, and when the average is lying to you','How to explain a finding in three sentences to someone with no technical background'],
-    notKnow:['Machine learning or predictive modeling — nice to have, rarely required for an analyst role','Production data engineering or pipeline architecture','Advanced statistics beyond regression','Any specific BI tool in depth — teams train you on theirs'],
-    internWork:'Interns are usually given one contained, real project — automate a report someone builds by hand every week, or clean and document a dataset nobody has had time to touch. You will spend more time understanding where the data comes from than analyzing it, and that is the actual lesson.',
+    know:['Write a multi-table SQL join without looking it up, and explain the difference between INNER and LEFT','Build a clear chart and explain why you chose that chart type','Comfort with Excel beyond the basics: pivot tables, lookups, conditional logic','Basic descriptive statistics: mean vs. median, and when the average is lying to you','How to explain a finding in three sentences to someone with no technical background'],
+    notKnow:['Machine learning or predictive modeling: nice to have, rarely required for an analyst role','Production data engineering or pipeline architecture','Advanced statistics beyond regression','Any specific BI tool in depth: teams train you on theirs'],
+    internWork:'Interns are usually given one contained, real project: automate a report someone builds by hand every week, or clean and document a dataset nobody has had time to touch. You will spend more time understanding where the data comes from than analyzing it, and that is the actual lesson.',
     certs:[{name:'Google Data Analytics Certificate',worth:'Useful for structure and vocabulary if you are starting cold. Employers will not hire you because of it.'},
            {name:'Microsoft PL-300 (Power BI)',worth:'Genuinely signals tool fluency and is cheap. Worth it if you are targeting BI-heavy shops.'}]
   },
   strong:[
-    'Has a portfolio with at least one project using real, messy, public data — not the Titanic dataset, not Iris. Anything from data.gov or a city open-data portal beats a Kaggle tutorial.',
+    'Has a portfolio with at least one project using real, messy, public data, not the Titanic dataset, not Iris. Anything from data.gov or a city open-data portal beats a Kaggle tutorial.',
     'Can walk through a project and explain a decision they made about ambiguous data: what they did about missing values and why.',
     'Explains findings without jargon. In interviews this is tested directly, and most candidates fail it.',
-    'Shows curiosity about the business, not just the tooling — asks what the company actually does with the number.',
+    'Shows curiosity about the business, not just the tooling. Asks what the company actually does with the number.',
     'Has caught an error in their own analysis and can tell that story. It signals the skepticism the job requires.'
   ],
   compensation:{
-    mapping:'Figures are for Data Scientists (SOC 15-2051), which is the closest BLS occupation — there is no BLS occupation titled "Data Analyst." Because 15-2051 implies more statistical modeling than a typical entry-level analyst job, treat this median as the top of the realistic range. Two adjacent occupations sit lower: Operations Research Analysts (15-2031) at $88,940 and Computer Systems Analysts (15-1211) at $105,850.',
+    mapping:'Figures are for Data Scientists (SOC 15-2051), which is the closest BLS occupation. There is no BLS occupation titled "Data Analyst." Because 15-2051 implies more statistical modeling than a typical entry-level analyst job, treat this median as the top of the realistic range. Two adjacent occupations sit lower: Operations Research Analysts (15-2031) at $88,940 and Computer Systems Analysts (15-1211) at $105,850.',
     intern:'$23.35/hr average (all majors, bachelor’s level)', internSrc:'nace-2026',
     rows:[
       ['Entry level (10th percentile)','$67,240','bls-datasci'],
       ['Median (all experience levels)','$120,230','bls-datasci'],
       ['Experienced (90th percentile)','$199,130','bls-datasci'],
-      ['Projected growth, 2025–2035','35%','bls-datasci'],
+      ['Projected growth, 2025-2035','35%','bls-datasci'],
       ['Openings per year','~24,800','bls-datasci']
     ],
-    ladder:[['During school','Data Analytics Intern','~$22–30/hr'],['0–2 yrs','Data Analyst','~$67,000+'],
-            ['3–7 yrs','Senior Analyst / Data Scientist','~$89,000–120,000'],['8+ yrs','Lead / Principal Data Scientist','~$199,000+'],
+    ladder:[['During school','Data Analytics Intern','~$22-30/hr'],['0-2 yrs','Data Analyst','~$67,000+'],
+            ['3-7 yrs','Senior Analyst / Data Scientist','~$89,000-120,000'],['8+ yrs','Lead / Principal Data Scientist','~$199,000+'],
             ['10+ yrs','Analytics Manager','~$175,000+']],
-    note:'35% projected growth is the highest of the four paths — but that figure is for Data Scientists specifically. The adjacent analyst occupations grow more slowly, at 8–12%.'
+    note:'35% projected growth is the highest of the four paths, but that figure is for Data Scientists specifically. The adjacent analyst occupations grow more slowly, at 8-12%.'
   },
   sourceIds:['bls-datasci','bls-orat','bls-csa','bls-cism','byu-bsis','nace-2026']
 },
@@ -358,36 +403,36 @@ This is often the most accessible entry point into a technical career for an IS 
   tagline:'Find the attack in the noise before it becomes an incident.',
   overview:`Cybersecurity analysts defend an organization's systems and data. The day-to-day reality is less dramatic than the movies: most of the job is monitoring alerts, investigating the small fraction that are real, and steadily closing the gaps that make attacks possible in the first place.
 
-Entry-level work usually starts in a Security Operations Center. Automated tools generate far more alerts than any human could chase, so the core skill is triage — quickly separating the noise from the handful of events that indicate a genuine problem, and knowing when to escalate.
+Entry-level work usually starts in a Security Operations Center. Automated tools generate far more alerts than any human could chase, so the core skill is triage: quickly separating the noise from the handful of events that indicate a genuine problem, and knowing when to escalate.
 
 It is the fastest-growing of these four paths by percentage. It is also the smallest, with roughly 14,100 openings a year against project management's 76,500. Growth rate and job availability are not the same thing, and this is the clearest example of the difference.`,
   dayToDay:[
-    'Triage security alerts in a SIEM — a queue of dozens to hundreds a shift, most of which are false positives that still have to be checked.',
+    'Triage security alerts in a SIEM: a queue of dozens to hundreds a shift, most of which are false positives that still have to be checked.',
     'Investigate user-reported phishing emails: inspect headers, check sender reputation, detonate links safely, and decide whether to pull the message from other inboxes.',
     'Review vulnerability scan output and work with IT teams to prioritize what actually gets patched, knowing you cannot patch everything.',
-    'Write incident documentation — what happened, what you did, what the evidence was. Careless notes ruin investigations and, in regulated industries, create legal exposure.',
+    'Write incident documentation: what happened, what you did, what the evidence was. Careless notes ruin investigations and, in regulated industries, create legal exposure.',
     'Support access reviews and audits: confirming that people who left still are not able to log in.',
     'Run and interpret phishing simulations against your own employees, then handle the fallout when an executive fails one.'
   ],
   skills:{
-    technical:['Networking fundamentals — TCP/IP, DNS, HTTP, ports','Operating system internals (Windows and Linux)','Log analysis and correlation','The CIA triad and common attack patterns','Identity and access management','Basic scripting (Python, PowerShell, Bash)','Incident response process'],
+    technical:['Networking fundamentals: TCP/IP, DNS, HTTP, ports','Operating system internals (Windows and Linux)','Log analysis and correlation','The CIA triad and common attack patterns','Identity and access management','Basic scripting (Python, PowerShell, Bash)','Incident response process'],
     tools:['Splunk / Microsoft Sentinel (SIEM)','CrowdStrike / Defender (EDR)','Wireshark','Nessus / Qualys','Burp Suite','Active Directory','Linux CLI'],
     soft:['Careful, precise written documentation','Calm judgment under time pressure','Skepticism without paranoia','Explaining risk to people who want to ignore it']
   },
   industries:[
     {name:'Financial Services',whyTheyHire:'Banks are the most directly and continuously targeted sector, and regulators require large, well-funded security programs.',
-     howTheRoleDiffers:'The most mature security programs and the deepest specialization — you may work only on fraud detection or only on threat intelligence rather than everything. Heavy regulatory overhead (PCI DSS, SOX, FFIEC) means much of the job is evidence and documentation. Typically the best-paying of the three.',
+     howTheRoleDiffers:'The most mature security programs and the deepest specialization. You may work only on fraud detection or only on threat intelligence rather than everything. Heavy regulatory overhead (PCI DSS, SOX, FFIEC) means much of the job is evidence and documentation. Typically the best-paying of the three.',
      employers:['Goldman Sachs','Zions Bancorporation','Capital One','Fidelity']},
     {name:'Healthcare',whyTheyHire:'Patient records are among the most valuable records on the black market, and ransomware against hospitals is now a routine, life-threatening event.',
      howTheRoleDiffers:'You defend a sprawling estate of medical devices and legacy systems that often cannot be patched or taken offline, so compensating controls matter more than clean fixes. HIPAA drives the priorities. The stakes are unusually concrete: downtime can mean diverted ambulances.',
      employers:['Intermountain Health','HCA Healthcare','Epic Systems','Cerner / Oracle Health']},
     {name:'Government & Defense',whyTheyHire:'Nation-state adversaries, classified systems, and critical infrastructure require the largest dedicated security workforces in the country.',
-     howTheRoleDiffers:'Frameworks are prescriptive rather than discretionary — NIST 800-53 and RMF define much of the work. Many roles require a security clearance, which takes months and constrains who can apply, but also insulates you from competition. Slower-moving, unusually stable, and the clearance itself becomes a durable career asset.',
+     howTheRoleDiffers:'Frameworks are prescriptive rather than discretionary. NIST 800-53 and RMF define much of the work. Many roles require a security clearance, which takes months and constrains who can apply, but also insulates you from competition. Slower-moving, unusually stable, and the clearance itself becomes a durable career asset.',
      employers:['Northrop Grumman','Booz Allen Hamilton','L3Harris','CISA']}
   ],
   entryLevel:{
-    know:['How DNS, HTTP, and TCP/IP actually work — this is tested constantly and is the most common failure point','How to read a log and construct a timeline from it','Common attack types: phishing, credential stuffing, SQL injection, ransomware, privilege escalation','The CIA triad, and how to apply it to a scenario rather than recite it','Basic command line on both Windows and Linux'],
-    notKnow:['Reverse engineering or malware analysis','Writing exploits','Deep cloud security architecture','Any specific SIEM platform — training on the employer’s tool is expected'],
+    know:['How DNS, HTTP, and TCP/IP actually work. This is tested constantly and is the most common failure point','How to read a log and construct a timeline from it','Common attack types: phishing, credential stuffing, SQL injection, ransomware, privilege escalation','The CIA triad, and how to apply it to a scenario rather than recite it','Basic command line on both Windows and Linux'],
+    notKnow:['Reverse engineering or malware analysis','Writing exploits','Deep cloud security architecture','Any specific SIEM platform. Training on the employer’s tool is expected'],
     internWork:'Security interns typically shadow the SOC queue, take real but low-severity alerts under supervision, and get a documentation-heavy project such as an asset inventory or a policy gap review. Expect a lot of reading before you touch anything sensitive.',
     certs:[{name:'CompTIA Security+',worth:'The single most recognized entry credential in this field. Many government and defense roles require it outright. If you get one certification, get this one.'},
            {name:'CompTIA Network+',worth:'Worth it only if your networking foundation is genuinely weak. The knowledge matters more than the certificate.'},
@@ -397,7 +442,7 @@ It is the fastest-growing of these four paths by percentage. It is also the smal
     'Has a home lab and can walk through it: a virtualized network, a firewall like pfSense, a Security Onion or Splunk box, and a written incident report from an attack they ran against their own environment.',
     'Can explain what happens when you type a URL and press enter, in detail, without notes. This is the most common technical screen in the field.',
     'Competes in CTFs or works through TryHackMe or Hack The Box, and can describe one specific problem they got stuck on and how they got unstuck.',
-    'Documents clearly. Ask for a writing sample and most candidates cannot produce one — an incident writeup from a home lab is a real differentiator.',
+    'Documents clearly. Ask for a writing sample and most candidates cannot produce one. An incident writeup from a home lab is a real differentiator.',
     'Understands that security is a business tradeoff, not an absolute. Candidates who would shut down operations to close every risk do not get hired.'
   ],
   compensation:{
@@ -407,27 +452,27 @@ It is the fastest-growing of these four paths by percentage. It is also the smal
       ['Entry level (10th percentile)','$75,090','bls-infosec'],
       ['Median (all experience levels)','$129,180','bls-infosec'],
       ['Experienced (90th percentile)','$199,850','bls-infosec'],
-      ['Projected growth, 2025–2035','21%','bls-infosec'],
+      ['Projected growth, 2025-2035','21%','bls-infosec'],
       ['Openings per year','~14,100','bls-infosec']
     ],
-    ladder:[['During school','Security Intern','~$23–32/hr'],['0–2 yrs','SOC Analyst (Tier 1)','~$75,000+'],
-            ['3–7 yrs','Security Analyst','~$129,000'],['8+ yrs','Senior / Lead Analyst','~$200,000+'],
+    ladder:[['During school','Security Intern','~$23-32/hr'],['0-2 yrs','SOC Analyst (Tier 1)','~$75,000+'],
+            ['3-7 yrs','Security Analyst','~$129,000'],['8+ yrs','Senior / Lead Analyst','~$200,000+'],
             ['10+ yrs','Security Manager / CISO track','~$175,000+']],
-    note:'Fastest growth of the four paths at 21% — but the smallest field, with only ~14,100 openings per year. Compare that to project management at 7% growth and ~76,500 openings. A high growth rate on a small base is still a small number of jobs.'
+    note:'Fastest growth of the four paths at 21%, but the smallest field, with only ~14,100 openings per year. Compare that to project management at 7% growth and ~76,500 openings. A high growth rate on a small base is still a small number of jobs.'
   },
   sourceIds:['bls-infosec','bls-cism','byu-bsis','nace-2026']
 },
 {
   id:'project-management', name:'IT Project Manager', short:'IT Project Manager',
   tagline:'Own the outcome when you do not control any of the people delivering it.',
-  overview:`IT project managers are accountable for getting technology work delivered — on a schedule, within a budget, across teams that do not report to them. The defining feature of the job is responsibility without authority: you own the outcome, but the developers, analysts, and vendors doing the work all answer to someone else.
+  overview:`IT project managers are accountable for getting technology work delivered: on a schedule, within a budget, across teams that do not report to them. The defining feature of the job is responsibility without authority: you own the outcome, but the developers, analysts, and vendors doing the work all answer to someone else.
 
 Most of the day is communication. Removing blockers, chasing decisions, reconciling what three teams each believe was agreed, and telling stakeholders things they do not want to hear early enough that they can still act.
 
-It has the lowest projected growth of these four paths at 7%, but by far the most openings — roughly 76,500 a year. It is also the path where an IS degree's business fluency is the most direct advantage over a pure computer science background.`,
+It has the lowest projected growth of these four paths at 7%, but by far the most openings: roughly 76,500 a year. It is also the path where an IS degree's business fluency is the most direct advantage over a pure computer science background.`,
   dayToDay:[
     'Run standups, planning, and retrospectives, and keep the board reflecting what is actually happening rather than what people wish were happening.',
-    'Maintain the project plan: dependencies, critical path, and the honest status — not the green-lit version.',
+    'Maintain the project plan: dependencies, critical path, and the honest status, not the green-lit version.',
     'Chase decisions. A surprising share of the job is finding the one person who can approve something and getting them to do it.',
     'Manage scope. New requests arrive constantly, and every yes costs something somewhere else.',
     'Communicate upward: status reports and steering meetings where you translate technical reality into business consequence.',
@@ -439,59 +484,59 @@ It has the lowest projected growth of these four paths at 7%, but by far the mos
     soft:['Written and verbal clarity','Negotiation and expectation-setting','Conflict resolution','Delivering bad news early','Reading a room']
   },
   industries:[
-    {name:'Healthcare',whyTheyHire:'Hospital systems run enormous, multi-year technology programs — EHR implementations alone can run years and hundreds of millions of dollars.',
+    {name:'Healthcare',whyTheyHire:'Hospital systems run enormous, multi-year technology programs. EHR implementations alone can run years and hundreds of millions of dollars.',
      howTheRoleDiffers:'Long timelines, heavy regulation, and stakeholders who are clinicians first and system users second. You cannot take systems down whenever you like, so cutover planning is unusually rigorous. Change management with physicians and nurses is often harder than the technology.',
      employers:['Intermountain Health','Epic Systems','HCA Healthcare','Oracle Health']},
     {name:'Financial Services',whyTheyHire:'Continuous regulatory change, core banking modernization, and large integration programs generate constant demand.',
      howTheRoleDiffers:'The most documentation-heavy and audit-driven of the three. Deadlines are frequently externally imposed by regulators, which removes the option of slipping the date. Risk management is a formal discipline here rather than a section in your status report.',
      employers:['Goldman Sachs','Zions Bancorporation','American Express','Fidelity']},
     {name:'Technology & Consulting',whyTheyHire:'Software companies and consultancies deliver projects continuously, and consulting firms in particular hire IT PMs at high volume straight out of undergrad.',
-     howTheRoleDiffers:'The fastest pace and the shortest cycles. In consulting you may juggle multiple clients, and billability becomes a metric you are measured on. Consulting travel can be significant. It offers the widest exposure early — several industries in your first two years — at the cost of depth.',
+     howTheRoleDiffers:'The fastest pace and the shortest cycles. In consulting you may juggle multiple clients, and billability becomes a metric you are measured on. Consulting travel can be significant. It offers the widest exposure early (several industries in your first two years) at the cost of depth.',
      employers:['EY','Deloitte','Accenture','Qualtrics']}
   ],
   entryLevel:{
     know:['What Agile and Scrum actually are, including the ceremonies and the roles, and when Waterfall is still the right call','How to build and read a project schedule with dependencies','How to write a clear status update that surfaces bad news instead of burying it','Basic risk management: identify, assess, mitigate, monitor','Jira or an equivalent tracker at a working level'],
-    notKnow:['Managing a large program or multiple workstreams','Budget ownership and forecasting','Vendor contracts and procurement','PMP certification — it requires years of documented experience'],
+    notKnow:['Managing a large program or multiple workstreams','Budget ownership and forecasting','Vendor contracts and procurement','PMP certification. It requires years of documented experience'],
     internWork:'PM interns usually shadow a project manager and own something contained: documenting a process, coordinating a small workstream, or running the status reporting for one team. You will sit in a lot of meetings, and paying attention to how the PM handles conflict is the real curriculum.',
-    certs:[{name:'Certified Associate in Project Management (CAPM)',worth:'The realistic PMI credential for a student — the PMP requires years of experience you do not have yet. A reasonable signal of seriousness.'},
+    certs:[{name:'Certified Associate in Project Management (CAPM)',worth:'The realistic PMI credential for a student. The PMP requires years of experience you do not have yet. A reasonable signal of seriousness.'},
            {name:'Certified ScrumMaster (CSM)',worth:'Fast and widely recognized, though the two-day course format means it signals less than the price suggests. Useful if your target employers run Scrum.'},
            {name:'Google Project Management Certificate',worth:'Good structure for learning the vocabulary from scratch. Weak as a hiring signal on its own.'}]
   },
   strong:[
-    'Can describe a real project they ran — a club initiative, a work project, a group assignment — including what went wrong and what they changed as a result.',
+    'Can describe a real project they ran (a club initiative, a work project, a group assignment) including what went wrong and what they changed as a result.',
     'Has a specific story about delivering bad news to a stakeholder. Interviewers probe this because avoiding it is the most common failure mode in new PMs.',
     'Understands the technology well enough to push back on an estimate without pretending to be an engineer.',
     'Can explain a tradeoff decision where every option was bad, and justify the one they chose.',
     'Writes clearly and concisely. A rambling status update is the tell that this person will not be trusted with a real project.'
   ],
   compensation:{
-    mapping:'Project Management Specialists (SOC 13-1082). Note that this code spans every industry — construction, healthcare, marketing, manufacturing — not just IT. IT-specific pay is likely higher than the all-industry median shown here. The career endpoint is Computer and Information Systems Managers (SOC 11-3021), median $175,140, which BLS notes requires 5+ years of related experience.',
+    mapping:'Project Management Specialists (SOC 13-1082). Note that this code spans every industry (construction, healthcare, marketing, manufacturing) not just IT. IT-specific pay is likely higher than the all-industry median shown here. The career endpoint is Computer and Information Systems Managers (SOC 11-3021), median $175,140, which BLS notes requires 5+ years of related experience.',
     intern:'$23.35/hr average (all majors, bachelor’s level)', internSrc:'nace-2026',
     rows:[
       ['Entry level (10th percentile)','$61,580','bls-pms'],
       ['Median (all industries)','$102,320','bls-pms'],
       ['Experienced (90th percentile)','$167,970','bls-pms'],
       ['IT management track','$175,140','bls-cism'],
-      ['Projected growth, 2025–2035','7%','bls-pms'],
+      ['Projected growth, 2025-2035','7%','bls-pms'],
       ['Openings per year','~76,500','bls-pms']
     ],
-    ladder:[['During school','PM Intern / Coordinator','~$20–28/hr'],['0–2 yrs','Project Coordinator','~$62,000+'],
-            ['3–7 yrs','Project Manager','~$102,000'],['8+ yrs','Senior / Program Manager','~$168,000+'],
+    ladder:[['During school','PM Intern / Coordinator','~$20-28/hr'],['0-2 yrs','Project Coordinator','~$62,000+'],
+            ['3-7 yrs','Project Manager','~$102,000'],['8+ yrs','Senior / Program Manager','~$168,000+'],
             ['10+ yrs','IT Director / CIO track','~$175,000+']],
-    note:'Lowest growth rate of the four at 7%, but by far the most openings — roughly 76,500 a year, more than five times cybersecurity. If you are optimizing for the odds of landing a job, this is the strongest of the four paths.'
+    note:'Lowest growth rate of the four at 7%, but by far the most openings: roughly 76,500 a year, more than five times cybersecurity. If you are optimizing for the odds of landing a job, this is the strongest of the four paths.'
   },
   sourceIds:['bls-pms','bls-cism','byu-bsis','nace-2026']
 },
 {
   id:'software-dev', name:'Software Developer', short:'Software Developer',
   tagline:'Build and maintain the systems the rest of the business runs on.',
-  overview:`Software developers design, build, test, and maintain applications. For an IS graduate this usually means business systems — internal tools, integrations, customer-facing web applications — rather than operating systems or game engines.
+  overview:`Software developers design, build, test, and maintain applications. For an IS graduate this usually means business systems (internal tools, integrations, customer-facing web applications) rather than operating systems or game engines.
 
 The most common misconception is that the job is mostly writing new code. It is mostly reading existing code, understanding why it does what it does, and changing it without breaking anything else. Most of what you touch will be code someone else wrote, often years ago, often without comments.
 
-It pays the best of these four paths at the median and has strong growth. It also has the highest technical bar to enter, and IS graduates compete with computer science graduates for the same roles — usually winning on business context and communication rather than on algorithms.`,
+It pays the best of these four paths at the median and has strong growth. It also has the highest technical bar to enter, and IS graduates compete with computer science graduates for the same roles, usually winning on business context and communication rather than on algorithms.`,
   dayToDay:[
-    'Read existing code to understand a system before changing it — routinely the largest single block of time in the day.',
+    'Read existing code to understand a system before changing it: routinely the largest single block of time in the day.',
     'Implement features from tickets, which usually means clarifying what the ticket actually meant before writing anything.',
     'Write and maintain tests, and fix the ones your change broke.',
     'Review teammates’ pull requests and respond to reviews on your own, which is where most day-to-day learning happens.',
@@ -499,30 +544,30 @@ It pays the best of these four paths at the median and has strong growth. It als
     'Sit in planning and estimation meetings, and learn the hard way that your estimates are optimistic.'
   ],
   skills:{
-    technical:['One language deeply (JavaScript/TypeScript, Python, Java, or C#)','Data structures and algorithms at a working level','SQL and relational database design','REST API design and consumption','Git and branching workflows','Testing — unit and integration','Debugging methodically rather than by guessing'],
+    technical:['One language deeply (JavaScript/TypeScript, Python, Java, or C#)','Data structures and algorithms at a working level','SQL and relational database design','REST API design and consumption','Git and branching workflows','Testing: unit and integration','Debugging methodically rather than by guessing'],
     tools:['VS Code / JetBrains IDEs','Git + GitHub / Azure DevOps','Docker','Postman','React / .NET / Spring (framework depends on shop)','PostgreSQL / SQL Server','CI/CD pipelines'],
     soft:['Reading unfamiliar code without panicking','Asking good questions before building the wrong thing','Giving and receiving code review without ego','Breaking a large problem into shippable pieces']
   },
   industries:[
     {name:'Software & SaaS',whyTheyHire:'The product is the software, so engineering is the largest cost center and the core of the company.',
-     howTheRoleDiffers:'The strongest engineering culture and the most modern tooling — code review, CI/CD, and testing are non-negotiable rather than aspirational. You ship frequently and see users hit your code quickly. The technical interview bar is the highest of the three, and the equity component of compensation matters.',
+     howTheRoleDiffers:'The strongest engineering culture and the most modern tooling. Code review, CI/CD, and testing are non-negotiable rather than aspirational. You ship frequently and see users hit your code quickly. The technical interview bar is the highest of the three, and the equity component of compensation matters.',
      employers:['Qualtrics','Adobe','Microsoft','Domo']},
     {name:'Financial Services',whyTheyHire:'Banks are effectively large software companies now, running everything from trading systems to mobile apps, and they hire developers in volume.',
-     howTheRoleDiffers:'Correctness and auditability outrank speed — releases go through change control, and "move fast and break things" is a firing offense. You will encounter genuinely old technology alongside modern stacks, sometimes in the same system. Compensation is strong and stable, and the work is unusually resilient to downturns.',
+     howTheRoleDiffers:'Correctness and auditability outrank speed: releases go through change control, and "move fast and break things" is a firing offense. You will encounter genuinely old technology alongside modern stacks, sometimes in the same system. Compensation is strong and stable, and the work is unusually resilient to downturns.',
      employers:['Goldman Sachs','Capital One','Zions Bancorporation','Fidelity']},
     {name:'Healthcare Technology',whyTheyHire:'Electronic health records, claims processing, and patient-facing applications are enormous, long-lived software systems.',
      howTheRoleDiffers:'Heavily regulated, with HIPAA constraints shaping architecture decisions from day one. Interoperability standards like HL7 and FHIR are a specialized skill set that transfers well within the industry and poorly outside it. Release cycles are slower, and the consequence of a bug can be clinical rather than financial.',
      employers:['Epic Systems','Oracle Health','Intermountain Health','Veradigm']}
   ],
   entryLevel:{
-    know:['Write clean, working code in at least one language and explain your choices','Core data structures — arrays, hash maps, lists — and when to reach for each','Write SQL queries with joins and aggregation','Use Git properly: branch, commit, resolve a merge conflict, open a pull request','Debug systematically — reproduce, isolate, hypothesize, test','Explain your own code out loud while writing it'],
-    notKnow:['System design at scale','Advanced algorithms and dynamic programming — for most IS-track roles, though big-tech screens do test these','DevOps and infrastructure management','Any specific framework in depth'],
+    know:['Write clean, working code in at least one language and explain your choices','Core data structures (arrays, hash maps, lists) and when to reach for each','Write SQL queries with joins and aggregation','Use Git properly: branch, commit, resolve a merge conflict, open a pull request','Debug systematically: reproduce, isolate, hypothesize, test','Explain your own code out loud while writing it'],
+    notKnow:['System design at scale','Advanced algorithms and dynamic programming. For most IS-track roles, though big-tech screens do test these','DevOps and infrastructure management','Any specific framework in depth'],
     internWork:'Development interns get real tickets, usually small and well-scoped, on a real codebase with a mentor assigned. Expect the first two weeks to be environment setup and reading. Your first pull request will get a lot of comments; that is the job working correctly, not a bad sign.',
     certs:[{name:'None, generally',worth:'Software development is the one path here where certifications carry almost no weight. A GitHub profile with real projects is worth more than any certificate.'},
            {name:'AWS Certified Cloud Practitioner',worth:'Marginal for a developer role, but a cheap way to demonstrate cloud literacy if your resume is otherwise thin.'}]
   },
   strong:[
-    'Has a GitHub with real projects that have commit history over time — not four repos all created the week before applications opened.',
+    'Has a GitHub with real projects that have commit history over time, not four repos all created the week before applications opened.',
     'Has built something that other people actually used, even a handful of people. A tool for a club or a family project beats a tutorial clone.',
     'Can talk through their own code and explain why they made a specific design choice, including one they would now make differently.',
     'Thinks out loud during technical interviews. Silence reads as being stuck; interviewers are evaluating your reasoning more than your answer.',
@@ -530,17 +575,17 @@ It pays the best of these four paths at the median and has strong growth. It als
     'Asks clarifying questions before coding. Jumping straight to a solution on an underspecified problem is the most common interview mistake.'
   ],
   compensation:{
-    mapping:'Software Developers (SOC 15-1252). Note that the BLS handbook page covers two occupations together — Software Developers (15-1252) and Software QA Analysts and Testers (15-1253). The wage figures below are developers only, but BLS reports employment (1,905,400) and annual openings (~106,100) for the combined group.',
+    mapping:'Software Developers (SOC 15-1252). Note that the BLS handbook page covers two occupations together: Software Developers (15-1252) and Software QA Analysts and Testers (15-1253). The wage figures below are developers only, but BLS reports employment (1,905,400) and annual openings (~106,100) for the combined group.',
     intern:'$23.35/hr average (all majors, bachelor’s level; NACE reports computer science among the highest-paying fields)', internSrc:'nace-2026',
     rows:[
       ['Entry level (10th percentile)','$82,460','bls-swdev'],
       ['Median (all experience levels)','$135,980','bls-swdev'],
       ['Experienced (90th percentile)','$214,670','bls-swdev'],
-      ['Projected growth, 2025–2035','10%','bls-swdev'],
+      ['Projected growth, 2025-2035','10%','bls-swdev'],
       ['Openings per year','~106,100','bls-swdev']
     ],
-    ladder:[['During school','Software Engineering Intern','~$23–35/hr'],['0–2 yrs','Junior / Associate Developer','~$82,000+'],
-            ['3–7 yrs','Software Engineer','~$136,000'],['8+ yrs','Senior Engineer','~$215,000+'],
+    ladder:[['During school','Software Engineering Intern','~$23-35/hr'],['0-2 yrs','Junior / Associate Developer','~$82,000+'],
+            ['3-7 yrs','Software Engineer','~$136,000'],['8+ yrs','Senior Engineer','~$215,000+'],
             ['10+ yrs','Engineering Manager','~$175,000+']],
     note:'Highest median pay of the four paths. The openings figure of ~106,100 covers developers plus QA analysts and testers combined, not developers alone.'
   },
@@ -550,7 +595,7 @@ It pays the best of these four paths at the median and has strong growth. It als
 
 
 /* ============================================================================
-   BEHAVIORAL POOLS — one per career.
+   BEHAVIORAL POOLS: one per career.
    v1 shared a single pool across all four paths, which meant a cybersecurity
    candidate could be shown an answer about data analytics. These are separate
    and career-flavored. Mostly free response: "tell me about a time" and
@@ -573,7 +618,7 @@ const BEHAVIORAL = {
        ['explain','explained','showed','walked','translate','simple','plain','example']],
   bonus:['analogy','visual','chart','definition','stakeholder','jargon','documented'],
   wc:BWC,
-  hint:'Use STAR — Situation, Task, Action, Result. The most common failure is describing the situation and never saying what changed because of you.'},
+  hint:'Use STAR: Situation, Task, Action, Result. The most common failure is describing the situation and never saying what changed because of you.'},
 
  {id:'dab2', cat:'behavioral', type:'free',
   prompt:'Describe a time you found an error in your own work. What did you do about it?',
@@ -627,7 +672,7 @@ const BEHAVIORAL = {
 
  {id:'cyb2', cat:'behavioral', type:'free',
   prompt:'Describe a time you had to explain a risk to someone who did not want to hear it.',
-  model:`On a group project, a teammate wanted to commit our API keys directly into the repository because setting up environment variables was slowing us down. Rather than argue about policy, I showed him a GitHub search returning thousands of exposed keys and explained that automated scanners find them within minutes of a push. I also acknowledged his actual complaint, which was real — the setup was genuinely annoying — and spent twenty minutes writing a setup script so the secure path was the easy path. He used it. Framing it as removing his friction rather than as a rule got a much better result than insisting would have.`,
+  model:`On a group project, a teammate wanted to commit our API keys directly into the repository because setting up environment variables was slowing us down. Rather than argue about policy, I showed him a GitHub search returning thousands of exposed keys and explained that automated scanners find them within minutes of a push. I also acknowledged his actual complaint, which was real (the setup was genuinely annoying) and spent twenty minutes writing a setup script so the secure path was the easy path. He used it. Framing it as removing his friction rather than as a rule got a much better result than insisting would have.`,
   req:[BEH_REQ.action, BEH_REQ.result,
        ['risk','vulnerable','exposed','insecure','danger','threat','breach'],
        ['explain','showed','demonstrated','concrete','example','evidence']],
@@ -637,7 +682,7 @@ const BEHAVIORAL = {
 
  {id:'cyb3', cat:'behavioral', type:'free',
   prompt:'Tell me about a time you had to follow a process carefully even when it slowed you down.',
-  model:`During an internship I was helping close out access reviews, and the process required a second person to confirm every revocation before it was applied. It felt like pure overhead when I could see plainly that the accounts belonged to people who had left. I followed it anyway, and on the fourth batch my reviewer caught that one account I had flagged was a shared service account that three active jobs depended on. Revoking it would have broken a nightly process. That was the moment the control stopped feeling like bureaucracy to me — the check existed precisely for the case I could not see.`,
+  model:`During an internship I was helping close out access reviews, and the process required a second person to confirm every revocation before it was applied. It felt like pure overhead when I could see plainly that the accounts belonged to people who had left. I followed it anyway, and on the fourth batch my reviewer caught that one account I had flagged was a shared service account that three active jobs depended on. Revoking it would have broken a nightly process. That was the moment the control stopped feeling like bureaucracy to me. The check existed precisely for the case I could not see.`,
   req:[BEH_REQ.context, BEH_REQ.action, BEH_REQ.learn,
        ['process','procedure','policy','control','protocol','documentation','steps']],
   bonus:['caught','mistake','why','reason','audit','evidence','patience','discipline'],
@@ -657,17 +702,17 @@ const BEHAVIORAL = {
  {id:'cyb5', cat:'behavioral', type:'mc',
   prompt:'You learn a coworker has been sharing their login with a contractor so the contractor can finish a deadline. Nothing has gone wrong. What do you do?',
   opts:[
-   {t:'Nothing — no harm was done and reporting it would damage a working relationship',c:false,w:'Shared credentials destroy accountability: no log can now attribute any action to a person. The harm is already present even though nothing visible has broken.'},
+   {t:'Nothing. No harm was done and reporting it would damage a working relationship',c:false,w:'Shared credentials destroy accountability: no log can now attribute any action to a person. The harm is already present even though nothing visible has broken.'},
    {t:'Report it straight to management without speaking to the coworker about it first',c:false,w:'It does need reporting, but going around a colleague you could have spoken to first is a poor default and often gets you less information.'},
-   {t:'Talk to the coworker, then report it and get the contractor proper access',c:true,w:'Correct. You address it directly, it still gets reported because accountability requires it, and you fix the underlying cause — the contractor needed real access.'},
+   {t:'Talk to the coworker, then report it and get the contractor proper access',c:true,w:'Correct. You address it directly, it still gets reported because accountability requires it, and you fix the underlying cause: the contractor needed real access.'},
    {t:'Quietly reset the shared password yourself so the arrangement stops immediately',c:false,w:'This stops the symptom, breaks the contractor without warning, and leaves no record. Acting unilaterally on someone else account is its own problem.'}],
-  takeaway:'Security incidents involving people are handled with people. Talk to them, fix the underlying need, and still document it — the record is the point.'}
+  takeaway:'Security incidents involving people are handled with people. Talk to them, fix the underlying need, and still document it. The record is the point.'}
 ],
 
 'project-management':[
  {id:'pmb1', cat:'behavioral', type:'free',
   prompt:'Tell me about a time you had to deliver bad news about a project or deadline.',
-  model:`On a semester-long group project our client contact expected a working prototype at the four-week check-in, and two weeks in it was clear we would have roughly half of it. I raised it at the two-week mark rather than the four-week one, because at two weeks she still had options. I brought a specific picture: what would be done, what would not, and two paths — a narrower demo on the original date, or the full scope a week later. She chose the narrower demo. Delivering it early cost me an uncomfortable conversation and saved a much worse one.`,
+  model:`On a semester-long group project our client contact expected a working prototype at the four-week check-in, and two weeks in it was clear we would have roughly half of it. I raised it at the two-week mark rather than the four-week one, because at two weeks she still had options. I brought a specific picture: what would be done, what would not, and two paths: a narrower demo on the original date, or the full scope a week later. She chose the narrower demo. Delivering it early cost me an uncomfortable conversation and saved a much worse one.`,
   req:[BEH_REQ.action, BEH_REQ.result,
        ['early','as soon as','immediately','ahead','before','two weeks','right away','sooner'],
        ['option','alternative','choice','path','plan','proposed','recommend']],
@@ -683,7 +728,7 @@ const BEHAVIORAL = {
        ['visible','shared','timeline','dependency','communicat','align','transparen','asked']],
   bonus:['influence','buy-in','follow up','blocker','ownership','relationship','trust'],
   wc:BWC,
-  hint:'This is the defining constraint of the job — responsibility without authority. Show influence, not enforcement.'},
+  hint:'This is the defining constraint of the job: responsibility without authority. Show influence, not enforcement.'},
 
  {id:'pmb3', cat:'behavioral', type:'free',
   prompt:'Tell me about a time a plan you were responsible for went off track. What did you do?',
@@ -717,7 +762,7 @@ const BEHAVIORAL = {
 'software-dev':[
  {id:'sdb1', cat:'behavioral', type:'free',
   prompt:'Tell me about a time you had to work in a codebase you did not write.',
-  model:`I joined a club project with about eight thousand lines of JavaScript and no documentation. Instead of trying to read all of it, I picked one user-visible behavior — submitting the signup form — and traced it end to end from the click handler through to the database write. That one path taught me the conventions the rest of the code followed. I wrote up what I learned in a short README as I went, partly for myself and partly because the next person would need it. My first real change took two days instead of the week I expected, mostly because I had a map by then.`,
+  model:`I joined a club project with about eight thousand lines of JavaScript and no documentation. Instead of trying to read all of it, I picked one user-visible behavior (submitting the signup form) and traced it end to end from the click handler through to the database write. That one path taught me the conventions the rest of the code followed. I wrote up what I learned in a short README as I went, partly for myself and partly because the next person would need it. My first real change took two days instead of the week I expected, mostly because I had a map by then.`,
   req:[BEH_REQ.action, BEH_REQ.result,
        ['unfamiliar','did not write','someone else','inherited','existing','legacy','no documentation'],
        ['trace','traced','read','follow','one','path','end to end','debugger','orient']],
@@ -769,15 +814,15 @@ const TECHNICAL = {
 'data-analytics':[
  {id:'da1', cat:'technical', type:'mc',
   prompt:'You need a list of every customer, along with their orders where orders exist. Customers with no orders must still appear. Which join?',
-  opts:[{t:'INNER JOIN',c:false,w:'Drops any customer who has no matching order — exactly the rows you were asked to keep.'},
+  opts:[{t:'INNER JOIN',c:false,w:'Drops any customer who has no matching order. Exactly the rows you were asked to keep.'},
         {t:'LEFT JOIN',c:true,w:'Keeps every row from the left table (customers) and fills NULL where no order matches. This is the correct answer.'},
-        {t:'CROSS JOIN',c:false,w:'Produces a Cartesian product — every customer paired with every order. Almost never what you want.'},
+        {t:'CROSS JOIN',c:false,w:'Produces a Cartesian product: every customer paired with every order. Almost never what you want.'},
         {t:'FULL OUTER JOIN',c:false,w:'Also keeps orphaned orders with no customer, which you were not asked for. Not wrong in spirit, but broader than the requirement.'}],
   takeaway:'Join questions are the most common technical screen for analyst roles. Know INNER, LEFT, and FULL OUTER cold and be able to say which rows each one drops.'},
 
  {id:'da2', cat:'technical', type:'free',
-  prompt:'A business stakeholder tells you "returns spiked in March — find out why." Walk me through how you would approach this.',
-  model:`First I would clarify the question: how much of a spike, against what baseline, and what decision they plan to make with the answer. Then I would verify the number is real before investigating it — a reporting or data pipeline change is a common cause of an apparent spike. Assuming it is real, I would segment: by product, region, channel, and customer type, to see whether the increase is broad or concentrated. Usually it is concentrated. I would then look for a corresponding change in that segment — a new SKU, a supplier change, a pricing test. Finally I would present the finding with the caveats about what I could not rule out.`,
+  prompt:'A business stakeholder tells you "returns spiked in March. Find out why." Walk me through how you would approach this.',
+  model:`First I would clarify the question: how much of a spike, against what baseline, and what decision they plan to make with the answer. Then I would verify the number is real before investigating it. A reporting or data pipeline change is a common cause of an apparent spike. Assuming it is real, I would segment: by product, region, channel, and customer type, to see whether the increase is broad or concentrated. Usually it is concentrated. I would then look for a corresponding change in that segment: a new SKU, a supplier change, a pricing test. Finally I would present the finding with the caveats about what I could not rule out.`,
   req:[['clarify','clarifying','question','scope','define','baseline','ask','understand','what they mean'],
        ['verify','validate','check','confirm','real','data quality','sanity','make sure','pipeline','trust'],
        ['segment','breakdown','slice','group','dimension','cohort','break down','by product','by region','drill'],
@@ -788,7 +833,7 @@ const TECHNICAL = {
 
  {id:'da3', cat:'technical', type:'free',
   prompt:'When would you report the median instead of the mean, and why does it matter?',
-  model:`The mean is pulled by outliers and the median is not, so I would use the median whenever the distribution is skewed. Salary and revenue-per-customer are the classic cases — a handful of very large values drag the mean well above what a typical case looks like. If I reported mean customer spend and one enterprise account was 400 times the others, the number would describe nobody. The median tells you about the middle of the distribution. In practice I would look at the shape of the data first, and often report both plus a note on the spread, since the gap between mean and median is itself informative.`,
+  model:`The mean is pulled by outliers and the median is not, so I would use the median whenever the distribution is skewed. Salary and revenue-per-customer are the classic cases. A handful of very large values drag the mean well above what a typical case looks like. If I reported mean customer spend and one enterprise account was 400 times the others, the number would describe nobody. The median tells you about the middle of the distribution. In practice I would look at the shape of the data first, and often report both plus a note on the spread, since the gap between mean and median is itself informative.`,
   req:[['outlier','skew','skewed','extreme','tail'],
        ['median','middle','50th'],
        ['distribution','shape','spread','variance']],
@@ -806,7 +851,7 @@ const TECHNICAL = {
 
  {id:'da5', cat:'technical', type:'free',
   prompt:'You are handed a dataset where about 8% of the rows are missing a value in a column central to your analysis. What do you do?',
-  model:`First I would find out why they are missing, because the reason determines the fix. If the values are missing at random, dropping or imputing them is defensible. If the missingness is systematic — for example one region's system never wrote the field — then dropping those rows silently biases the result. I would check whether the missing rows differ from the complete rows on other dimensions. Depending on what I found I would either exclude them and state that clearly, impute with a documented method, or go back to the source system. Whatever I chose, I would report the decision and the percentage affected alongside the analysis rather than burying it.`,
+  model:`First I would find out why they are missing, because the reason determines the fix. If the values are missing at random, dropping or imputing them is defensible. If the missingness is systematic(for example one region's system never wrote the field) then dropping those rows silently biases the result. I would check whether the missing rows differ from the complete rows on other dimensions. Depending on what I found I would either exclude them and state that clearly, impute with a documented method, or go back to the source system. Whatever I chose, I would report the decision and the percentage affected alongside the analysis rather than burying it.`,
   req:[['why','reason','cause','systematic','random','pattern'],
        ['bias','biased','skew','misleading','distort'],
        ['document','report','disclose','state','note','communicate'],
@@ -817,31 +862,31 @@ const TECHNICAL = {
 
  {id:'da6', cat:'technical', type:'free',
   prompt:'Explain the difference between a primary key and a foreign key, and why it matters when you are joining tables.',
-  model:`A primary key uniquely identifies each row in a table — customer_id in a customers table. A foreign key is a column in another table that points back to that primary key, like customer_id appearing in an orders table to say which customer placed each order. That relationship is what makes joins possible. It matters practically because if you join on a column that is not actually unique on one side, you get row multiplication — a customer with three orders produces three rows, and any sum over that result is silently inflated. Checking row counts before and after a join is the habit that catches this.`,
+  model:`A primary key uniquely identifies each row in a table: customer_id in a customers table. A foreign key is a column in another table that points back to that primary key, like customer_id appearing in an orders table to say which customer placed each order. That relationship is what makes joins possible. It matters practically because if you join on a column that is not actually unique on one side, you get row multiplication. A customer with three orders produces three rows, and any sum over that result is silently inflated. Checking row counts before and after a join is the habit that catches this.`,
   req:[['primary key','unique','uniquely','identifies','identifier'],
        ['foreign key','reference','references','points','relationship'],
        ['join','joining','joined'],
        ['duplicate','multiplication','inflate','fan out','row count','many','double','extra rows','more rows','blow up']],
   bonus:['one-to-many','cardinality','integrity','normalize','orphan'],
   wc:{min:40,ideal:105,max:210},
-  hint:'Mentioning what goes wrong — duplicated rows inflating your totals — separates a memorized definition from real experience.'}
+  hint:'Mentioning what goes wrong (duplicated rows inflating your totals) separates a memorized definition from real experience.'}
 ],
 
 'cybersecurity':[
  {id:'cy1', cat:'technical', type:'free',
   prompt:'Walk me through what happens when you type a URL into a browser and press enter.',
-  model:`The browser checks its cache, then resolves the domain to an IP address through DNS, querying the local resolver and walking up to root, TLD, and authoritative nameservers if needed. With the IP it opens a TCP connection to the server, typically on port 443, completing the three-way handshake. For HTTPS it then performs a TLS handshake — the server presents a certificate, the browser validates it against a trusted certificate authority, and they negotiate session keys. The browser sends an HTTP GET request, the server responds, and the browser parses the HTML and requests any additional resources it references before rendering.`,
+  model:`The browser checks its cache, then resolves the domain to an IP address through DNS, querying the local resolver and walking up to root, TLD, and authoritative nameservers if needed. With the IP it opens a TCP connection to the server, typically on port 443, completing the three-way handshake. For HTTPS it then performs a TLS handshake: the server presents a certificate, the browser validates it against a trusted certificate authority, and they negotiate session keys. The browser sends an HTTP GET request, the server responds, and the browser parses the HTML and requests any additional resources it references before rendering.`,
   req:[['dns','domain name','resolve','resolution','nameserver'],
        ['tcp','handshake','connection','three-way'],
        ['tls','ssl','https','certificate','encrypt'],
        ['http','request','get','response']],
   bonus:['cache','port 443','ip address','render','root','authoritative','cdn'],
   wc:{min:50,ideal:120,max:240},
-  hint:'This is the single most common cybersecurity screening question. Interviewers keep asking "and then what?" — depth is the whole point.'},
+  hint:'This is the single most common cybersecurity screening question. Interviewers keep asking "and then what?". Depth is the whole point.'},
 
  {id:'cy2', cat:'technical', type:'free',
   prompt:'A user reports their machine is slow and pop-ups keep appearing. Walk me through your first three steps.',
-  model:`First I would isolate the machine from the network to stop any potential spread or data exfiltration, while leaving it powered on so volatile evidence in memory is preserved. Second, I would open a ticket and start documenting everything — timestamps, what the user reports, what they were doing beforehand, and any recent downloads or email attachments. Third, I would run a scan with our EDR or antimalware tooling and review the endpoint's recent process and network activity for anything unexpected. Depending on what turns up, I would escalate to the incident response process. Throughout, I would avoid destroying evidence by rebuilding the machine prematurely.`,
+  model:`First I would isolate the machine from the network to stop any potential spread or data exfiltration, while leaving it powered on so volatile evidence in memory is preserved. Second, I would open a ticket and start documenting everything. Timestamps, what the user reports, what they were doing beforehand, and any recent downloads or email attachments. Third, I would run a scan with our EDR or antimalware tooling and review the endpoint's recent process and network activity for anything unexpected. Depending on what turns up, I would escalate to the incident response process. Throughout, I would avoid destroying evidence by rebuilding the machine prematurely.`,
   req:[['isolate','disconnect','quarantine','contain','segment','off the network','unplug','pull the machine','take it offline','offline'],
        ['document','ticket','log','record','timeline','notes','write down','write up','note what'],
        ['scan','antimalware','antivirus','edr','endpoint','malware','defender','crowdstrike']],
@@ -859,7 +904,7 @@ const TECHNICAL = {
 
  {id:'cy4', cat:'technical', type:'free',
   prompt:'Explain the CIA triad and apply it to a hospital that has just been hit with ransomware.',
-  model:`The CIA triad is confidentiality, integrity, and availability. Confidentiality means only authorized parties can read data; integrity means the data has not been altered without authorization; availability means authorized users can access it when they need it. In a hospital ransomware case, availability takes the hardest hit — encrypted systems mean clinicians cannot reach patient records, which can force ambulance diversion and delay care. Confidentiality is also at risk if the attackers exfiltrated data before encrypting, which is now standard in double-extortion attacks. Integrity is a concern because you cannot fully trust restored data until it is validated. In healthcare, availability is often the priority because the consequence is clinical rather than financial.`,
+  model:`The CIA triad is confidentiality, integrity, and availability. Confidentiality means only authorized parties can read data; integrity means the data has not been altered without authorization; availability means authorized users can access it when they need it. In a hospital ransomware case, availability takes the hardest hit. Encrypted systems mean clinicians cannot reach patient records, which can force ambulance diversion and delay care. Confidentiality is also at risk if the attackers exfiltrated data before encrypting, which is now standard in double-extortion attacks. Integrity is a concern because you cannot fully trust restored data until it is validated. In healthcare, availability is often the priority because the consequence is clinical rather than financial.`,
   req:[['confidentiality','confidential'],
        ['integrity'],
        ['availability','available','uptime','access'],
@@ -878,7 +923,7 @@ const TECHNICAL = {
 
  {id:'cy6', cat:'technical', type:'free',
   prompt:'What is the difference between authentication and authorization? Give an example of a failure of each.',
-  model:`Authentication is verifying who you are; authorization is determining what you are allowed to do once you are verified. Logging in with a password and an MFA code is authentication. Being permitted to view payroll records after logging in is authorization. An authentication failure is an attacker successfully using credentials stolen in a phishing attack to log in as a legitimate user. An authorization failure is a logged-in user changing an ID in a URL and seeing another customer's record — that is an insecure direct object reference, and it is a broken access control problem rather than an identity problem. MFA addresses the first and access control reviews address the second.`,
+  model:`Authentication is verifying who you are; authorization is determining what you are allowed to do once you are verified. Logging in with a password and an MFA code is authentication. Being permitted to view payroll records after logging in is authorization. An authentication failure is an attacker successfully using credentials stolen in a phishing attack to log in as a legitimate user. An authorization failure is a logged-in user changing an ID in a URL and seeing another customer's record. That is an insecure direct object reference, and it is a broken access control problem rather than an identity problem. MFA addresses the first and access control reviews address the second.`,
   req:[['authentication','authenticate','who','identity','verify'],
        ['authorization','authorize','permission','allowed','access control','privilege'],
        ['example','failure','attacker','breach','stolen','escalation']],
@@ -890,7 +935,7 @@ const TECHNICAL = {
 'project-management':[
  {id:'pm1', cat:'technical', type:'free',
   prompt:'When would you use Agile and when would you use Waterfall? Give a concrete example of each.',
-  model:`Agile fits when requirements are expected to change and you can deliver value incrementally — a customer-facing web product where you want user feedback every two weeks and can reprioritize based on it. Waterfall fits when requirements are fixed up front, the cost of change is high, and there are regulatory or physical dependencies — a data center migration or a compliance system where the audit requirements are defined by law and cannot be discovered iteratively. In practice most organizations run a hybrid: Agile delivery inside a Waterfall governance and budgeting structure. The real question is how much uncertainty exists in the requirements, not which methodology is better.`,
+  model:`Agile fits when requirements are expected to change and you can deliver value incrementally. A customer-facing web product where you want user feedback every two weeks and can reprioritize based on it. Waterfall fits when requirements are fixed up front, the cost of change is high, and there are regulatory or physical dependencies. A data center migration or a compliance system where the audit requirements are defined by law and cannot be discovered iteratively. In practice most organizations run a hybrid: Agile delivery inside a Waterfall governance and budgeting structure. The real question is how much uncertainty exists in the requirements, not which methodology is better.`,
   req:[['agile','scrum','iterative','sprint','incremental'],
        ['waterfall','sequential','fixed','up front','phase'],
        ['requirement','change','uncertainty','scope'],
@@ -920,7 +965,7 @@ const TECHNICAL = {
 
  {id:'pm4', cat:'technical', type:'free',
   prompt:'You realize your project is going to miss its deadline by about three weeks. What do you do, and when?',
-  model:`I would communicate it as soon as I am confident, not when it becomes undeniable. Late bad news removes the options that would have fixed it. Before I escalate I would get specific: what exactly is slipping, why, and what the realistic new date is. Then I would bring options rather than just a problem — descope to hold the date, add capacity if that genuinely helps, or move the date with a clear explanation. I would tell my sponsor directly and privately first rather than letting them find out in a status meeting. Afterward I would look at why the plan was wrong so the next estimate is better.`,
+  model:`I would communicate it as soon as I am confident, not when it becomes undeniable. Late bad news removes the options that would have fixed it. Before I escalate I would get specific: what exactly is slipping, why, and what the realistic new date is. Then I would bring options rather than just a problem. Descope to hold the date, add capacity if that genuinely helps, or move the date with a clear explanation. I would tell my sponsor directly and privately first rather than letting them find out in a status meeting. Afterward I would look at why the plan was wrong so the next estimate is better.`,
   req:[['early','immediately','as soon as','now','not wait','proactive','right away','straight away','soon as i know','asap'],
        ['option','alternative','descope','recovery','plan','solution'],
        ['sponsor','stakeholder','escalate','manager','communicate'],
@@ -935,18 +980,18 @@ const TECHNICAL = {
         {t:'The longest chain of dependent tasks, setting minimum duration',c:true,w:'Correct. Any delay to a task on the critical path delays the whole project, because these tasks have zero slack.'},
         {t:'The sequence of tasks assigned to the most senior team members',c:false,w:'Unrelated to who is doing the work.'},
         {t:'The tasks that carry the highest risk of failing or slipping',c:false,w:'Risk and critical path are tracked separately. A high-risk task may have plenty of slack.'}],
-  takeaway:'Critical path means zero slack, not high importance. If a task on it slips by a day, the project slips by a day — that is the whole concept.'},
+  takeaway:'Critical path means zero slack, not high importance. If a task on it slips by a day, the project slips by a day. That is the whole concept.'},
 
  {id:'pm6', cat:'technical', type:'free',
   prompt:'How do you handle a project risk? Walk me through your process.',
-  model:`I identify risks with the team rather than alone, since the people doing the work usually see them first. For each one I assess likelihood and impact, which lets me rank them instead of treating every risk as equal. Then I decide on a response: avoid by changing the plan, mitigate by reducing likelihood or impact, transfer through a vendor or contract, or accept it consciously and document that we did. High-priority risks get an owner and a trigger point that tells us when to act. I review the register regularly, because risks change as the project moves — and the ones that materialize become issues, which is a different process.`,
+  model:`I identify risks with the team rather than alone, since the people doing the work usually see them first. For each one I assess likelihood and impact, which lets me rank them instead of treating every risk as equal. Then I decide on a response: avoid by changing the plan, mitigate by reducing likelihood or impact, transfer through a vendor or contract, or accept it consciously and document that we did. High-priority risks get an owner and a trigger point that tells us when to act. I review the register regularly, because risks change as the project moves, and the ones that materialize become issues, which is a different process.`,
   req:[['identify','identification','surface','spot'],
        ['likelihood','probability','impact','severity','assess','rank','prioriti'],
        ['mitigate','avoid','transfer','accept','response','plan'],
        ['monitor','review','register','track','owner']],
   bonus:['trigger','contingency','issue','escalate','team','regularly'],
   wc:{min:45,ideal:110,max:220},
-  hint:'Interviewers listen for the four standard responses — avoid, mitigate, transfer, accept — and for the fact that risk management is continuous rather than a one-time exercise.'}
+  hint:'Interviewers listen for the four standard responses (avoid, mitigate, transfer, accept) and for the fact that risk management is continuous rather than a one-time exercise.'}
 ],
 
 'software-dev':[
@@ -960,17 +1005,17 @@ const TECHNICAL = {
 
  {id:'sd2', cat:'technical', type:'free',
   prompt:'When would you use a hash map instead of an array, and what is the tradeoff?',
-  model:`I would use a hash map when I need to look things up by a key rather than by position — counting occurrences of words, or finding a user by ID without scanning. Lookup, insert, and delete are all constant time on average, versus linear for searching an unsorted array. The tradeoffs are that hash maps use more memory per element, they do not preserve any meaningful ordering in most implementations, and worst-case performance degrades if the hash function distributes keys poorly. If I needed ordered data or was iterating over everything anyway, an array or list is simpler and has better cache locality.`,
+  model:`I would use a hash map when I need to look things up by a key rather than by position: counting occurrences of words, or finding a user by ID without scanning. Lookup, insert, and delete are all constant time on average, versus linear for searching an unsorted array. The tradeoffs are that hash maps use more memory per element, they do not preserve any meaningful ordering in most implementations, and worst-case performance degrades if the hash function distributes keys poorly. If I needed ordered data or was iterating over everything anyway, an array or list is simpler and has better cache locality.`,
   req:[['key','lookup','look up','by name','identifier'],
        ['constant','o(1)','fast','average'],
        ['tradeoff','trade-off','memory','overhead','order','unordered','collision']],
   bonus:['cache','locality','hash function','iterate','index','resize','worst case'],
   wc:{min:40,ideal:105,max:210},
-  hint:'Naming a real tradeoff — memory, ordering, or collision behavior — is what distinguishes this from a textbook recitation.'},
+  hint:'Naming a real tradeoff (memory, ordering, or collision behavior) is what distinguishes this from a textbook recitation.'},
 
  {id:'sd3', cat:'technical', type:'free',
   prompt:'A bug is reported in production that you cannot reproduce locally. How do you approach it?',
-  model:`First I would try to reproduce it more precisely — get the exact steps, the user, the timestamp, the browser or client, and any IDs involved. Most "cannot reproduce" cases are a missing detail about the environment or the data. Then I would check logs and any error tracking around that timestamp for a stack trace. I would compare environments: configuration, data, versions, and feature flags are the usual culprits. If it is data-dependent, I would try to pull a sanitized copy of the record that triggered it. Once I have a reproduction I write a failing test first, then fix it, so the test proves the fix and prevents regression.`,
+  model:`First I would try to reproduce it more precisely. Get the exact steps, the user, the timestamp, the browser or client, and any IDs involved. Most "cannot reproduce" cases are a missing detail about the environment or the data. Then I would check logs and any error tracking around that timestamp for a stack trace. I would compare environments: configuration, data, versions, and feature flags are the usual culprits. If it is data-dependent, I would try to pull a sanitized copy of the record that triggered it. Once I have a reproduction I write a failing test first, then fix it, so the test proves the fix and prevents regression.`,
   req:[['reproduce','repro','steps','replicate','recreate','trigger it','make it happen'],
        ['log','logs','stack trace','error','monitoring','telemetry'],
        ['environment','config','configuration','version','data','flag'],
@@ -982,14 +1027,14 @@ const TECHNICAL = {
  {id:'sd4', cat:'technical', type:'mc',
   prompt:'Your feature branch is behind main. What is the practical difference between merging main into your branch and rebasing onto main?',
   opts:[{t:'Merge rewrites your commit history, while rebase preserves it exactly as written',c:false,w:'Backwards. Rebase is the one that rewrites history by replaying your commits onto a new base.'},
-        {t:'Merge adds a merge commit; rebase replays commits and rewrites hashes',c:true,w:'Correct. This is also why you avoid rebasing branches others have pulled — their history no longer matches yours.'},
+        {t:'Merge adds a merge commit; rebase replays commits and rewrites hashes',c:true,w:'Correct. This is also why you avoid rebasing branches others have pulled: their history no longer matches yours.'},
         {t:'They produce identical results, so the choice between them is purely stylistic',c:false,w:'The resulting tree content is often the same, but the history and the hashes differ, which matters for shared branches.'},
         {t:'Rebase is always the safer option on any branch, shared or not',c:false,w:'The opposite is closer to true on shared branches. Rebasing published commits causes real problems for collaborators.'}],
   takeaway:'Git questions are routine in entry-level screens. The rule worth remembering: never rebase a branch someone else has already pulled.'},
 
  {id:'sd5', cat:'technical', type:'free',
   prompt:'Explain what a REST API is to someone non-technical, then tell me what an endpoint and an HTTP status code are.',
-  model:`A REST API is a structured way for two programs to talk to each other over the web. It is like a restaurant menu — the API defines exactly what you can order and what you get back, so you do not need to know anything about the kitchen. An endpoint is one specific item on that menu, a URL representing a resource, like /customers/123 for a particular customer. You act on it with HTTP methods: GET to read, POST to create, PUT to update, DELETE to remove. A status code is the server's short answer about what happened — 200 means success, 404 means the resource was not found, 401 means you are not authenticated, and 500 means the server itself failed.`,
+  model:`A REST API is a structured way for two programs to talk to each other over the web. It is like a restaurant menu. The API defines exactly what you can order and what you get back, so you do not need to know anything about the kitchen. An endpoint is one specific item on that menu, a URL representing a resource, like /customers/123 for a particular customer. You act on it with HTTP methods: GET to read, POST to create, PUT to update, DELETE to remove. A status code is the server's short answer about what happened. 200 means success, 404 means the resource was not found, 401 means you are not authenticated, and 500 means the server itself failed.`,
   req:[['endpoint','url','resource','route'],
        ['get','post','put','delete','method','verb'],
        ['status code','200','404','500','401','response code'],
@@ -1156,30 +1201,42 @@ function feedbackFree(q, s){
     out.push('At <b>'+s.words+' words</b> this rambles. Strong candidates answer this in about '+
       q.wc.ideal+' words and then stop talking.');
   }
-  s.missed.slice(0,3).forEach(function(g){
-    const l=labelFor(g);
-    out.push(!beh
-      ? 'You did not mention <b>'+l+'</b>. Interviewers listen for this specifically — it is how they check you understand the underlying concept.'
-      : isStar(g)
-        ? 'Your answer did not clearly include <b>'+l+'</b>. That is one of the four STAR elements, and it is what interviewers score behavioral answers on.'
-        : 'Your answer never really got to <b>'+l+'</b>, which is the heart of what this question is asking.');
-  });
+  if(s.missed.length){
+    const labels = s.missed.map(function(g){ return '<b>'+labelFor(g)+'</b>'; });
+    const list = labels.length===1 ? labels[0]
+               : labels.slice(0,-1).join(', ')+' and '+labels[labels.length-1];
+    if(!beh){
+      out.push('Missing from your answer: '+list+'. Interviewers listen for these specifically, because they are how you show you understand the underlying concept.');
+    } else {
+      const star = s.missed.filter(isStar), rest = s.missed.filter(function(g){return !isStar(g);});
+      if(star.length){
+        const sl = star.map(function(g){return '<b>'+labelFor(g)+'</b>';});
+        out.push('Missing from your answer: '+(sl.length===1?sl[0]:sl.slice(0,-1).join(', ')+' and '+sl[sl.length-1])+
+          '. Those are STAR elements, and they are what behavioral answers get scored on.');
+      }
+      if(rest.length){
+        const rl = rest.map(function(g){return '<b>'+labelFor(g)+'</b>';});
+        out.push('Your answer never really got to '+(rl.length===1?rl[0]:rl.slice(0,-1).join(', ')+' and '+rl[rl.length-1])+
+          ', which is the heart of what this question is asking.');
+      }
+    }
+  }
   if(s.kw>=0.75 && s.cos<0.25){
     out.push(beh
       ? 'You hit the structure, but the answer stays general. Anchor it to one specific instance with details only you would know.'
-      : 'You used the right terminology but did not connect it into a process. Try walking through it in order — first, then, finally.');
+      : 'You used the right terminology but did not connect it into a process. Try walking through it in order: first, then, finally.');
   }
   if(s.kw<0.5 && s.cos>=0.35){
     out.push('Your reasoning is heading the right direction, but the answer is missing the pieces an interviewer is listening for.');
   }
   if(s.bonusHit.length){
-    out.push('Good instinct mentioning <b>'+s.bonusHit.slice(0,2).join('</b> and <b>')+'</b> — that is above the bar for an intern.');
+    out.push('Good instinct mentioning <b>'+s.bonusHit.slice(0,2).join('</b> and <b>')+'</b>. That is above the bar for an intern.');
   }
   if(s.band==='strong' && s.missed.length===0){
     out.push('Strong answer. You covered '+s.hitTerms.join(', ')+'.');
   }
   if(!out.length){
-    out.push('You covered '+s.hitTerms.join(', ')+'. To sharpen this, add a concrete detail — specifics are what make an answer memorable.');
+    out.push('You covered '+s.hitTerms.join(', ')+'. To sharpen this, add a concrete detail. Specifics are what make an answer memorable.');
   }
   return out;
 }
@@ -1244,13 +1301,13 @@ function viewLanding(){
       '<path d="M400 80V44M430 80V60" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".55"/>'+
     '</svg><div class="wrap">'+
     '<h1>Figure out what you actually want to do with an IS degree.</h1>'+
-    '<p class="lede">Four career paths, explored properly — what the job really looks like day to day, what it pays, '+
+    '<p class="lede">Four career paths, explored properly. What the job really looks like day to day, what it pays, '+
     'what an intern is expected to know. Then practice a mock interview for the one that interests you.</p>'+
     '<div class="stats">'+
       '<div class="stat"><b>90%</b><span>of BYU BS IS graduates placed within three months'+cite('byu-bsis')+'</span></div>'+
       '<div class="stat"><b>$74,000</b><span>median starting salary, Class of 2025'+cite('byu-bsis')+'</span></div>'+
       '<div class="stat"><b>4</b><span>career paths, with a hands-on activity for each</span></div>'+
-      '<div class="stat"><b>Sept 17</b><span>STEM Fair — the hiring cycle starts now</span></div>'+
+      '<div class="stat"><b>Sept 17</b><span>STEM Fair. The hiring cycle starts now</span></div>'+
     '</div></div></div>'+
 
     '<div class="wrap">'+
@@ -1272,41 +1329,34 @@ function viewLanding(){
 
     '<div class="callout blue"><b>Read the salary numbers carefully.</b> National medians on this site cover '+
     'everyone in the occupation, including people with twenty years of experience. They are not starting salaries. '+
-    'BYU IS graduates averaged <b>$72,820</b> in their first job'+cite('byu-bsis')+' — well below the national median for '+
+    'BYU IS graduates averaged <b>$72,820</b> in their first job'+cite('byu-bsis')+', well below the national median for '+
     'most of these roles. We show the 10th percentile on every page as a more honest entry-level figure.</div>'+
 
     '<div class="section">'+secH('cap','How to use this')+
     '<ul class="ul" style="max-width:75ch">'+
-    '<li><b>Explore a path</b> — roughly five minutes of reading per career, covering day-to-day work, skills, three industries that hire for it, what interns are expected to know, and pay.</li>'+
-    '<li><b>Try the activity</b> — two to five minutes. Each one is a small taste of the actual work, not a quiz.</li>'+
-    '<li><b>Run a mock interview</b> — five questions drawn from a larger pool: two behavioral and three technical, with feedback on what you wrote and a model answer to compare against.</li>'+
+    '<li><b>Explore a path</b>. Roughly five minutes of reading per career, covering day-to-day work, skills, three industries that hire for it, what interns are expected to know, and pay.</li>'+
+    '<li><b>Try the activity</b>: two to five minutes. Each one is a small taste of the actual work, not a quiz.</li>'+
+    '<li><b>Run a mock interview</b>: five questions drawn from a larger pool: two behavioral and three technical, with feedback on what you wrote and a model answer to compare against.</li>'+
     '</ul></div>'+
 
-    '<div class="section">'+secH('link','Where the numbers come from')+
-    '<p class="muted small" style="max-width:75ch">Every figure on this site links to its source. Salary and outlook data '+
-    'is from the U.S. Bureau of Labor Statistics Occupational Outlook Handbook (May 2025 wages, 2025&ndash;2035 projections). '+
-    'Placement data is from BYU Marriott published placement profiles for the Class of 2025. Where a role does not map '+
-    'cleanly onto a BLS occupation — data analytics in particular — we say so on the page rather than picking a '+
-    'convenient number.</p></div>'+
-    '</div>';
+        '</div>';
 }
 
 function srcBlock(ids){
   return '<div class="section">'+secH('link','Sources')+'<ol class="srclist">'+
     ids.map(function(id){
       const s=SOURCES[id];
-      return '<li id="src-'+id+'">'+esc(s.label)+' — <a href="'+s.url+'" target="_blank" rel="noopener">'+s.url+'</a>'+
+      return '<li id="src-'+id+'">'+esc(s.label)+': <a href="'+s.url+'" target="_blank" rel="noopener">'+s.url+'</a>'+
         ' <span class="muted">('+esc(s.asOf)+'; accessed 2026-09-02)</span></li>';
     }).join('')+'</ol></div>';
 }
 
 function viewCareer(c){
-  const t=THEME[c.id];
-  return '<div class="wrap themed" style="padding-top:28px;--accent:'+t.accent+';--accent-soft:'+t.soft+'">'+
-  '<div class="tabs">'+CAREERS.map(function(x){
-      const xt=THEME[x.id];
-      return '<button class="'+(x.id===c.id?'on':'')+'" style="'+(x.id===c.id?'border-bottom-color:'+xt.accent:'')+'" '+
-        'onclick="go(\'#/careers/'+x.id+'\')">'+x.name+'</button>';}).join('')+'</div>'+
+  const t=THEME[c.id], k=c.compensation;
+  const outlook = k.rows.filter(function(r){ return !/^\$/.test(String(r[1]).trim()) && !/^\$/.test(String(r[1])); })
+                        .filter(function(r){ return /growth|Openings/i.test(r[0]); });
+
+  return '<div class="wrap themed" style="padding-top:26px;--accent:'+t.accent+';--accent-soft:'+t.soft+'">'+
 
   '<div class="chero">'+
     '<span class="badge">'+ico(t.icon,'xl')+'</span>'+
@@ -1315,71 +1365,105 @@ function viewCareer(c){
       'stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">'+ICON_PATHS[t.icon]+'</svg>'+
   '</div>'+
 
-  '<div class="cta" style="margin:20px 0 6px">'+
+  '<div class="cta" style="margin:18px 0 30px">'+
     '<button class="btn lg accent" onclick="go(\'#/careers/'+c.id+'/activity\')">Try the hands-on activity</button>'+
     '<button class="btn lg ghost" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role</button>'+
   '</div>'+
 
-  '<hr class="rule">'+
-
-  '<div class="grid2">'+
-    '<div>'+
-      '<div class="section">'+secH('brief','What this job is')+''+
-        c.overview.split('\n\n').map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>'+
-
-      '<div class="section">'+secH('clock','A typical day')+'<ul class="ul">'+
-        c.dayToDay.map(function(d){return '<li>'+d+'</li>';}).join('')+'</ul></div>'+
-
-      '<div class="section">'+secH('build','Where you would work')+''+
-        '<p class="muted">The same job title means genuinely different work depending on the industry. These are three of the largest employers of this role.</p>'+
-        c.industries.map(function(i){
-          return '<div class="card ind"><h4>'+i.name+'</h4>'+
-            '<p style="margin:0 0 8px"><b class="small muted">WHY THEY HIRE</b><br>'+i.whyTheyHire+'</p>'+
-            '<p style="margin:0 0 10px"><b class="small muted">HOW THE ROLE DIFFERS</b><br>'+i.howTheRoleDiffers+'</p>'+
-            '<div>'+i.employers.map(function(e){return '<span class="pill">'+e+'</span>';}).join('')+'</div></div>';
-        }).join('')+'</div>'+
-
-      '<div class="section">'+secH('cap','What an intern is expected to know')+''+
-        '<div class="card know-good" style="padding:20px;margin-bottom:12px">'+
-        '<h4 style="color:var(--ok)">'+ico('star')+' You should know this</h4><ul class="ul">'+
-        c.entryLevel.know.map(function(k){return '<li>'+k+'</li>';}).join('')+'</ul></div>'+
-        '<div class="card know-bad" style="padding:20px;margin-bottom:14px">'+
-        '<h4 style="color:var(--muted)">You are not expected to know this yet</h4><ul class="ul">'+
-        c.entryLevel.notKnow.map(function(k){return '<li>'+k+'</li>';}).join('')+'</ul></div>'+
-        '<p><b>What internships actually look like.</b> '+c.entryLevel.internWork+'</p>'+
-        '<h4>Certifications</h4>'+
-        c.entryLevel.certs.map(function(ct){
-          return '<p style="margin-bottom:8px"><b>'+ct.name+'</b> — <span class="muted">'+ct.worth+'</span></p>';}).join('')+
-      '</div>'+
-
-      '<div class="section">'+secH('star','What makes a strong candidate')+'<ul class="ul">'+
-        c.strong.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ul></div>'+
-    '</div>'+
-
-    '<div>'+
-      '<div class="card paycard" style="padding:20px;position:sticky;top:80px">'+
-        '<h3 style="color:var(--navy)">'+ico('trend','lg')+'Pay &amp; outlook</h3>'+
+  /* ---------- pay band: full width, figures shown once, as bars ---------- */
+  '<div class="card payband">'+
+    '<div class="payband-head">'+ico('trend','lg')+'<h2 style="margin:0">Pay and outlook</h2></div>'+
+    '<div class="pay3">'+
+      '<div>'+
+        '<h4 class="sub">What the role pays nationally</h4>'+
         payBars(c)+
-        '<table class="pay">'+c.compensation.rows.map(function(r){
-          return '<tr><td class="muted">'+r[0]+cite(r[2])+'</td><td>'+r[1]+'</td></tr>';}).join('')+'</table>'+
-        '<p class="small muted" style="margin:14px 0 0"><b>Internship:</b> '+c.compensation.intern+cite(c.compensation.internSrc)+'</p>'+
-        '<div class="callout" style="margin:16px 0 0;font-size:.85rem"><b>How BLS maps this role.</b> '+c.compensation.mapping+'</div>'+
-        '<div class="callout blue" style="font-size:.85rem"><b>BYU reality check.</b> BS IS graduates, Class of 2025, averaged '+
-          '<b>$72,820</b> (median $74,000) across all tracks'+cite('byu-bsis')+'. That is a starting salary. '+
-          'The medians above are not.</div>'+
-        '<h4 style="margin-top:20px">Career trajectory</h4>'+
-        '<ul class="ladder">'+c.compensation.ladder.map(function(l){
-          return '<li><span class="yr">'+l[0]+'</span><span class="ti">'+l[1]+'</span><span class="pay">'+l[2]+'</span></li>';}).join('')+'</ul>'+
-        '<p class="small muted" style="margin-top:10px">Experience bands are estimated from BLS wage percentiles. '+
-        'BLS does not publish salary by years of experience.</p>'+
-        '<p class="small" style="margin-top:12px">'+c.compensation.note+'</p>'+
+        '<p class="xs muted" style="margin:10px 0 0">Internship pay: '+k.intern+cite(k.internSrc)+'</p>'+
       '</div>'+
+      '<div>'+
+        '<h4 class="sub">Outlook</h4>'+
+        '<div class="factgrid">'+outlook.map(function(r){
+          return '<div class="fact"><b>'+r[1]+'</b><span>'+r[0].replace(/,.*$/,'')+cite(r[2])+'</span></div>';
+        }).join('')+'</div>'+
+        '<div class="callout blue" style="margin:14px 0 0;font-size:.85rem"><b>BYU reality check.</b> '+
+          'BS Information Systems graduates, Class of 2025, averaged <b>$72,820</b> (median $74,000) across all '+
+          'tracks'+cite('byu-bsis')+'. That is a starting salary. The figures above are not.</div>'+
+      '</div>'+
+      '<div>'+
+        '<h4 class="sub">Career trajectory</h4>'+
+        '<ul class="ladder">'+k.ladder.map(function(l){
+          return '<li><span class="yr">'+l[0]+'</span><span class="ti">'+l[1]+'</span><span class="pay">'+l[2]+'</span></li>';
+        }).join('')+'</ul>'+
+        '<p class="xs muted" style="margin-top:9px">Experience bands are estimated from wage percentiles. '+
+        'Salary by years of experience is not published.</p>'+
+      '</div>'+
+    '</div>'+
+    '<div class="paynote">'+
+      '<p class="small" style="margin:0 0 8px"><b>Where these figures come from.</b> They are published by the '+
+      '<b>U.S. Bureau of Labor Statistics (BLS)</b>, the federal agency that surveys employers and reports national '+
+      'wage and employment data. Its Occupational Outlook Handbook is free, updated annually, and is the standard '+
+      'reference for what an occupation pays and how fast it is growing. These figures reflect May 2025 wages and '+
+      'projections running to 2035.</p>'+
+      '<p class="small" style="margin:0"><b>How this role maps to a BLS occupation.</b> '+k.mapping+'</p>'+
+      '<p class="small" style="margin:8px 0 0">'+k.note+'</p>'+
     '</div>'+
   '</div>'+
 
-  '<hr class="rule">'+
-  '<div class="cta">'+
-    '<button class="btn lg accent" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role &rarr;</button>'+
+  /* ---------- what the job is / typical day ---------- */
+  '<div class="grid2col" style="margin-top:34px">'+
+    '<div>'+secH('brief','What this job is')+
+      c.overview.split('\n\n').map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>'+
+    '<div>'+secH('clock','A typical day')+'<ul class="ul">'+
+      c.dayToDay.map(function(d){return '<li>'+d+'</li>';}).join('')+'</ul></div>'+
+  '</div>'+
+
+  /* ---------- where you would work ---------- */
+  '<div class="section">'+
+    '<h2 class="bigh">'+ico('build','xl')+'Where you would work</h2>'+
+    '<p class="muted" style="max-width:78ch;margin-bottom:20px">The same job title means genuinely different work '+
+    'depending on the industry. These are three of the largest employers of this role.</p>'+
+    '<div class="grid3col">'+c.industries.map(function(i){
+      return '<div class="card indcard">'+
+        '<h3>'+i.name+'</h3>'+
+        '<div class="emp">'+i.employers.map(function(e){return '<span class="pill">'+e+'</span>';}).join('')+'</div>'+
+        '<p>'+i.whyTheyHire+'</p>'+
+        '<p style="margin-bottom:0">'+i.howTheRoleDiffers+'</p>'+
+      '</div>';}).join('')+'</div>'+
+  '</div>'+
+
+  /* ---------- skills ---------- */
+  '<div class="section">'+secH('code','Skills and tools')+
+    '<div class="grid3col">'+
+      '<div class="card skillbox"><h4>Technical</h4><ul class="ul">'+
+        c.skills.technical.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'+
+      '<div class="card skillbox"><h4>Tools you will see in postings</h4><div>'+
+        c.skills.tools.map(function(x){return '<span class="pill">'+x+'</span>';}).join('')+'</div></div>'+
+      '<div class="card skillbox"><h4>Non-technical</h4><ul class="ul">'+
+        c.skills.soft.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'+
+    '</div></div>'+
+
+  /* ---------- what makes a strong candidate (merged with intern expectations) ---------- */
+  '<div class="section">'+
+    '<h2 class="bigh">'+ico('star','xl')+'What you should know to be a strong candidate</h2>'+
+    '<p class="muted" style="max-width:78ch;margin-bottom:20px">Plenty of applicants clear the technical bar above. '+
+    'These are the things that actually separate the ones who get offers.</p>'+
+    '<div class="grid2col"><ul class="ul">'+
+      c.strong.slice(0,Math.ceil(c.strong.length/2)).map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>'+
+    '<ul class="ul">'+
+      c.strong.slice(Math.ceil(c.strong.length/2)).map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'+
+    '<div class="grid2col" style="margin-top:24px">'+
+      '<div class="card know-bad" style="padding:20px">'+
+        '<h4 class="muted">You are not expected to know this yet</h4>'+
+        '<p class="xs muted" style="margin-bottom:10px">Nobody hiring an intern expects these. Do not let them stop you applying.</p>'+
+        '<ul class="ul">'+c.entryLevel.notKnow.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'+
+      '<div>'+
+        '<h4>What internships actually look like</h4><p>'+c.entryLevel.internWork+'</p>'+
+        '<h4 style="margin-top:18px">Certifications</h4>'+c.entryLevel.certs.map(function(ct){
+          return '<p style="margin-bottom:9px"><b>'+ct.name+'.</b> <span class="muted">'+ct.worth+'</span></p>';}).join('')+
+      '</div>'+
+    '</div></div>'+
+
+  '<div class="cta" style="margin-top:8px">'+
+    '<button class="btn lg accent" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role</button>'+
     '<button class="btn lg ghost" onclick="go(\'#/careers/'+c.id+'/activity\')">Try the activity</button>'+
   '</div>'+
 
@@ -1466,9 +1550,7 @@ function nextQ(){
   else { iv.done=true; go('#/careers/'+iv.careerId+'/summary'); }
 }
 function quitInterview(){
-  if(confirm('Exit this interview? Your progress will be lost.')){
-    const id=STATE.interview.careerId; STATE.interview=null; go('#/careers/'+id);
-  }
+  const id=STATE.interview.careerId; STATE.interview=null; go('#/careers/'+id);
 }
 
 /* ------------------------------------------------------------------ summary */
@@ -1485,14 +1567,14 @@ function viewSummary(c){
   });
 
   let pattern;
-  if(shortAns>=2) pattern='Your written answers were consistently short. Length is not the point in itself, but interviewers read brevity as uncertainty — give the reasoning, not just the conclusion.';
+  if(shortAns>=2) pattern='Your written answers were consistently short. Length is not the point in itself, but interviewers read brevity as uncertainty. Give the reasoning, not just the conclusion.';
   else if(behMissedResult>=2) pattern='Your behavioral answers described the situation but did not land a concrete result. That is the single most common weakness in entry-level interviews, and it is the easiest one to fix.';
-  else if(strong>=4) pattern='You are in good shape on this track. Run it again — questions are drawn from a larger pool, so you will get a different set.';
+  else if(strong>=4) pattern='You are in good shape on this track. Run it again. Questions are drawn from a larger pool, so you will get a different set.';
   else pattern='A mixed result, which is normal the first time. Work through the model answers, then run it again with a fresh set of questions.';
 
   let h='<div class="iv" style="max-width:820px">'+
     '<span class="chip">Interview complete</span>'+
-    '<h1 style="margin-top:12px;font-size:1.7rem;color:var(--navy)">'+c.name+' — mock interview</h1>'+
+    '<h1 style="margin-top:12px;font-size:1.7rem;color:var(--navy)">'+c.name+': mock interview</h1>'+
     '<p class="muted" style="margin-bottom:14px">'+strong+' of '+iv.qs.length+' answers rated strong. '+
     'Two behavioral, three technical, drawn at random from this role’s question pools.</p>'+
     '<div class="callout blue"><b>What to work on.</b> '+pattern+'</div>';
@@ -1531,7 +1613,7 @@ function viewSummary(c){
 }
 
 /* ============================================================================
-   ACTIVITIES — one per career, deliberately different in interaction type.
+   ACTIVITIES: one per career, deliberately different in interaction type.
    v2: the data and security activities now require the user to FIND the
    problems themselves rather than pressing a button that fixes everything.
    ========================================================================== */
@@ -1548,6 +1630,10 @@ function actShell(c, title, blurb, stages, body, debrief){
     '<button class="btn" onclick="startInterview(\''+c.id+'\')">Practice interviewing for this role &rarr;</button></div></div>';
 }
 const LTRS='ABCDEFGH';
+function howto(text){ return '<div class="howto">'+ico('target')+'<div>'+text+'</div></div>'; }
+function mcBlock(title, lead, optsHTML){
+  return '<div class="mcblock"><h4>'+title+'</h4><div class="lead">'+lead+'</div>'+optsHTML+'</div>';
+}
 function mcOpt(idx, text, why, revealed, isCorrect, isPicked, onclick){
   let cls='opt', st='';
   if(revealed){ cls+=' locked';
@@ -1581,13 +1667,13 @@ const DROWS=[
  ['1010','2026-03-13','Juno Co','6','720']];
 const DISSUES={
  '2,1':'Date is written as "Mar 6 2026" while most rows use ISO format. Mixed formats break sorting and date maths.',
- '3,1':'Date is written as "3/7/26" — a third format, and ambiguous between US and international conventions.',
+ '3,1':'Date is written as "3/7/26": a third format, and ambiguous between US and international conventions.',
  '6,1':'Another non-ISO date format. Three different formats in one column.',
  '2,3':'Quantity is the string "N/A" rather than a null. Three different placeholders are used in this column.',
  '5,3':'Quantity is an empty string. Same missing value, encoded differently again.',
  '8,3':'Quantity is the literal text "NULL". A third encoding of the same missing value.',
  '6,3':'9,999 units against $1,100 of revenue is impossible given every other row. This is an outlier or a data-entry error.',
- '4,0':'Order 1004 appears twice. Order IDs should be unique — this row is a duplicate.',
+ '4,0':'Order 1004 appears twice. Order IDs should be unique. This row is a duplicate.',
  '10,0':'Order 1009 appears twice. Another duplicate row.'};
 function flagCell(r,cc){ if(ACT.checked) return; const k=r+','+cc; ACT.f=ACT.f||{}; ACT.f[k]=!ACT.f[k]; render(); }
 function checkData(){ ACT.checked=true; render(); }
@@ -1596,12 +1682,12 @@ const DFIX=[
  {q:'Two order IDs appear twice, with every field identical. What do you do?',
   o:[['Delete both copies of each duplicated order',false,'That throws away a real order along with the duplicate. You would understate revenue.'],
      ['Keep one copy of each and document that you deduplicated',true,'Correct. Order ID should be unique, so one row is the record and one is an artifact. Documenting it matters because your totals will not match the raw extract.'],
-     ['Leave them — they might be two genuine separate orders',false,'Possible in principle, but identical IDs, dates, customers and amounts point to an export artifact. Worth one question to the source owner, not worth keeping as-is.'],
+     ['Leave them. They might be two genuine separate orders',false,'Possible in principle, but identical IDs, dates, customers and amounts point to an export artifact. Worth one question to the source owner, not worth keeping as-is.'],
      ['Sum them together into a single row with double quantity',false,'This invents an order that does not exist and doubles the quantity.']]},
  {q:'One row shows a quantity of 9,999 against $1,100 in revenue. What do you do?',
   o:[['Delete the row so it does not distort the average',false,'Silently deleting inconvenient rows is how analyses become wrong. If it is real, you have just hidden something important.'],
      ['Replace it with the average quantity of the other rows',false,'Imputing over a value you have not investigated fabricates data and hides the underlying problem.'],
-     ['Flag it, exclude it from the headline number, and ask the source owner',true,'Correct. You do not yet know whether it is a typo, a bulk order, or a broken feed. Flag, isolate, and go ask — then decide.'],
+     ['Flag it, exclude it from the headline number, and ask the source owner',true,'Correct. You do not yet know whether it is a typo, a bulk order, or a broken feed. Flag, isolate, and go ask: then decide.'],
      ['Cap it at the highest plausible value and move on',false,'Winsorizing has legitimate uses, but applying it before you know the cause is a guess dressed up as a method.']]},
  {q:'Four rows are missing a quantity, encoded three different ways. What do you do first?',
   o:[['Fill them all with zero',false,'Zero is a real quantity and means something different from unknown. This corrupts every downstream sum and average.'],
@@ -1617,7 +1703,9 @@ function actData(c){
   const missed=keys.filter(function(k){return !f[k];});
   const stage = !checked?0:(ACT.fix0===undefined||ACT.fix1===undefined||ACT.fix2===undefined?1:2);
 
-  let body='<div class="card" style="padding:18px;margin:6px 0 18px">'+
+  let body=(checked?'':howto('<b>Click directly on any cell you think is wrong.</b> Cells highlight as you hover. '+
+      'Click again to unflag. When you have found all nine, press <b>Check my work</b>.'))+
+    '<div class="card" style="padding:18px;margin:6px 0 18px">'+
     '<table class="gridtbl"><tr><th>Order</th><th>Date</th><th>Customer</th><th>Qty</th><th>Revenue</th></tr>'+
     DROWS.map(function(row,ri){
       return '<tr>'+row.map(function(v,ci){
@@ -1651,19 +1739,19 @@ function actData(c){
       '<p class="muted small">Finding problems is the easy half. Choosing the fix is where analysts actually differ.</p>'+
       DFIX.map(function(fx,n){
         const pick=ACT['fix'+n];
-        return '<div class="card" style="padding:16px;margin-bottom:12px"><h4>'+fx.q+'</h4>'+
+        return mcBlock(fx.q, pick===undefined?'Choose one option.':'',
           fx.o.map(function(o,oi){
             return mcOpt(oi,o[0],o[2],pick!==undefined,o[1],pick===oi,'fixPick('+n+','+oi+')');
-          }).join('')+'</div>';
+          }).join(''));
       }).join('');
   }
 
   return actShell(c,'Audit the Extract',
-    'A sales extract just landed from the source system. Before anyone can answer a question with it, someone has to establish whether it can be trusted. That someone is you. <b>Nine cells in this table are a problem — find them all.</b>',
+    'A sales extract just landed from the source system. Before anyone can answer a question with it, someone has to establish whether it can be trusted. That someone is you. <b>Nine cells in this table are a problem. Find them all.</b>',
     stageBar(['Find the problems','Decide the fixes','Debrief'], stage),
     body,
     stage===2?('You found '+hits.length+' of '+keys.length+' problems'+(fps.length?', with '+fps.length+' false positive'+(fps.length===1?'':'s'):'')+
-      '. Notice that nothing in this table was labelled as wrong — you had to know what "clean" meant for this business before you could see it. That is why analysts who understand the business outperform analysts who only know the tools. Also notice that every one of the three fixes had a defensible-sounding wrong answer. Deleting the outlier, zero-filling the nulls, and dropping the duplicates all produce a tidy table and a wrong number.'):'');
+      '. Notice that nothing in this table was labeled as wrong. You had to know what "clean" meant for this business before you could see it. That is why analysts who understand the business outperform analysts who only know the tools. Also notice that every one of the three fixes had a defensible-sounding wrong answer. Deleting the outlier, zero-filling the nulls, and dropping the duplicates all produce a tidy table and a wrong number.'):'');
 }
 
 /* ---- 2. Cybersecurity: three-stage investigation ---- */
@@ -1673,11 +1761,11 @@ const EMAILS=[
   phish:true, tells:['Lookalike domain: byu-secure.net is not byu.edu','Manufactured urgency with a 24-hour deadline','Link text reads byu.edu but the href points somewhere else','Generic sender, no individual named']},
  {from:'GitHub &lt;noreply@github.com&gt;', subj:'A new SSH key was added to your account',
   body:'If you did not add this key, review your account security settings. This is an automated notification.',
-  phish:false, tells:['Legitimate github.com domain','Alarming subject, but it is a real security notification','Does not ask for credentials — it tells you to check your own settings','Exactly the kind of real alert that gets wrongly reported as phishing']},
+  phish:false, tells:['Legitimate github.com domain','Alarming subject, but it is a real security notification','Does not ask for credentials. It tells you to check your own settings','Exactly the kind of real alert that gets wrongly reported as phishing']},
  {from:'Payroll &lt;payroll@byu.edu&gt;', subj:'Action required: update your direct deposit',
   body:'Our records show your direct deposit information is out of date. Please reply to this message with your bank routing and account number so we can correct it before the next pay period.',
-  phish:true, tells:['A legitimate-looking domain can still be spoofed — check the header, not the display name','Real payroll systems never collect bank details by email reply','The reply-to address differs from the displayed sender','Requesting financial data over email is the tell, regardless of the domain']},
- {from:'Sarah Chen &lt;schen@qualtrics.com&gt;', subj:'Re: Internship offer — paperwork',
+  phish:true, tells:['A legitimate-looking domain can still be spoofed: check the header, not the display name','Real payroll systems never collect bank details by email reply','The reply-to address differs from the displayed sender','Requesting financial data over email is the tell, regardless of the domain']},
+ {from:'Sarah Chen &lt;schen@qualtrics.com&gt;', subj:'Re: Internship offer: paperwork',
   body:'Hi! Great talking yesterday. HR will send the formal packet through Workday tomorrow. Let me know if you have questions before then.',
   phish:false, tells:['Named individual at a domain matching the company','References a specific prior conversation','No link, no attachment, no credential request','Routes you to an official internal system rather than an external form']}];
 const LOGS=[
@@ -1691,7 +1779,7 @@ const LOGS=[
  {t:'02:44:05  export         user=jsmith  rows=48210  dest=external_share', bad:true, why:'48,210 rows exported to an external destination, one minute after gaining admin rights. This is the exfiltration.'}];
 const RESP=[
  ['Email jsmith to ask whether the 2:41am activity was them',false,'Slow, and if the account is controlled by an attacker you have just told them they were noticed.'],
- ['Disable the account and isolate the systems it touched, then investigate',true,'Correct. Containment comes first. The account is provably compromised and is actively exfiltrating data — every minute of investigation before containment is more data gone.'],
+ ['Disable the account and isolate the systems it touched, then investigate',true,'Correct. Containment comes first. The account is provably compromised and is actively exfiltrating data. Every minute of investigation before containment is more data gone.'],
  ['Reset the password on the jsmith account and continue monitoring',false,'A password reset does not end an established session or remove the domain admin rights the attacker already granted themselves.'],
  ['Open a ticket and escalate to your manager for review in the morning',false,'Data is leaving right now. Anything that waits until morning is not a response.']];
 function markMail(i,g){ ACT['m'+i]=g; render(); }
@@ -1707,8 +1795,9 @@ function actPhish(c){
   const logFps=LOGS.map(function(l,i){return (!l.bad&&ACT['L'+i])?i:-1;}).filter(function(i){return i>=0;});
   const stage = !mailDone?0:(!logChecked?1:(ACT.resp===undefined?2:3));
 
-  let body='<h3>Stage 1 — Triage the reported messages</h3>'+
+  let body='<h3>Stage 1. Triage the reported messages</h3>'+
     '<p class="muted small">Four messages reported by employees. Two are real threats and two are not.</p>'+
+    (mailDone?'':howto('<b>Read each message, then press Phishing or Legitimate.</b> The tells are revealed after you choose.'))+
     EMAILS.map(function(e,i){
       const g=ACT['m'+i], shown=g!==undefined, right=g===e.phish;
       return '<div class="card" style="padding:15px;margin-bottom:10px;'+(shown?(right?'border-color:var(--ok)':'border-color:var(--bad)'):'')+'">'+
@@ -1716,8 +1805,8 @@ function actPhish(c){
         '<div style="font-weight:600;margin:3px 0 6px;font-size:.95rem">'+esc(e.subj)+'</div>'+
         '<div class="small muted">'+e.body+'</div>'+
         (shown?'<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--line)">'+
-          (right?'<span class="chip ok">Correct — '+(e.phish?'phishing':'legitimate')+'</span>':
-                 '<span class="chip bad">Missed — this one is '+(e.phish?'phishing':'legitimate')+'</span>')+
+          (right?'<span class="chip ok">Correct: '+(e.phish?'phishing':'legitimate')+'</span>':
+                 '<span class="chip bad">Missed. This one is '+(e.phish?'phishing':'legitimate')+'</span>')+
           '<ul class="ul xs" style="margin-top:8px">'+e.tells.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div>'
         :'<div style="margin-top:10px;display:flex;gap:7px">'+
           '<button class="btn sm" onclick="markMail('+i+',true)">Phishing</button>'+
@@ -1728,8 +1817,10 @@ function actPhish(c){
     body+='<div class="callout '+(mailRight===4?'good':'')+'"><b>'+mailRight+' of 4 correct.</b> '+
       (mailRight===4?'Clean sweep. ':'')+
       'One user clicked the link in the first message before reporting it. Now you investigate.</div>'+
-      '<h3>Stage 2 — Hunt through the authentication log</h3>'+
-      '<p class="muted small">Click every line you think is suspicious. Four of the eight are.</p>'+
+      '<h3>Stage 2. Hunt through the authentication log</h3>'+
+      '<p class="muted small">Four of these eight lines are suspicious.</p>'+
+      (logChecked?'':howto('<b>Click any log line that looks wrong to you.</b> Lines highlight as you hover, and '+
+        'click again to unflag. Press <b>Check my work</b> when you are done.'))+
       '<div class="card" style="padding:8px 0;margin-bottom:12px">'+
       LOGS.map(function(l,i){
         const on=!!ACT['L'+i]; let cls='logline';
@@ -1744,11 +1835,12 @@ function actPhish(c){
       body+='<div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">'+
         '<span class="chip ok">'+logHits.length+' of 4 found</span>'+
         (logFps.length?'<span class="chip warn">'+logFps.length+' false positive'+(logFps.length===1?'':'s')+'</span>':'')+'</div>'+
-        '<h3>Stage 3 — Decide your first action</h3>'+
-        '<p class="muted small">It is 09:10. You have just reconstructed the timeline above. What do you do first?</p>'+
-        RESP.map(function(r,i){
-          return mcOpt(i,r[0],r[2],ACT.resp!==undefined,r[1],ACT.resp===i,'pickResp('+i+')');
-        }).join('');
+        '<h3>Stage 3. Decide your first action</h3>'+
+        mcBlock('It is 09:10. You have reconstructed the timeline above. What do you do first?',
+          ACT.resp===undefined?'Choose one option.':'',
+          RESP.map(function(r,i){
+            return mcOpt(i,r[0],r[2],ACT.resp!==undefined,r[1],ACT.resp===i,'pickResp('+i+')');
+          }).join(''));
     }
   }
 
@@ -1756,13 +1848,13 @@ function actPhish(c){
     'A phishing report comes in, someone clicked, and now you have to work out what happened and stop it. Three stages: triage the messages, reconstruct the timeline from the log, then decide what to do.',
     stageBar(['Triage messages','Hunt the log','Respond','Debrief'], stage),
     body,
-    stage===3?('The whole attack took three minutes: compromise at 02:41, domain admin at 02:43, 48,000 rows out the door at 02:44. You found it at 09:10 — more than six hours later — which is realistic and is exactly why detection speed is the metric security teams are judged on. Notice too that two of the four messages were legitimate. If you quarantine the real GitHub alert and the real recruiter email, people stop reporting anything at all, and you lose the only sensor that found this one.'):'');
+    stage===3?('The whole attack took three minutes: compromise at 02:41, domain admin at 02:43, 48,000 rows out the door at 02:44. You found it at 09:10(more than six hours later) which is realistic and is exactly why detection speed is the metric security teams are judged on. Notice too that two of the four messages were legitimate. If you quarantine the real GitHub alert and the real recruiter email, people stop reporting anything at all, and you lose the only sensor that found this one.'):'');
 }
 
 /* ---- 3. IT Project Manager: scope triage, then critical path ---- */
 const REQS=[
  {t:'Security patch for a known vulnerability in the auth library', eff:2, who:'Security team', right:'sprint', why:'A known vulnerability in authentication is not deferrable. Small effort, unbounded downside.'},
- {t:'"Quick" dashboard tweak requested by the VP', eff:3, who:'VP of Operations', right:'backlog', why:'Nothing requested by a VP is actually quick, and this one is cosmetic. Backlog it with a date and tell them why — do not silently drop it.'},
+ {t:'"Quick" dashboard tweak requested by the VP', eff:3, who:'VP of Operations', right:'backlog', why:'Nothing requested by a VP is actually quick, and this one is cosmetic. Backlog it with a date and tell them why. Do not silently drop it.'},
  {t:'Bug affecting 2% of users at checkout', eff:3, who:'Support', right:'sprint', why:'Two percent of checkout is revenue walking out the door. Small percentages of a large number are still large.'},
  {t:'Upgrade a dependency that goes end-of-life in 8 months', eff:5, who:'Engineering', right:'backlog', why:'Real and necessary, but eight months of runway means it does not belong in a sprint that is already full.'},
  {t:'Match a feature a competitor launched last week', eff:8, who:'Product Marketing', right:'backlog', why:'Reactive scope with no validation behind it. Needs a real conversation before it consumes most of a sprint.'},
@@ -1787,7 +1879,8 @@ function actScope(c){
   const cpFps=TASKS.filter(function(t,i){return !t.crit&&ACT['t'+i];}).length;
   const stage = !all?0:(!cpDone?1:2);
 
-  let body='<h3>Stage 1 — Allocate the incoming requests</h3>'+
+  let body='<h3>Stage 1. Allocate the incoming requests</h3>'+
+    (all?'':howto('<b>For each request, press Sprint, Backlog or Decline.</b> Watch the capacity bar as you load the sprint.'))+
     '<div class="card" style="padding:16px;margin:10px 0 14px">'+
     '<div style="display:flex;align-items:center;gap:12px">'+
     '<span class="small muted" style="min-width:110px">Sprint capacity</span>'+
@@ -1808,9 +1901,11 @@ function actScope(c){
     }).join('');
 
   if(all){
-    body+='<div class="callout"><b>You matched the reference allocation on '+match+' of 6.</b> There was no clean answer — that is the point. Now the harder question: which work actually controls your end date?</div>'+
-      '<h3>Stage 2 — Find the critical path</h3>'+
-      '<p class="muted small">Five tasks with dependencies and durations. Click every task on the <b>critical path</b> — the chain that determines the earliest the project can possibly finish.</p>'+
+    body+='<div class="callout"><b>You matched the reference allocation on '+match+' of 6.</b> There was no clean answer. That is the point. Now the harder question: which work actually controls your end date?</div>'+
+      '<h3>Stage 2. Find the critical path</h3>'+
+      '<p class="muted small">Five tasks, with their durations and dependencies. The <b>critical path</b> is the chain that determines the earliest the project can possibly finish.</p>'+
+      (cpDone?'':howto('<b>Click every task you believe is on the critical path.</b> Click again to deselect. '+
+        'Press <b>Check my work</b> when you have chosen.'))+
       '<div style="margin-bottom:12px">'+TASKS.map(function(t,i){
         const on=!!ACT['t'+i]; let st='';
         if(!cpDone && on) st='border-color:var(--warn);background:var(--warn-soft)';
@@ -1826,7 +1921,7 @@ function actScope(c){
     if(!cpDone) body+='<button class="btn" onclick="checkCP()"'+(TASKS.some(function(t,i){return ACT['t'+i];})?'':' disabled')+'>Check my work</button>';
     else body+='<div class="callout blue"><b>'+cpHits+' of 3 correct'+(cpFps?', '+cpFps+' extra':'')+'.</b> '+
       'The two paths are A→B→D→E at 14 days and A→C→E at <b>15 days</b>. The longer one wins, so the critical path is '+
-      '<b>A, C, E</b>. B and D each carry one day of slack — which means if you have a spare developer, putting them on '+
+      '<b>A, C, E</b>. B and D each carry one day of slack, which means if you have a spare developer, putting them on '+
       'the UI work buys you nothing at all. Moving them to the migration script is the only thing that pulls the date in.</div>';
   }
 
@@ -1834,10 +1929,10 @@ function actScope(c){
     'You are three weeks into a six-week project. Six requests landed this morning and your team has 6 points of capacity left. Then you need to work out which tasks actually control your delivery date.',
     stageBar(['Allocate requests','Find the critical path','Debrief'], stage),
     body,
-    stage===2?'Both halves of this are the job. The first half has no right answer — every allocation makes someone unhappy, and the skill is making the tradeoff visible rather than absorbing it silently. The second half does have a right answer, and it is counterintuitive: most people assume the biggest or most visible task is the critical one. Knowing which work actually moves the date is what stops a PM from optimizing things that do not matter.':'');
+    stage===2?'Both halves of this are the job. The first half has no right answer. Every allocation makes someone unhappy, and the skill is making the tradeoff visible rather than absorbing it silently. The second half does have a right answer, and it is counterintuitive: most people assume the biggest or most visible task is the critical one. Knowing which work actually moves the date is what stops a PM from optimizing things that do not matter.':'');
 }
 
-/* ---- 4. Software Developer: three stages — find a bug, review a PR, pick a test ---- */
+/* ---- 4. Software Developer: three stages. Find a bug, review a PR, pick a test ---- */
 const CODE=[
  'function getTopScores(scores, limit) {',
  '  const sorted = scores.slice().sort((a, b) => b - a);',
@@ -1854,13 +1949,13 @@ const CODE=[
  '// expected: [99, 94, 88]',
  '// actual:   [99, 94, 88, 71]'];
 const BUGLINE=4;
-const NUDGES={1:'That line is correct — slice() copies the array so the caller’s data is not mutated, and the comparator sorts descending.',
+const NUDGES={1:'That line is correct. The slice() call copies the array so the caller’s data is not mutated, and the comparator sorts descending.',
  2:'Correct. An empty array to accumulate into is fine.',
  5:'This line is fine on its own. The question is how many times it runs.',
  8:'Correct. The function returns what it built.',
  11:'That is the call site, not the bug. The inputs are valid.'};
 
-/* Stage 2 — a teammate's pull request with three real review issues. */
+/* Stage 2: a teammate's pull request with three real review issues. */
 const DIFF=[
  {t:'async function getUser(id) {', bad:false},
  {t:"  const res = await fetch('/api/users/' + id);", bad:false},
@@ -1877,7 +1972,7 @@ const DIFF=[
  {t:'  return joined;', bad:false},
  {t:'}', bad:false}];
 
-/* Stage 3 — which test would actually have caught the stage-1 bug? */
+/* Stage 3, which test would actually have caught the stage-1 bug? */
 const TESTS=[
  ['expect(getTopScores([5,4,3],2)).toEqual([5,4])', true,
   'Correct. It asserts the exact contents at the boundary, so an off-by-one that returns [5,4,3] fails immediately. Testing the boundary is the whole point.'],
@@ -1886,7 +1981,7 @@ const TESTS=[
  ['expect(getTopScores([],2)).toEqual([])', false,
   'A reasonable edge case worth having, but the empty array never enters the loop, so this passes even with the off-by-one bug present.'],
  ['expect(() => getTopScores([5,4,3],2)).not.toThrow()', false,
-  'The buggy version does not throw — it returns the wrong answer quietly. Testing for absence of a crash misses every correctness bug.']];
+  'The buggy version does not throw: it returns the wrong answer quietly. Testing for absence of a crash misses every correctness bug.']];
 
 function guessLine(i){ ACT.guess=i; ACT.tries=(ACT.tries||0)+1; render(); }
 function flagDiff(i){ if(ACT.prChecked) return; ACT['d'+i]=!ACT['d'+i]; render(); }
@@ -1901,8 +1996,10 @@ function actBug(c){
   const stage = !found?0:(!prDone?1:(ACT.test===undefined?2:3));
 
   /* Stage 1 */
-  let body='<h3>Stage 1 — Find the bug</h3>'+
-    '<p class="muted small">This function should return the top N scores. It returns one too many. Click the line you think is wrong.</p>'+
+  let body='<h3>Stage 1. Find the bug</h3>'+
+    '<p class="muted small">This function should return the top N scores. It returns one too many.</p>'+
+    (found?'':howto('<b>Click the line of code you think is wrong.</b> Lines highlight as you hover. '+
+      'Guess as many times as you need, you get a hint each time.'))+
     '<div class="card" style="padding:0;margin:10px 0 14px;overflow:hidden">'+
     CODE.map(function(l,i){
       const sel=g===i, clickable=l.trim().length>0 && !found;
@@ -1914,14 +2011,15 @@ function actBug(c){
   if(g!==undefined && !found)
     body+='<div class="callout"><b>Not that line.</b> '+(NUDGES[g]||'That line is correct.')+' Look again at what happens on the last iteration.</div>';
   if(found)
-    body+='<div class="callout good"><b>Found it — line 5, in '+ACT.tries+' '+(ACT.tries===1?'guess':'guesses')+'.</b> '+
+    body+='<div class="callout good"><b>Found it: line 5, in '+ACT.tries+' '+(ACT.tries===1?'guess':'guesses')+'.</b> '+
       'The condition uses <code>i &lt;= limit</code>, so the loop runs <code>limit + 1</code> times and returns one extra element. '+
       'An off-by-one error, and the single most common bug in production code. The fix is one character: <code>i &lt; limit</code>.</div>';
 
   /* Stage 2 */
   if(found){
-    body+='<h3 style="margin-top:26px">Stage 2 — Review a teammate’s pull request</h3>'+
-      '<p class="muted small">Reviewing is most of what senior engineers do for juniors. <b>Three lines below have real problems.</b> Click them.</p>'+
+    body+='<h3 style="margin-top:26px">Stage 2. Review a teammate\u2019s pull request</h3>'+
+      '<p class="muted small">Reviewing code is most of what senior engineers do for juniors. Three of these lines have real problems.</p>'+
+      (prDone?'':howto('<b>Click each line you would leave a review comment on.</b> Click again to unflag, then press <b>Submit review</b>.'))+
       '<div class="card" style="padding:0;margin:10px 0 12px;overflow:hidden">'+
       DIFF.map(function(d,i){
         const on=!!ACT['d'+i], clickable=d.t.trim().length>0 && !prDone;
@@ -1944,24 +2042,25 @@ function actBug(c){
 
   /* Stage 3 */
   if(prDone){
-    body+='<h3 style="margin-top:26px">Stage 3 — Pick the test that would have caught it</h3>'+
-      '<p class="muted small">Back to the bug from stage 1. Your lead asks you to add one test. Which of these actually fails against the buggy version?</p>'+
-      TESTS.map(function(t,i){
-        return mcOpt(i,'<code style="font-size:.85rem">'+esc(t[0])+'</code>',t[2],ACT.test!==undefined,t[1],ACT.test===i,'pickTest('+i+')');
-      }).join('');
+    body+='<h3 style="margin-top:26px">Stage 3. Pick the test that would have caught it</h3>'+
+      mcBlock('Your lead asks you to add one test for the bug from stage 1. Which of these actually fails against the buggy version?',
+        ACT.test===undefined?'Choose one option.':'',
+        TESTS.map(function(t,i){
+          return mcOpt(i,'<code style="font-size:.85rem">'+esc(t[0])+'</code>',t[2],ACT.test!==undefined,t[1],ACT.test===i,'pickTest('+i+')');
+        }).join(''));
   }
 
   return actShell(c,'Ship It',
     'Three things developers actually do all day: track down a bug, review someone else’s code, and decide what is worth testing.',
     stageBar(['Find the bug','Review the PR','Pick the test','Debrief'], stage),
     body,
-    stage===3?'Notice how little of that was writing new code. Reading and fixing existing code is most of the job, and most of what you touch will have been written by someone else, often years ago, usually without comments. The review stage is where juniors grow fastest — the three issues you were looking for (unchecked responses, unsafe DOM writes, unchecked assumptions about data) account for a large share of real production bugs. And a test that cannot fail is worse than no test at all, because it makes everyone confident about code nobody has actually checked.':'');
+    stage===3?'Notice how little of that was writing new code. Reading and fixing existing code is most of the job, and most of what you touch will have been written by someone else, often years ago, usually without comments. The review stage is where juniors grow fastest. The three issues you were looking for (unchecked responses, unsafe DOM writes, unchecked assumptions about data) account for a large share of real production bugs. And a test that cannot fail is worse than no test at all, because it makes everyone confident about code nobody has actually checked.':'');
 }
 
 const ACTIVITIES={'data-analytics':actData,'cybersecurity':actPhish,'project-management':actScope,'software-dev':actBug};
 
 /* ============================================================================
-   RENDER — every view change returns you to the top of the page.
+   RENDER: every view change returns you to the top of the page.
    ========================================================================== */
 let LASTVIEW='';
 function render(){
