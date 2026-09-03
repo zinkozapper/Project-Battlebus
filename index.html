@@ -153,7 +153,32 @@ h2.bigh .ico{color:var(--accent)}
 .payband{padding:24px 26px;margin-top:6px}
 .payband-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;color:var(--accent)}
 .payband-head h2{color:var(--navy);font-size:1.35rem}
-.pay3{display:grid;grid-template-columns:1.15fr 1fr 1.1fr;gap:30px;align-items:start}
+.pay2{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:start}
+/* Career trajectory, horizontal: a connected row rather than a tall list that
+   left dead space beside the two panels above it. */
+.traj{display:grid;position:relative;margin-top:10px}
+.traj:before{content:'';position:absolute;left:9%;right:9%;top:9px;height:2px;background:var(--line)}
+.trstep{text-align:center;padding:0 10px;position:relative;min-width:0}
+.trdot{display:block;width:20px;height:20px;border-radius:50%;margin:0 auto 13px;
+  border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line);position:relative;z-index:1}
+.trstep .yr{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.trstep .ti{font-weight:700;font-size:.87rem;color:var(--navy);margin:4px 0 5px;line-height:1.32}
+.trstep .pay{font-size:.82rem;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+/* Where you would work */
+.indul{font-size:.9rem;padding-left:19px;margin:0}
+.indul li{margin-bottom:9px}
+.indcard .emplabel{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  font-weight:700;margin-bottom:7px}
+/* Certifications */
+.certs{display:flex;flex-direction:column;gap:9px}
+.cert{border:1px solid var(--line);border-left:4px solid var(--line);border-radius:9px;
+  padding:12px 14px;background:var(--surface)}
+.cert-ok{border-left-color:var(--ok)}
+.cert-warn{border-left-color:var(--warn)}
+.cert-grey{border-left-color:#B9BEC7}
+.certtop{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:5px}
+.certname{font-weight:700;color:var(--navy);font-size:.92rem;line-height:1.3}
+.cert p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.5}
 h4.sub{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
   margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--line)}
 .factgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -169,7 +194,12 @@ h4.sub{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(
 .skillbox h4{color:var(--navy);margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--line)}
 .skillbox .ul{font-size:.92rem}
 @media (max-width:1000px){
-  .pay3,.grid2col,.grid3col{grid-template-columns:1fr}
+  .pay2,.grid2col,.grid3col{grid-template-columns:1fr}
+  .traj{grid-template-columns:1fr !important;gap:14px}
+  .traj:before{display:none}
+  .trstep{text-align:left;display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:center;padding:0}
+  .trdot{margin:0}
+  .trstep .ti{margin:0}
 }
 
 /* Activity multiple-choice needs stronger separation than the interview does,
@@ -371,8 +401,8 @@ This is often the most accessible entry point into a technical career for an IS 
     know:['Write a multi-table SQL join without looking it up, and explain the difference between INNER and LEFT','Build a clear chart and explain why you chose that chart type','Comfort with Excel beyond the basics: pivot tables, lookups, conditional logic','Basic descriptive statistics: mean vs. median, and when the average is lying to you','How to explain a finding in three sentences to someone with no technical background'],
     notKnow:['Machine learning or predictive modeling: nice to have, rarely required for an analyst role','Production data engineering or pipeline architecture','Advanced statistics beyond regression','Any specific BI tool in depth: teams train you on theirs'],
     internWork:'Interns are usually given one contained, real project: automate a report someone builds by hand every week, or clean and document a dataset nobody has had time to touch. You will spend more time understanding where the data comes from than analyzing it, and that is the actual lesson.',
-    certs:[{name:'Google Data Analytics Certificate',worth:'Useful for structure and vocabulary if you are starting cold. Employers will not hire you because of it.'},
-           {name:'Microsoft PL-300 (Power BI)',worth:'Genuinely signals tool fluency and is cheap. Worth it if you are targeting BI-heavy shops.'}]
+    certs:[{name:'Google Data Analytics Certificate',v:'Marginal',worth:'Useful for structure and vocabulary if you are starting cold. Employers will not hire you because of it.'},
+           {name:'Microsoft PL-300 (Power BI)',v:'Worth it',worth:'Genuinely signals tool fluency and is cheap. Worth it if you are targeting BI-heavy shops.'}]
   },
   strong:[
     'Has a portfolio with at least one project using real, messy, public data, not the Titanic dataset, not Iris. Anything from data.gov or a city open-data portal beats a Kaggle tutorial.',
@@ -434,9 +464,9 @@ It is the fastest-growing of these four paths by percentage. It is also the smal
     know:['How DNS, HTTP, and TCP/IP actually work. This is tested constantly and is the most common failure point','How to read a log and construct a timeline from it','Common attack types: phishing, credential stuffing, SQL injection, ransomware, privilege escalation','The CIA triad, and how to apply it to a scenario rather than recite it','Basic command line on both Windows and Linux'],
     notKnow:['Reverse engineering or malware analysis','Writing exploits','Deep cloud security architecture','Any specific SIEM platform. Training on the employer’s tool is expected'],
     internWork:'Security interns typically shadow the SOC queue, take real but low-severity alerts under supervision, and get a documentation-heavy project such as an asset inventory or a policy gap review. Expect a lot of reading before you touch anything sensitive.',
-    certs:[{name:'CompTIA Security+',worth:'The single most recognized entry credential in this field. Many government and defense roles require it outright. If you get one certification, get this one.'},
-           {name:'CompTIA Network+',worth:'Worth it only if your networking foundation is genuinely weak. The knowledge matters more than the certificate.'},
-           {name:'ISC2 Certified in Cybersecurity (CC)',worth:'Free to sit as a student and reasonable as a first credential, but well below Security+ in recognition.'}]
+    certs:[{name:'CompTIA Security+',v:'Start here',worth:'The single most recognized entry credential in this field. Many government and defense roles require it outright. If you get one certification, get this one.'},
+           {name:'CompTIA Network+',v:'Situational',worth:'Worth it only if your networking foundation is genuinely weak. The knowledge matters more than the certificate.'},
+           {name:'ISC2 Certified in Cybersecurity (CC)',v:'Situational',worth:'Free to sit as a student and reasonable as a first credential, but well below Security+ in recognition.'}]
   },
   strong:[
     'Has a home lab and can walk through it: a virtualized network, a firewall like pfSense, a Security Onion or Splunk box, and a written incident report from an attack they ran against their own environment.',
@@ -498,9 +528,9 @@ It has the lowest projected growth of these four paths at 7%, but by far the mos
     know:['What Agile and Scrum actually are, including the ceremonies and the roles, and when Waterfall is still the right call','How to build and read a project schedule with dependencies','How to write a clear status update that surfaces bad news instead of burying it','Basic risk management: identify, assess, mitigate, monitor','Jira or an equivalent tracker at a working level'],
     notKnow:['Managing a large program or multiple workstreams','Budget ownership and forecasting','Vendor contracts and procurement','PMP certification. It requires years of documented experience'],
     internWork:'PM interns usually shadow a project manager and own something contained: documenting a process, coordinating a small workstream, or running the status reporting for one team. You will sit in a lot of meetings, and paying attention to how the PM handles conflict is the real curriculum.',
-    certs:[{name:'Certified Associate in Project Management (CAPM)',worth:'The realistic PMI credential for a student. The PMP requires years of experience you do not have yet. A reasonable signal of seriousness.'},
-           {name:'Certified ScrumMaster (CSM)',worth:'Fast and widely recognized, though the two-day course format means it signals less than the price suggests. Useful if your target employers run Scrum.'},
-           {name:'Google Project Management Certificate',worth:'Good structure for learning the vocabulary from scratch. Weak as a hiring signal on its own.'}]
+    certs:[{name:'Certified Associate in Project Management (CAPM)',v:'Worth it',worth:'The realistic PMI credential for a student. The PMP requires years of experience you do not have yet. A reasonable signal of seriousness.'},
+           {name:'Certified ScrumMaster (CSM)',v:'Situational',worth:'Fast and widely recognized, though the two-day course format means it signals less than the price suggests. Useful if your target employers run Scrum.'},
+           {name:'Google Project Management Certificate',v:'Marginal',worth:'Good structure for learning the vocabulary from scratch. Weak as a hiring signal on its own.'}]
   },
   strong:[
     'Can describe a real project they ran (a club initiative, a work project, a group assignment) including what went wrong and what they changed as a result.',
@@ -563,8 +593,8 @@ It pays the best of these four paths at the median and has strong growth. It als
     know:['Write clean, working code in at least one language and explain your choices','Core data structures (arrays, hash maps, lists) and when to reach for each','Write SQL queries with joins and aggregation','Use Git properly: branch, commit, resolve a merge conflict, open a pull request','Debug systematically: reproduce, isolate, hypothesize, test','Explain your own code out loud while writing it'],
     notKnow:['System design at scale','Advanced algorithms and dynamic programming. For most IS-track roles, though big-tech screens do test these','DevOps and infrastructure management','Any specific framework in depth'],
     internWork:'Development interns get real tickets, usually small and well-scoped, on a real codebase with a mentor assigned. Expect the first two weeks to be environment setup and reading. Your first pull request will get a lot of comments; that is the job working correctly, not a bad sign.',
-    certs:[{name:'None, generally',worth:'Software development is the one path here where certifications carry almost no weight. A GitHub profile with real projects is worth more than any certificate.'},
-           {name:'AWS Certified Cloud Practitioner',worth:'Marginal for a developer role, but a cheap way to demonstrate cloud literacy if your resume is otherwise thin.'}]
+    certs:[{name:'No certification needed',v:'Skip these',worth:'Software development is the one path here where certifications carry almost no weight. A GitHub profile with real projects is worth more than any certificate.'},
+           {name:'AWS Certified Cloud Practitioner',v:'Marginal',worth:'Marginal for a developer role, but a cheap way to demonstrate cloud literacy if your resume is otherwise thin.'}]
   },
   strong:[
     'Has a GitHub with real projects that have commit history over time, not four repos all created the week before applications opened.',
@@ -1254,6 +1284,11 @@ function shuffle(arr){
   return c;
 }
 function sample(arr,n){ return shuffle(arr).slice(0,n); }
+/* Split prose into sentences for bulleted display. The industry copy contains no
+   abbreviations with internal periods, so a simple boundary split is safe here. */
+function sentences(text){
+  return String(text).split(/(?<=\.)\s+/).map(function(s){return s.trim();}).filter(Boolean);
+}
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function go(hash){ if(location.hash===hash) render(); else location.hash=hash; }
 
@@ -1373,7 +1408,7 @@ function viewCareer(c){
   /* ---------- pay band: full width, figures shown once, as bars ---------- */
   '<div class="card payband">'+
     '<div class="payband-head">'+ico('trend','lg')+'<h2 style="margin:0">Pay and outlook</h2></div>'+
-    '<div class="pay3">'+
+    '<div class="pay2">'+
       '<div>'+
         '<h4 class="sub">What the role pays nationally</h4>'+
         payBars(c)+
@@ -1388,14 +1423,21 @@ function viewCareer(c){
           'BS Information Systems graduates, Class of 2025, averaged <b>$72,820</b> (median $74,000) across all '+
           'tracks'+cite('byu-bsis')+'. That is a starting salary. The figures above are not.</div>'+
       '</div>'+
-      '<div>'+
-        '<h4 class="sub">Career trajectory</h4>'+
-        '<ul class="ladder">'+k.ladder.map(function(l){
-          return '<li><span class="yr">'+l[0]+'</span><span class="ti">'+l[1]+'</span><span class="pay">'+l[2]+'</span></li>';
-        }).join('')+'</ul>'+
-        '<p class="xs muted" style="margin-top:9px">Experience bands are estimated from wage percentiles. '+
-        'Salary by years of experience is not published.</p>'+
+    '</div>'+
+    '<div style="margin-top:24px">'+
+      '<h4 class="sub">Career trajectory</h4>'+
+      '<div class="traj" style="grid-template-columns:repeat('+k.ladder.length+',1fr)">'+
+        k.ladder.map(function(l,i){
+          const op=(0.35+0.65*(i/(k.ladder.length-1))).toFixed(2);
+          return '<div class="trstep">'+
+            '<span class="trdot" style="background:var(--accent);opacity:'+op+'"></span>'+
+            '<div class="yr">'+l[0]+'</div>'+
+            '<div class="ti">'+l[1]+'</div>'+
+            '<div class="pay">'+l[2]+'</div></div>';
+        }).join('')+
       '</div>'+
+      '<p class="xs muted" style="margin-top:12px">Experience bands are estimated from wage percentiles. '+
+      'Salary by years of experience is not published.</p>'+
     '</div>'+
     '<div class="paynote">'+
       '<p class="small" style="margin:0 0 8px"><b>Where these figures come from.</b> They are published by the '+
@@ -1419,14 +1461,17 @@ function viewCareer(c){
   /* ---------- where you would work ---------- */
   '<div class="section">'+
     '<h2 class="bigh">'+ico('build','xl')+'Where you would work</h2>'+
-    '<p class="muted" style="max-width:78ch;margin-bottom:20px">The same job title means genuinely different work '+
-    'depending on the industry. These are three of the largest employers of this role.</p>'+
+    '<p class="muted" style="max-width:82ch;margin-bottom:20px">The three industries below are among the largest '+
+    'employers of '+c.short.toLowerCase()+'s. Under each one we name a few of the most prominent companies that hire '+
+    'for this role in that industry, then set out how the day-to-day work actually changes depending on which of '+
+    'them you end up in. The job title stays the same. The work does not.</p>'+
     '<div class="grid3col">'+c.industries.map(function(i){
+      const points = sentences(i.whyTheyHire).concat(sentences(i.howTheRoleDiffers));
       return '<div class="card indcard">'+
         '<h3>'+i.name+'</h3>'+
-        '<div class="emp">'+i.employers.map(function(e){return '<span class="pill">'+e+'</span>';}).join('')+'</div>'+
-        '<p>'+i.whyTheyHire+'</p>'+
-        '<p style="margin-bottom:0">'+i.howTheRoleDiffers+'</p>'+
+        '<div class="emp"><div class="emplabel">Prominent employers</div>'+
+          i.employers.map(function(e){return '<span class="pill">'+e+'</span>';}).join('')+'</div>'+
+        '<ul class="ul indul">'+points.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>'+
       '</div>';}).join('')+'</div>'+
   '</div>'+
 
@@ -1457,8 +1502,15 @@ function viewCareer(c){
         '<ul class="ul">'+c.entryLevel.notKnow.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'+
       '<div>'+
         '<h4>What internships actually look like</h4><p>'+c.entryLevel.internWork+'</p>'+
-        '<h4 style="margin-top:18px">Certifications</h4>'+c.entryLevel.certs.map(function(ct){
-          return '<p style="margin-bottom:9px"><b>'+ct.name+'.</b> <span class="muted">'+ct.worth+'</span></p>';}).join('')+
+        '<h4 style="margin-top:18px">Certifications</h4>'+
+        '<p class="xs muted" style="margin-bottom:11px">Our read on whether each one is worth your time and money '+
+        'as a student.</p>'+
+        '<div class="certs">'+c.entryLevel.certs.map(function(ct){
+          const cls = /Start here|Worth it/.test(ct.v) ? 'ok' : (/Situational/.test(ct.v) ? 'warn' : 'grey');
+          return '<div class="cert cert-'+cls+'">'+
+            '<div class="certtop"><span class="certname">'+ct.name+'</span>'+
+            '<span class="chip '+cls+'">'+ct.v+'</span></div>'+
+            '<p>'+ct.worth+'</p></div>';}).join('')+'</div>'+
       '</div>'+
     '</div></div>'+
 
